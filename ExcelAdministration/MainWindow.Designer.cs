@@ -82,6 +82,7 @@
             this.izaToolStripMenuItem.Name = "izaToolStripMenuItem";
             this.izaToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.izaToolStripMenuItem.Text = "Exit the Application";
+            this.izaToolStripMenuItem.Click += new System.EventHandler(this.exitStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -133,7 +134,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.25F);
             this.label1.Location = new System.Drawing.Point(11, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 19);
+            this.label1.Size = new System.Drawing.Size(89, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Name Input: ";
             // 
