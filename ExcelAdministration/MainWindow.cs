@@ -27,5 +27,10 @@ namespace WindowsFormsApplication2
             this.Close();
         }
 
+        private void nameInput_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
     }
 }
