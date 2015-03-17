@@ -43,6 +43,8 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataView = new System.Windows.Forms.DataGridView();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.textBoxPath = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -68,19 +70,20 @@
             this.otvoriExcellToolStripMenuItem,
             this.izaToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // otvoriExcellToolStripMenuItem
             // 
             this.otvoriExcellToolStripMenuItem.Name = "otvoriExcellToolStripMenuItem";
-            this.otvoriExcellToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.otvoriExcellToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.otvoriExcellToolStripMenuItem.Text = "Choose Excel File";
+            this.otvoriExcellToolStripMenuItem.Click += new System.EventHandler(this.otvoriExcellToolStripMenuItem_Click);
             // 
             // izaToolStripMenuItem
             // 
             this.izaToolStripMenuItem.Name = "izaToolStripMenuItem";
-            this.izaToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.izaToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.izaToolStripMenuItem.Text = "Exit the Application";
             this.izaToolStripMenuItem.Click += new System.EventHandler(this.exitStripMenuItem_Click);
             // 
@@ -89,13 +92,13 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.posaljiMailRijaduToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // posaljiMailRijaduToolStripMenuItem
             // 
             this.posaljiMailRijaduToolStripMenuItem.Name = "posaljiMailRijaduToolStripMenuItem";
-            this.posaljiMailRijaduToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.posaljiMailRijaduToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.posaljiMailRijaduToolStripMenuItem.Text = "Excel Sheet Format Example";
             // 
             // panel1
@@ -199,11 +202,34 @@
             this.openFileDialog1.Filter = "Excel (.xlsx) |*.xlsx| Excel (stari)|*.xls";
             this.openFileDialog1.Title = "Choose an Excel File";
             // 
+            // textBoxPath
+            // 
+            this.textBoxPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxPath.Enabled = false;
+            this.textBoxPath.Location = new System.Drawing.Point(670, 1);
+            this.textBoxPath.Name = "textBoxPath";
+            this.textBoxPath.Size = new System.Drawing.Size(446, 20);
+            this.textBoxPath.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Enabled = false;
+            this.label2.Location = new System.Drawing.Point(574, 6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Database Path:";
+            this.label2.Click += new System.EventHandler(this.label2_Click_1);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1116, 593);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBoxPath);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
@@ -247,5 +273,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView dataView;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.TextBox textBoxPath;
+        private System.Windows.Forms.Label label2;
     }
 }

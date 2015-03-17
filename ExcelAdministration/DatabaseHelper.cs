@@ -94,7 +94,7 @@ namespace WindowsFormsApplication2
         /*
          *  We need to secure the connection first so that the INSERT functions properly. 
         */
-        public void insertNewMember(Person person)
+        /*public void insertNewMember(Person person)
         {
             String ID = person.getID();
             String titel = person.getTitle();
@@ -113,7 +113,7 @@ namespace WindowsFormsApplication2
             {
                 /*
                  * Connection begins here when dbPath is set   ********   *********   *********
-                 */
+                 *
                 String connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + dbPath + "; Extended Properties='Excel 12.0 Xml;HDR=YES'";
 
                 using (OleDbConnection connection = new OleDbConnection(connectionString))
@@ -157,6 +157,6 @@ namespace WindowsFormsApplication2
                     }
                 }
             }
-        }
+        }*/
     }
 }

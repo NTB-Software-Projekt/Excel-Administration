@@ -32,5 +32,24 @@ namespace WindowsFormsApplication2
             
         }
 
+        private void otvoriExcellToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Excel 97-2007 WorkBook|*.xls|Excel WorkBook 2010/2013|*.xlsx|All Excel Files|*.xls;*.xlsx"; //"Description|*.extension"
+            ofd.ShowDialog();
+            String dbPath = System.IO.Path.GetDirectoryName(ofd.FileName); //filename = System.IO.Path.GetFileName(ofd.FileName);
+            textBoxPath.Text = dbPath;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
