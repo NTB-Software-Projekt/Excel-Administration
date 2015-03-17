@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication2
+namespace MemberAdministration
 {
     public partial class MainWindow : Form
     {
@@ -49,6 +49,12 @@ namespace WindowsFormsApplication2
         private void label2_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            AboutBox1 a = new AboutBox1();
+            a.Show();
         }
 
     }
