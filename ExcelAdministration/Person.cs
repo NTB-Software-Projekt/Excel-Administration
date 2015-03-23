@@ -6,65 +6,31 @@ using System.Threading.Tasks;
 
 namespace MemberAdministration
 {
-    class Person
+    class Person 
     {
+        public String ID { get; set; }
+        public String Title { get; set; }
+        public String Surname { get; set; }
+        public String Name { get; set; }
+        public String Address { get; set; }
+        public String Plz { get; set; }
+        public String State { get; set; }
+        public Int32 Telephone { get; set; }
+        public String Mail { get; set; }
+        public String Amount { get; set; }
 
-        String ID;
-        String title;
-        String surname;
-        String name;
-        String address;
-        String plz;
-        String state;
-        Int32 telephone;
-        String mail;
-        String amount;
-
-        public String getID()
+        public Person(String ID, String title, String surname, String name, String address, String plz, String state, String telephone, String mail, String amount )
         {
-            return this.ID;
+            this.ID = ID;
+            this.Title = title;
+            this.Surname = surname;
+            this.Name = name;
+            this.Address = address;
+            this.Plz = plz;
+            this.State = state;
+            this.Telephone = Int32.Parse(telephone) ;
+            this.Mail = mail;
+            this.Amount = amount;
         }
-
-        public String getTitle()
-        {
-            return this.title;
-        }
-
-        public String getSurname()
-        {
-            return this.surname;
-        }
-
-        public String getName()
-        {
-            return this.name;
-        }
-
-        public String getAddress()
-        {
-            return this.address;
-        }
-
-        public String getPlz()
-        {
-            return this.plz;
-        }
-
-        public String getState(){
-            return this.state;
-        }
-
-        public Int32 getTelephone(){
-            return this.telephone;
-        }
-
-        public String getEmail(){
-            return this.mail;
-        }
-
-        public String getAmount()
-        {
-            return this.amount;
-        } 
     }
 }

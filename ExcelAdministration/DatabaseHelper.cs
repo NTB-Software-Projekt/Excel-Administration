@@ -92,16 +92,16 @@ namespace MemberAdministration
         */
         public void insertNewMember(Person person)
         {
-            String ID = person.getID();
-            String title = person.getTitle();
-            String surname = person.getSurname();
-            String name = person.getName();
-            String address = person.getAddress();
-            String plz = person.getPlz();
-            String state = person.getState();
-            Int32 telephone = person.getTelephone();
-            String mail = person.getEmail();
-            String amount = person.getAmount();
+            String ID = person.ID;
+            String title = person.Title;
+            String surname = person.Surname;
+            String name = person.Name;
+            String address = person.Address;
+            String plz = person.Plz;
+            String state = person.State;
+            Int32 telephone = person.Telephone;
+            String mail = person.Mail;
+            String amount = person.Amount;
 
             dbPath = MemberAdministration.Properties.Settings.Default.dbPath;
             if (dbPath != null)
@@ -155,7 +155,7 @@ namespace MemberAdministration
 
         public void deleteMember(Person person)
         {
-            String ID = person.getID();
+            String ID = person.ID;
             dbPath = MemberAdministration.Properties.Settings.Default.dbPath;
             if (dbPath != null)
             {
@@ -178,7 +178,7 @@ namespace MemberAdministration
                             try
                             {
                                 cmd.ExecuteNonQuery();
-                                MessageBox.Show("Person :"+person.getName()+" Deleted");
+                                MessageBox.Show("Person :"+person.Name+" Deleted");
                                 connection.Close();
                             }
                             catch (OleDbException expe)
