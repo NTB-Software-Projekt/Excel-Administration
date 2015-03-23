@@ -260,11 +260,6 @@
 
         }
 
-        private void MainWindow_Load(object sender, System.EventArgs e)
-        {
-            //throw new System.NotImplementedException();
-        }
-
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;

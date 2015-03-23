@@ -12,13 +12,23 @@ namespace MemberAdministration
 {
     public partial class MainWindow : Form
     {
+        DatabaseHelper dbHelper = new DatabaseHelper();
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        public void MainWindow_Load()
+        public void MainWindow_Load(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(MemberAdministration.Properties.Settings.Default.dbPath))
+            {
+                MessageBox.Show("No Database");
+            }
+            else 
+            {
+                dbHelper.setDatabase(MemberAdministration.Properties.Settings.Default.dbPath);
+                writeTextBoxPath(MemberAdministration.Properties.Settings.Default.dbPath);
+            }
 
         }
 
@@ -38,6 +48,14 @@ namespace MemberAdministration
             ofd.Filter = "Excel 97-2007 WorkBook|*.xls|Excel WorkBook 2010/2013|*.xlsx|All Excel Files|*.xls;*.xlsx"; //"Description|*.extension"
             ofd.ShowDialog();
             String dbPath = System.IO.Path.GetDirectoryName(ofd.FileName); //filename = System.IO.Path.GetFileName(ofd.FileName);
+            writeTextBoxPath(dbPath);
+
+            dbHelper.setDatabase(dbPath);
+
+        }
+
+        private void writeTextBoxPath(String dbPath)
+        {
             textBoxPath.Text = dbPath;
         }
 
