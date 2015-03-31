@@ -79,7 +79,7 @@
             this.otvoriExcellToolStripMenuItem.Name = "otvoriExcellToolStripMenuItem";
             this.otvoriExcellToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.otvoriExcellToolStripMenuItem.Text = "Choose Excel File";
-            this.otvoriExcellToolStripMenuItem.Click += new System.EventHandler(this.otvoriExcellToolStripMenuItem_Click);
+            this.otvoriExcellToolStripMenuItem.Click += new System.EventHandler(this.openExcelMenu_Click);
             // 
             // izaToolStripMenuItem
             // 
@@ -230,7 +230,7 @@
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(220, 22);
             this.toolStripMenuItem1.Text = "About";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.exitApplicationMenu_Click);
             // 
             // MainWindow
             // 
