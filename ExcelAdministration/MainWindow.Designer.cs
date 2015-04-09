@@ -223,7 +223,6 @@
             this.label2.Size = new System.Drawing.Size(81, 13);
             this.label2.TabIndex = 7;
             this.label2.Text = "Database Path:";
-            this.label2.Click += new System.EventHandler(this.label2_Click_1);
             // 
             // toolStripMenuItem1
             // 
