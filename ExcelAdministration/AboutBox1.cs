@@ -19,7 +19,7 @@ namespace MemberAdministration
             this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
             this.labelCopyright.Text = AssemblyCopyright;
             this.labelCompanyName.Text = AssemblyCompany;
-            this.textBoxDescription.Text = AssemblyDescription;
+            //this.textBoxDescription.Text = AssemblyDescription;
         }
 
         #region Assemblyattributaccessoren
@@ -103,6 +103,21 @@ namespace MemberAdministration
         #endregion
 
         private void AboutBox1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void okButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void textBoxDescription_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
