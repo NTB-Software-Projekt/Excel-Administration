@@ -44,7 +44,7 @@ namespace MemberAdministration
         private void openExcelMenu_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Excel 97-2007 WorkBook|*.xls|Excel WorkBook 2010/2013|*.xlsx|All Excel Files|*.xls;*.xlsx"; //"Description|*.extension"
+            ofd.Filter = "All Excel Files|*.xls;*.xlsx|Excel 97-2007 WorkBook|*.xls|Excel WorkBook 2010/2013|*.xlsx"; //"Description|*.extension"
             ofd.ShowDialog();
             String dbPath = System.IO.Path.GetDirectoryName(ofd.FileName); //filename = System.IO.Path.GetFileName(ofd.FileName);
             writeTextBoxPath(dbPath);
