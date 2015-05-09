@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{geometry}
 \usepackage{enumitem}
+\usepackage{parskip}
 \geometry{
 	a4paper,
 	total={210mm,297mm},
@@ -17,12 +18,14 @@
 \renewcommand{\contentsname}{Inhaltsverzeichnis}
 \begin{document}
 
-\title{Software Projekt - Excel als SQL Datenbank }
-\author{Rijad \v{Z}u\v{z}o \and Séverin Müller}
+\pagenumbering{roman}
+
+\title{Software Projekt - Excel als SQL Datenbank}
+\author{Authoren: Rijad \v{Z}u\v{z}o , Séverin Müller \\ \\ Dozent: Ulrich Hauser}
 
 \maketitle
 
-\vspace{60mm}
+\vspace{80mm}
 \begin{center}
 		\includegraphics{SoftwareLogo}
 \end{center}
@@ -30,6 +33,8 @@
 \newpage
 \tableofcontents
 \newpage
+
+\pagenumbering{arabic}
 
 \section{Motivation}
 Die Motivation für dieses Projekt stand aus dem Beruflichen Leben. Ein Excel File das zum einfachen auflisten einiger Daten erstellt wurde, kann schnell in eine richtige Datenbank auswachsen.
@@ -48,7 +53,7 @@ Durch das benutzen der Applikation hat der User einen begrenzten Einfluss auf da
 Für zusätzliche Datensicherheit wird nach entsprechender Zeit ein Backup File erstellt und einsetzbar sein. Dies ist natürlich nicht eine Endlösung aber eine guter fix für solche problematische Legacy Situationen.
 
 \section{Anforderungsliste}
-Für die Applikation stellen sich jetzt gewisse Anforderungen da es sich um eventuell sehr wichtige Daten handelt. In diesem Prozess darf es keine Datenverluste und ähnliche Ausfälle geben. 
+Für die Applikation stellen sich jetzt gewisse Anforderungen- Da es sich um eventuell sehr wichtige Daten handelt, darf es in diesem Prozess keine Datenverluste und ähnliche Ausfälle geben. 
 	
 \subsection{Muss-Anforderungen}
 Die Applikation muss:
@@ -90,11 +95,24 @@ Die Auswahl des Verwaltungssystem war sehr einfach da wir die Software als Open 
 
 \newpage
 
+\section{Projekt Planung}
+\subsection{Product Backlog}
+\subsection{Sprints}
+\subsection{Sprint Stand-up Meetings}
+\subsection{Sprint Review}
+
+\newpage
+
 \section{Ablauf der Entwicklung}
+
 \subsection{Modellierung}
 Die erste Phase der Entwicklung war das Strukturieren der Software. Wir wollten ein klares Design haben das uns die Weiterentwicklung in der Zukunft ermöglicht. 
 
 \subsubsection{Klassen Diagramm}
+\begin{center}
+	\includegraphics[width=1.05 \textwidth]{KlassendiagrammBild}
+	\caption{1.a Klassendiagramm}
+\end{center}
 
 \subsubsection{Aktivitäts-Diagramm}
 
