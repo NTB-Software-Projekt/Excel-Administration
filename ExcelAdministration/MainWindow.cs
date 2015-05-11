@@ -22,12 +22,13 @@ namespace MemberAdministration
         {
             if (String.IsNullOrEmpty(MemberAdministration.Properties.Settings.Default.dbPath))
             {
-                MessageBox.Show("No Database");
+                MessageBox.Show("No Database Selected");
             }
             else 
             {
                 dbHelper.setDatabase(MemberAdministration.Properties.Settings.Default.dbPath);
                 writeTextBoxPath(MemberAdministration.Properties.Settings.Default.dbPath);
+                populateTable();
             }
         }
 
@@ -46,10 +47,11 @@ namespace MemberAdministration
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "All Excel Files|*.xls;*.xlsx|Excel 97-2007 WorkBook|*.xls|Excel WorkBook 2010/2013|*.xlsx"; //"Description|*.extension"
             ofd.ShowDialog();
-            String dbPath = System.IO.Path.GetDirectoryName(ofd.FileName); //filename = System.IO.Path.GetFileName(ofd.FileName);
+            String dbPath = System.IO.Path.GetDirectoryName(ofd.FileName)+"\\"+System.IO.Path.GetFileName(ofd.FileName);
             writeTextBoxPath(dbPath);
 
             dbHelper.setDatabase(dbPath);
+            populateTable();
 
         }
 
@@ -62,6 +64,16 @@ namespace MemberAdministration
         {
             AboutBox1 a = new AboutBox1();
             a.Show();
+        }
+
+        public void populateTable()
+        {
+            
+            BindingSource source = new BindingSource();
+            source.DataSource = dbHelper.getAllMembers().Tables[0];
+            dataView.DataSource = source;
+            DataGridViewColumn column = dataView.Columns[0];
+            column.Width = 40;
         }
 
     }
