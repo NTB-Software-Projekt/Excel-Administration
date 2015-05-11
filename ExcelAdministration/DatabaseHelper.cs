@@ -13,6 +13,10 @@ namespace MemberAdministration
     {
         private String dbPath;
 
+        /// <summary>
+        /// Setting the Database Path and saving it to the Properties of this Application. It will be loaded on the next Application start automatically.
+        /// </summary>
+        /// <param name="dbPath">Path to the Database which will be used for the connection.</param>
         public void setDatabase(String dbPath)
         {
             this.dbPath = dbPath;
@@ -20,6 +24,10 @@ namespace MemberAdministration
             Properties.Settings.Default.Save();
         }
 
+        /// <summary>
+        /// Pulling all members from the Excel file and returning a DataSet which will be used as a DataSource in the GridView
+        /// </summary>
+        /// <returns> DataSet </returns>
         public DataSet getAllMembers()
         {
             dbPath = MemberAdministration.Properties.Settings.Default.dbPath;

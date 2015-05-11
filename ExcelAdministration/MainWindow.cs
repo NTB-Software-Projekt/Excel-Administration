@@ -73,7 +73,7 @@ namespace MemberAdministration
             source.DataSource = dbHelper.getAllMembers().Tables[0];
             dataView.DataSource = source;
             DataGridViewColumn column = dataView.Columns[0];
-            column.Width = 40;
+            column.Width = 50;
         }
 
         public void populateTable(String name)
@@ -85,7 +85,7 @@ namespace MemberAdministration
                 dataView.DataSource = source;
 
                 DataGridViewColumn column = dataView.Columns[0];
-                column.Width = 40;
+                column.Width = 50;
             }
             catch (Exception ex)
             {
@@ -97,6 +97,12 @@ namespace MemberAdministration
         {
             NewMember newMember = new NewMember();
             newMember.Show();
+        }
+
+        private void dataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            PersonWindow pWindow = new PersonWindow();
+            pWindow.Show();
         }
 
     }
