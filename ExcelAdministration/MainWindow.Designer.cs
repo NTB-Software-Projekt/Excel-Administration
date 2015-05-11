@@ -34,6 +34,7 @@
             this.izaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.posaljiMailRijaduToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -45,7 +46,6 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.textBoxPath = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -71,20 +71,20 @@
             this.otvoriExcellToolStripMenuItem,
             this.izaToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // otvoriExcellToolStripMenuItem
             // 
             this.otvoriExcellToolStripMenuItem.Name = "otvoriExcellToolStripMenuItem";
-            this.otvoriExcellToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.otvoriExcellToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.otvoriExcellToolStripMenuItem.Text = "Choose Excel File";
             this.otvoriExcellToolStripMenuItem.Click += new System.EventHandler(this.openExcelMenu_Click);
             // 
             // izaToolStripMenuItem
             // 
             this.izaToolStripMenuItem.Name = "izaToolStripMenuItem";
-            this.izaToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.izaToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.izaToolStripMenuItem.Text = "Exit the Application";
             this.izaToolStripMenuItem.Click += new System.EventHandler(this.exitStripMenuItem_Click);
             // 
@@ -94,14 +94,21 @@
             this.posaljiMailRijaduToolStripMenuItem,
             this.toolStripMenuItem1});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // posaljiMailRijaduToolStripMenuItem
             // 
             this.posaljiMailRijaduToolStripMenuItem.Name = "posaljiMailRijaduToolStripMenuItem";
-            this.posaljiMailRijaduToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.posaljiMailRijaduToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.posaljiMailRijaduToolStripMenuItem.Text = "Excel Sheet Format Example";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(210, 22);
+            this.toolStripMenuItem1.Text = "About";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.exitApplicationMenu_Click);
             // 
             // panel1
             // 
@@ -124,6 +131,7 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "New Member";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox1
             // 
@@ -223,13 +231,6 @@
             this.label2.Size = new System.Drawing.Size(81, 13);
             this.label2.TabIndex = 7;
             this.label2.Text = "Database Path:";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(220, 22);
-            this.toolStripMenuItem1.Text = "About";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.exitApplicationMenu_Click);
             // 
             // MainWindow
             // 
