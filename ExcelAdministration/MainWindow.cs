@@ -39,7 +39,8 @@ namespace MemberAdministration
 
         private void nameInput_TextChanged(object sender, EventArgs e)
         {
-            //TODO
+            String inputName = textBox1.Text;
+            populateTable(inputName);
         }
 
         private void openExcelMenu_Click(object sender, EventArgs e)
@@ -68,12 +69,28 @@ namespace MemberAdministration
 
         public void populateTable()
         {
-            
             BindingSource source = new BindingSource();
             source.DataSource = dbHelper.getAllMembers().Tables[0];
             dataView.DataSource = source;
             DataGridViewColumn column = dataView.Columns[0];
             column.Width = 40;
+        }
+
+        public void populateTable(String name)
+        {
+            BindingSource source = new BindingSource();
+            try
+            {
+                source.DataSource = dbHelper.getThisMember(name).Tables[0];
+                dataView.DataSource = source;
+
+                DataGridViewColumn column = dataView.Columns[0];
+                column.Width = 40;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
     }
