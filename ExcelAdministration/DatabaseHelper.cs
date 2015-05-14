@@ -27,7 +27,7 @@ namespace MemberAdministration
         /// <summary>
         /// Pulling all members from the Excel file and returning a DataSet which will be used as a DataSource in the GridView
         /// </summary>
-        /// <returns> DataSet </returns>
+        /// <returns> DataSet with all the Member Data </returns>
         public DataSet getAllMembers()
         {
             dbPath = MemberAdministration.Properties.Settings.Default.dbPath;
@@ -59,9 +59,11 @@ namespace MemberAdministration
             return null;
         }
 
-        /*
-         * We need this for getting the specified user in the input box, either by name or surname 
-         */
+        /// <summary>
+        /// Pulling a specific member from the Database, filtered by the inputted name or surname. 
+        /// </summary>
+        /// <param name="member">name or surname of the wanted person.</param>
+        /// <returns> DataSet with the specific person information.</returns>
         public DataSet getThisMember(String member)
         {
 
@@ -95,9 +97,10 @@ namespace MemberAdministration
             return null;
         }
 
-        /*
-         *  We need to secure the connection first so that the INSERT functions properly. 
-        */
+        /// <summary>
+        /// Inserting the new person into the DB. We strip all the information from the Person object and pass it to the query.
+        /// </summary>
+        /// <param name="person">Person object containing all the needed informatino</param>
         public void insertNewMember(Person person)
         {
             String ID = person.ID;
@@ -161,6 +164,10 @@ namespace MemberAdministration
             }
         }
 
+        /// <summary>
+        /// Deleting one specific member, filtered by the ID in the Person object.
+        /// </summary>
+        /// <param name="person">Person object containing the needed ID</param>
         public void deleteMember(Person person)
         {
             String ID = person.ID;
