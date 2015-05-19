@@ -93,7 +93,7 @@ namespace MemberAdministration
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void newMemberButton_Click(object sender, EventArgs e)
         {
             NewMember newMember = new NewMember();
             newMember.Show();

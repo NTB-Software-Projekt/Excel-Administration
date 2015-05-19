@@ -36,7 +36,7 @@
             this.posaljiMailRijaduToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.newMemberButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -71,20 +71,20 @@
             this.otvoriExcellToolStripMenuItem,
             this.izaToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // otvoriExcellToolStripMenuItem
             // 
             this.otvoriExcellToolStripMenuItem.Name = "otvoriExcellToolStripMenuItem";
-            this.otvoriExcellToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.otvoriExcellToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.otvoriExcellToolStripMenuItem.Text = "Choose Excel File";
             this.otvoriExcellToolStripMenuItem.Click += new System.EventHandler(this.openExcelMenu_Click);
             // 
             // izaToolStripMenuItem
             // 
             this.izaToolStripMenuItem.Name = "izaToolStripMenuItem";
-            this.izaToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.izaToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.izaToolStripMenuItem.Text = "Exit the Application";
             this.izaToolStripMenuItem.Click += new System.EventHandler(this.exitStripMenuItem_Click);
             // 
@@ -94,19 +94,19 @@
             this.posaljiMailRijaduToolStripMenuItem,
             this.toolStripMenuItem1});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // posaljiMailRijaduToolStripMenuItem
             // 
             this.posaljiMailRijaduToolStripMenuItem.Name = "posaljiMailRijaduToolStripMenuItem";
-            this.posaljiMailRijaduToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.posaljiMailRijaduToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.posaljiMailRijaduToolStripMenuItem.Text = "Excel Sheet Format Example";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(210, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(221, 22);
             this.toolStripMenuItem1.Text = "About";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.exitApplicationMenu_Click);
             // 
@@ -114,7 +114,7 @@
             // 
             this.panel1.AutoSize = true;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.newMemberButton);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -123,15 +123,15 @@
             this.panel1.Size = new System.Drawing.Size(166, 569);
             this.panel1.TabIndex = 1;
             // 
-            // button2
+            // newMemberButton
             // 
-            this.button2.Location = new System.Drawing.Point(15, 144);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(138, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "New Member";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.newMemberButton.Location = new System.Drawing.Point(15, 144);
+            this.newMemberButton.Name = "newMemberButton";
+            this.newMemberButton.Size = new System.Drawing.Size(138, 23);
+            this.newMemberButton.TabIndex = 5;
+            this.newMemberButton.Text = "New Member";
+            this.newMemberButton.UseVisualStyleBackColor = true;
+            this.newMemberButton.Click += new System.EventHandler(this.newMemberButton_Click);
             // 
             // textBox1
             // 
@@ -273,7 +273,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button newMemberButton;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView dataView;

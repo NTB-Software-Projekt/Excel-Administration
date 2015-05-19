@@ -47,11 +47,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.newPaymentButton = new System.Windows.Forms.Button();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.closeButton = new System.Windows.Forms.Button();
+            this.saveChangesButton = new System.Windows.Forms.Button();
+            this.updateButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -223,14 +225,15 @@
             this.label9.TabIndex = 19;
             this.label9.Text = "Payment Amount:";
             // 
-            // button2
+            // newPaymentButton
             // 
-            this.button2.Location = new System.Drawing.Point(442, 137);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(123, 23);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "New Payment";
-            this.button2.UseVisualStyleBackColor = true;
+            this.newPaymentButton.Location = new System.Drawing.Point(442, 137);
+            this.newPaymentButton.Name = "newPaymentButton";
+            this.newPaymentButton.Size = new System.Drawing.Size(123, 23);
+            this.newPaymentButton.TabIndex = 21;
+            this.newPaymentButton.Text = "New Payment";
+            this.newPaymentButton.UseVisualStyleBackColor = true;
+            this.newPaymentButton.Click += new System.EventHandler(this.newPaymentButton_Click);
             // 
             // textBox10
             // 
@@ -248,40 +251,61 @@
             this.label10.TabIndex = 22;
             this.label10.Text = "Payed:";
             // 
-            // button1
+            // closeButton
             // 
-            this.button1.Location = new System.Drawing.Point(490, 281);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 23);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "Close";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.closeButton.Location = new System.Drawing.Point(490, 294);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(123, 23);
+            this.closeButton.TabIndex = 24;
+            this.closeButton.Text = "Close";
+            this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
-            // button3
+            // saveChangesButton
             // 
-            this.button3.Location = new System.Drawing.Point(361, 281);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(123, 23);
-            this.button3.TabIndex = 25;
-            this.button3.Text = "Save Changes";
-            this.button3.UseVisualStyleBackColor = true;
+            this.saveChangesButton.Location = new System.Drawing.Point(361, 294);
+            this.saveChangesButton.Name = "saveChangesButton";
+            this.saveChangesButton.Size = new System.Drawing.Size(123, 23);
+            this.saveChangesButton.TabIndex = 25;
+            this.saveChangesButton.Text = "Save Changes";
+            this.saveChangesButton.UseVisualStyleBackColor = true;
+            // 
+            // updateButton
+            // 
+            this.updateButton.Location = new System.Drawing.Point(38, 294);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Size = new System.Drawing.Size(123, 23);
+            this.updateButton.TabIndex = 26;
+            this.updateButton.Text = "Update Information";
+            this.updateButton.UseVisualStyleBackColor = true;
+            // 
+            // cancelButton
+            // 
+            this.cancelButton.Location = new System.Drawing.Point(167, 294);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(123, 23);
+            this.cancelButton.TabIndex = 27;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // PersonWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(625, 316);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(625, 327);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.updateButton);
+            this.Controls.Add(this.saveChangesButton);
+            this.Controls.Add(this.closeButton);
             this.Controls.Add(this.textBox10);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.newPaymentButton);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panel1);
-            this.MaximumSize = new System.Drawing.Size(633, 343);
-            this.MinimumSize = new System.Drawing.Size(633, 343);
+            this.MaximumSize = new System.Drawing.Size(633, 354);
+            this.MinimumSize = new System.Drawing.Size(633, 354);
             this.Name = "PersonWindow";
             this.Text = "PersonWindow";
             this.panel1.ResumeLayout(false);
@@ -312,11 +336,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button newPaymentButton;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button closeButton;
+        private System.Windows.Forms.Button saveChangesButton;
+        private System.Windows.Forms.Button updateButton;
+        private System.Windows.Forms.Button cancelButton;
 
     }
 }

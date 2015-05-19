@@ -17,9 +17,29 @@ namespace MemberAdministration
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void closeButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        public void updateButton_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        public void saveChangesButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void newPaymentButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
