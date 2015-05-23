@@ -14,6 +14,7 @@ namespace MemberAdministration
     {
         DatabaseHelper dbHelper = new DatabaseHelper();
         BackupManager backupMannager = new BackupManager();
+        PersonWindow pWindow;
 
         public MainWindow()
         {
@@ -105,8 +106,45 @@ namespace MemberAdministration
 
         private void cellClick(object sender, DataGridViewCellEventArgs e)
         {
-            PersonWindow pWindow = new PersonWindow();
-            pWindow.Show();
+            if (pWindow != null)
+            {
+                pWindow.Close();
+            }
+
+            if (e.RowIndex >= 0)
+            {
+                String ID = "";
+                String title = "";
+                String surname = "";
+                String name = "";
+                String address = "";
+                String zip = "";
+                String state = "";
+                String telephone = "";
+                String email = "";
+                String amount = "";
+
+                foreach (DataGridViewRow row in dataView.SelectedRows)
+                {
+                    ID = row.Cells[0].Value.ToString();
+                    title = row.Cells[1].Value.ToString();
+                    surname = row.Cells[2].Value.ToString();
+                    name = row.Cells[3].Value.ToString();
+                    address = row.Cells[4].Value.ToString();
+                    zip = row.Cells[5].Value.ToString();
+                    state = row.Cells[6].Value.ToString();
+                    telephone = row.Cells[7].Value.ToString();
+                    email = row.Cells[8].Value.ToString();
+                    amount = row.Cells[9].Value.ToString();
+                }
+
+                MessageBox.Show(title);
+                Person person = new Person(ID, title, surname, name, address, zip, state, telephone, email, amount);
+                pWindow = new PersonWindow();
+                pWindow.loadInformation(person);
+                pWindow.Show();
+            }
         }
+
     }
 }
