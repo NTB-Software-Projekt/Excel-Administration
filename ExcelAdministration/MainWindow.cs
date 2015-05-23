@@ -13,8 +13,11 @@ namespace MemberAdministration
     public partial class MainWindow : Form
     {
         DatabaseHelper dbHelper = new DatabaseHelper();
+        BackupManager backupMannager = new BackupManager();
+
         public MainWindow()
         {
+            backupMannager.saveFile();
             InitializeComponent();
         }
 
@@ -22,7 +25,7 @@ namespace MemberAdministration
         {
             if (String.IsNullOrEmpty(MemberAdministration.Properties.Settings.Default.dbPath))
             {
-                MessageBox.Show("First Time starting the Application.\nWelcome to Excel2DB");
+                MessageBox.Show("First Time starting the Application.\nWelcome to xl2DB");
             }
             else
             {
@@ -51,7 +54,7 @@ namespace MemberAdministration
             {
                 String dbPath = System.IO.Path.GetDirectoryName(ofd.FileName) + "\\" + System.IO.Path.GetFileName(ofd.FileName);
                 writeTextBoxPath(dbPath);
-
+                backupMannager.setFileName(System.IO.Path.GetFileName(ofd.FileName));
                 dbHelper.setDatabase(dbPath);
                 populateTable();
             }
@@ -105,6 +108,5 @@ namespace MemberAdministration
             PersonWindow pWindow = new PersonWindow();
             pWindow.Show();
         }
-
     }
 }

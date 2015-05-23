@@ -53,6 +53,7 @@
     <Compile Include="AboutBox1.Designer.cs">
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </Compile>
+    <Compile Include="BackupManager.cs" />
     <Compile Include="DatabaseHelper.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
