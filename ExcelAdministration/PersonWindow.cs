@@ -24,7 +24,7 @@ namespace MemberAdministration
 
         public void updateButton_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         public void saveChangesButton_Click(object sender, EventArgs e)

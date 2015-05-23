@@ -17,14 +17,14 @@ namespace MemberAdministration
         {
             InitializeComponent();
         }
-        
+
         public void MainWindow_Load(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(MemberAdministration.Properties.Settings.Default.dbPath))
             {
                 MessageBox.Show("No Database Selected");
             }
-            else 
+            else
             {
                 dbHelper.setDatabase(MemberAdministration.Properties.Settings.Default.dbPath);
                 writeTextBoxPath(MemberAdministration.Properties.Settings.Default.dbPath);
@@ -47,13 +47,14 @@ namespace MemberAdministration
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "All Excel Files|*.xls;*.xlsx|Excel 97-2007 WorkBook|*.xls|Excel WorkBook 2010/2013|*.xlsx"; //"Description|*.extension"
-            ofd.ShowDialog();
-            String dbPath = System.IO.Path.GetDirectoryName(ofd.FileName)+"\\"+System.IO.Path.GetFileName(ofd.FileName);
-            writeTextBoxPath(dbPath);
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                String dbPath = System.IO.Path.GetDirectoryName(ofd.FileName) + "\\" + System.IO.Path.GetFileName(ofd.FileName);
+                writeTextBoxPath(dbPath);
 
-            dbHelper.setDatabase(dbPath);
-            populateTable();
-
+                dbHelper.setDatabase(dbPath);
+                populateTable();
+            }
         }
 
         private void writeTextBoxPath(String dbPath)
