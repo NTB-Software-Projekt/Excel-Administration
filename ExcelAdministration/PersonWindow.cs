@@ -12,6 +12,7 @@ namespace MemberAdministration
 {
     public partial class PersonWindow : Form
     {
+        private Person person;
 
         public PersonWindow()
         {
@@ -20,6 +21,7 @@ namespace MemberAdministration
 
         public void loadInformation(Person person)
         {
+            this.person = person;
             titleBox.Text = person.Title;
             surnameBox.Text = person.Surname;
             nameBox.Text = person.Name;
@@ -36,9 +38,17 @@ namespace MemberAdministration
             this.Close();
         }
 
-        public void updateButton_Click(object sender, EventArgs e)
+        private void updateButton_Click(object sender, EventArgs e)
         {
-
+            titleBox.Enabled = true;
+            surnameBox.Enabled = true;
+            nameBox.Enabled = true;
+            addressBox.Enabled = true;
+            zipBox.Enabled = true;
+            stateBox.Enabled = true;
+            phoneBox.Enabled = true;
+            emailBox.Enabled = true;
+            payedBox.Enabled = true;
         }
 
         public void saveChangesButton_Click(object sender, EventArgs e)
@@ -53,7 +63,15 @@ namespace MemberAdministration
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-
+            titleBox.Enabled = false;
+            surnameBox.Enabled = false;
+            nameBox.Enabled = false;
+            addressBox.Enabled = false;
+            zipBox.Enabled = false;
+            stateBox.Enabled = false;
+            phoneBox.Enabled = false;
+            emailBox.Enabled = false;
+            payedBox.Enabled = false;
         }
 
     }

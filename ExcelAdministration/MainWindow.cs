@@ -138,7 +138,6 @@ namespace MemberAdministration
                     amount = row.Cells[9].Value.ToString();
                 }
 
-                MessageBox.Show(title);
                 Person person = new Person(ID, title, surname, name, address, zip, state, telephone, email, amount);
                 pWindow = new PersonWindow();
                 pWindow.loadInformation(person);

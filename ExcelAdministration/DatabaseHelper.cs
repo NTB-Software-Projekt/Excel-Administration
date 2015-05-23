@@ -101,6 +101,73 @@ namespace MemberAdministration
         /// Inserting the new person into the DB. We strip all the information from the Person object and pass it to the query.
         /// </summary>
         /// <param name="person">Person object containing all the needed informatino</param>
+        public void updateMember(Person person)
+        {
+            String ID = person.ID;
+            String title = person.Title;
+            String surname = person.Surname;
+            String name = person.Name;
+            String address = person.Address;
+            String plz = person.Plz;
+            String state = person.State;
+            String telephone = person.Telephone.ToString();
+            String mail = person.Mail;
+            String amount = person.Amount.ToString();
+
+            dbPath = MemberAdministration.Properties.Settings.Default.dbPath;
+            if (dbPath != null)
+            {
+                /*
+                 * Connection begins here when dbPath is set   ********   *********   *********
+                 */
+                String connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + dbPath + "; Extended Properties='Excel 12.0 Xml;HDR=YES'";
+
+                using (OleDbConnection connection = new OleDbConnection(connectionString))
+                {
+                    try
+                    {
+                        connection.Open();
+                        //this next line assumes that the file is in default Excel format with Sheet1 as the first sheet name, adjust accordingly
+                        OleDbCommand cmd = new OleDbCommand("UPDATE [Sheet1$] SET Anrede = @Anrede, Nachname = @Nachname, Vorname = @Vorname, Addresse = @Addresse, PLZ = @PLZ, Ort = @Ort, Telefon = @Telefon, Email = @Email, Betrag = @Betrag WHERE ID = @ID", connection);
+
+                        if (connection.State == ConnectionState.Open)
+                        {
+                            cmd.Parameters.Add("@ID", OleDbType.VarChar, 50).Value = ID;
+                            cmd.Parameters.Add("@Anrede", OleDbType.VarChar, 50).Value = title;
+                            cmd.Parameters.Add("@Nachname", OleDbType.VarChar, 50).Value = surname;
+                            cmd.Parameters.Add("@Vorname", OleDbType.VarChar, 50).Value = name;
+                            cmd.Parameters.Add("@Addresse", OleDbType.VarChar, 50).Value = address;
+                            cmd.Parameters.Add("@PLZ", OleDbType.VarChar, 50).Value = plz;
+                            cmd.Parameters.Add("@Ort", OleDbType.VarChar, 50).Value = state;
+                            cmd.Parameters.Add("@Telefon", OleDbType.VarChar, 50).Value = telephone;
+                            cmd.Parameters.Add("@Email", OleDbType.VarChar, 50).Value = mail;
+                            cmd.Parameters.Add("@Betrag", OleDbType.VarChar, 50).Value = amount;
+                            try
+                            {
+                                cmd.ExecuteNonQuery();
+                                MessageBox.Show("DATA UPDATED");
+                                connection.Close();
+                            }
+                            catch (OleDbException expe)
+                            {
+                                MessageBox.Show(expe.Message);
+                                connection.Close();
+                            }
+                        }
+                    }
+
+                    catch (OleDbException)
+                    {
+                        Console.WriteLine("Something went wrong with DB connecting for addin new member");
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Inserting the new person into the DB. We strip all the information from the Person object and pass it to the query.
+        /// </summary>
+        /// <param name="person">Person object containing all the needed informatino</param>
         public void insertNewMember(Person person)
         {
             String ID = person.ID;
@@ -110,9 +177,9 @@ namespace MemberAdministration
             String address = person.Address;
             String plz = person.Plz;
             String state = person.State;
-            Int32 telephone = person.Telephone;
+            String telephone = person.Telephone.ToString();
             String mail = person.Mail;
-            Int32 amount = person.Amount;
+            String amount = person.Amount.ToString();
 
             dbPath = MemberAdministration.Properties.Settings.Default.dbPath;
             if (dbPath != null)
@@ -133,19 +200,19 @@ namespace MemberAdministration
                         if (connection.State == ConnectionState.Open)
                             {
                                 cmd.Parameters.Add("@ID", OleDbType.VarChar, 50).Value =ID;
-                                cmd.Parameters.Add("@Anrede", OleDbType.VarChar, 50).Value =ID;
-                                cmd.Parameters.Add("@Nachname", OleDbType.VarChar, 50).Value =ID;
-                                cmd.Parameters.Add("@Vorname", OleDbType.VarChar, 50).Value =ID;
-                                cmd.Parameters.Add("@Addresse", OleDbType.VarChar, 50).Value =ID;
-                                cmd.Parameters.Add("@PLZ", OleDbType.VarChar, 50).Value =ID;
-                                cmd.Parameters.Add("@Ort", OleDbType.VarChar, 50).Value =ID;
-                                cmd.Parameters.Add("@Telefon", OleDbType.VarChar, 50).Value =ID;
-                                cmd.Parameters.Add("@Email", OleDbType.VarChar, 50).Value =ID;
-                                cmd.Parameters.Add("@Betrag", OleDbType.VarChar, 50).Value =ID;
+                                cmd.Parameters.Add("@Anrede", OleDbType.VarChar, 50).Value = title;
+                                cmd.Parameters.Add("@Nachname", OleDbType.VarChar, 50).Value = surname;
+                                cmd.Parameters.Add("@Vorname", OleDbType.VarChar, 50).Value = name;
+                                cmd.Parameters.Add("@Addresse", OleDbType.VarChar, 50).Value = address;
+                                cmd.Parameters.Add("@PLZ", OleDbType.VarChar, 50).Value = plz;
+                                cmd.Parameters.Add("@Ort", OleDbType.VarChar, 50).Value = state;
+                                cmd.Parameters.Add("@Telefon", OleDbType.VarChar, 50).Value = telephone;
+                                cmd.Parameters.Add("@Email", OleDbType.VarChar, 50).Value = mail;
+                                cmd.Parameters.Add("@Betrag", OleDbType.VarChar, 50).Value = amount;
                             try
                                 {
                                     cmd.ExecuteNonQuery();
-                                    MessageBox.Show("DATA ADDED");
+                                    MessageBox.Show("Person "+person.Name+" ADDED");
                                     connection.Close();
                                 }
                             catch (OleDbException expe)

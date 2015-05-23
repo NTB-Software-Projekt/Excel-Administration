@@ -287,6 +287,7 @@
             this.updateButton.TabIndex = 26;
             this.updateButton.Text = "Update Information";
             this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // cancelButton
             // 
