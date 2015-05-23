@@ -100,7 +100,7 @@ namespace MemberAdministration
 
         private void newMemberButton_Click(object sender, EventArgs e)
         {
-            NewMember newMember = new NewMember();
+            NewMember newMember = new NewMember(this);
             newMember.Show();
         }
 
@@ -139,10 +139,15 @@ namespace MemberAdministration
                 }
 
                 Person person = new Person(ID, title, surname, name, address, zip, state, telephone, email, amount);
-                pWindow = new PersonWindow();
+                pWindow = new PersonWindow(this);
                 pWindow.loadInformation(person);
                 pWindow.Show();
             }
+        }
+
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            populateTable();
         }
 
     }

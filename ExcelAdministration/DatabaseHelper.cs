@@ -128,24 +128,25 @@ namespace MemberAdministration
                     {
                         connection.Open();
                         //this next line assumes that the file is in default Excel format with Sheet1 as the first sheet name, adjust accordingly
-                        OleDbCommand cmd = new OleDbCommand("UPDATE [Sheet1$] SET Anrede = @Anrede, Nachname = @Nachname, Vorname = @Vorname, Addresse = @Addresse, PLZ = @PLZ, Ort = @Ort, Telefon = @Telefon, Email = @Email, Betrag = @Betrag WHERE ID = @ID", connection);
+                        //OleDbCommand cmd = new OleDbCommand("UPDATE [Sheet1$] SET Anrede = ?, Nachname = ?, Vorname = ?, Adresse = ?, PLZ = ?, Ort = ?, Telefon = ?, E-Mail = ?, Betrag = ? WHERE ID = ?", connection);
+                        OleDbCommand cmd = new OleDbCommand("UPDATE [Sheet1$] SET Anrede = ?, Nachname = ?, Vorname = ?, Adresse = ?, PLZ = ?, Ort = ?, Telefon = ?, EMail = ?, Betrag = ? WHERE ID = ?", connection);
 
                         if (connection.State == ConnectionState.Open)
                         {
-                            cmd.Parameters.Add("@ID", OleDbType.VarChar, 50).Value = ID;
                             cmd.Parameters.Add("@Anrede", OleDbType.VarChar, 50).Value = title;
                             cmd.Parameters.Add("@Nachname", OleDbType.VarChar, 50).Value = surname;
                             cmd.Parameters.Add("@Vorname", OleDbType.VarChar, 50).Value = name;
-                            cmd.Parameters.Add("@Addresse", OleDbType.VarChar, 50).Value = address;
+                            cmd.Parameters.Add("@Adresse", OleDbType.VarChar, 50).Value = address;
                             cmd.Parameters.Add("@PLZ", OleDbType.VarChar, 50).Value = plz;
                             cmd.Parameters.Add("@Ort", OleDbType.VarChar, 50).Value = state;
                             cmd.Parameters.Add("@Telefon", OleDbType.VarChar, 50).Value = telephone;
                             cmd.Parameters.Add("@Email", OleDbType.VarChar, 50).Value = mail;
                             cmd.Parameters.Add("@Betrag", OleDbType.VarChar, 50).Value = amount;
+                            cmd.Parameters.Add("@ID", OleDbType.VarChar, 50).Value = ID;
                             try
                             {
                                 cmd.ExecuteNonQuery();
-                                MessageBox.Show("DATA UPDATED");
+                                MessageBox.Show("Person data of " + person.Name + " UPDATED");
                                 connection.Close();
                             }
                             catch (OleDbException expe)
@@ -158,7 +159,7 @@ namespace MemberAdministration
 
                     catch (OleDbException)
                     {
-                        Console.WriteLine("Something went wrong with DB connecting for addin new member");
+                        Console.WriteLine("Something went wrong with DB connecting for Updating");
                     }
                 }
             }
@@ -195,32 +196,32 @@ namespace MemberAdministration
                     {
                         connection.Open();
                         //this next line assumes that the file is in default Excel format with Sheet1 as the first sheet name, adjust accordingly
-                        OleDbCommand cmd = new OleDbCommand("INSERT INTO [Sheet1$](ID, Anrede, Nachname, Vorname, Addresse, PLZ, Ort, Telefon, Email, Betrag) VALUES(@ID, @Anrede, @Nachname, @Vorname, @Addresse, @PLZ, @Ort, @Telefon, @Email, @Betrag)", connection);
+                        OleDbCommand cmd = new OleDbCommand("INSERT INTO [Sheet1$](ID, Anrede, Nachname, Vorname, Adresse, PLZ, Ort, Telefon, Email, Betrag) VALUES(@ID, @Anrede, @Nachname, @Vorname, @Adresse, @PLZ, @Ort, @Telefon, @Email, @Betrag)", connection);
 
                         if (connection.State == ConnectionState.Open)
-                            {
-                                cmd.Parameters.Add("@ID", OleDbType.VarChar, 50).Value =ID;
-                                cmd.Parameters.Add("@Anrede", OleDbType.VarChar, 50).Value = title;
-                                cmd.Parameters.Add("@Nachname", OleDbType.VarChar, 50).Value = surname;
-                                cmd.Parameters.Add("@Vorname", OleDbType.VarChar, 50).Value = name;
-                                cmd.Parameters.Add("@Addresse", OleDbType.VarChar, 50).Value = address;
-                                cmd.Parameters.Add("@PLZ", OleDbType.VarChar, 50).Value = plz;
-                                cmd.Parameters.Add("@Ort", OleDbType.VarChar, 50).Value = state;
-                                cmd.Parameters.Add("@Telefon", OleDbType.VarChar, 50).Value = telephone;
-                                cmd.Parameters.Add("@Email", OleDbType.VarChar, 50).Value = mail;
-                                cmd.Parameters.Add("@Betrag", OleDbType.VarChar, 50).Value = amount;
+                        {
+                            cmd.Parameters.Add("@ID", OleDbType.VarChar, 50).Value = ID;
+                            cmd.Parameters.Add("@Anrede", OleDbType.VarChar, 50).Value = title;
+                            cmd.Parameters.Add("@Nachname", OleDbType.VarChar, 50).Value = surname;
+                            cmd.Parameters.Add("@Vorname", OleDbType.VarChar, 50).Value = name;
+                            cmd.Parameters.Add("@Adresse", OleDbType.VarChar, 50).Value = address;
+                            cmd.Parameters.Add("@PLZ", OleDbType.VarChar, 50).Value = plz;
+                            cmd.Parameters.Add("@Ort", OleDbType.VarChar, 50).Value = state;
+                            cmd.Parameters.Add("@Telefon", OleDbType.VarChar, 50).Value = telephone;
+                            cmd.Parameters.Add("@Email", OleDbType.VarChar, 50).Value = mail;
+                            cmd.Parameters.Add("@Betrag", OleDbType.VarChar, 50).Value = amount;
                             try
-                                {
-                                    cmd.ExecuteNonQuery();
-                                    MessageBox.Show("Person "+person.Name+" ADDED");
-                                    connection.Close();
-                                }
-                            catch (OleDbException expe)
-                                {
-                                    MessageBox.Show(expe.Message);
-                                    connection.Close();
-                                }
+                            {
+                                cmd.ExecuteNonQuery();
+                                MessageBox.Show("Person " + person.Name + " ADDED");
+                                connection.Close();
                             }
+                            catch (OleDbException expe)
+                            {
+                                MessageBox.Show(expe.Message);
+                                connection.Close();
+                            }
+                        }
                     }
 
                     catch (OleDbException)
@@ -260,7 +261,7 @@ namespace MemberAdministration
                             try
                             {
                                 cmd.ExecuteNonQuery();
-                                MessageBox.Show("Person :"+person.Name+" Deleted");
+                                MessageBox.Show("Person :" + person.Name + " DELETED");
                                 connection.Close();
                             }
                             catch (OleDbException expe)

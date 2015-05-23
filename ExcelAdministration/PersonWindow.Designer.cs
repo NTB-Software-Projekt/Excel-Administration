@@ -45,7 +45,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.titleBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.newPaymentBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.newPaymentButton = new System.Windows.Forms.Button();
             this.payedBox = new System.Windows.Forms.TextBox();
@@ -217,12 +217,12 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "Title:";
             // 
-            // textBox9
+            // newPaymentBox
             // 
-            this.textBox9.Location = new System.Drawing.Point(423, 108);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(162, 20);
-            this.textBox9.TabIndex = 20;
+            this.newPaymentBox.Location = new System.Drawing.Point(423, 108);
+            this.newPaymentBox.Name = "newPaymentBox";
+            this.newPaymentBox.Size = new System.Drawing.Size(162, 20);
+            this.newPaymentBox.TabIndex = 20;
             // 
             // label9
             // 
@@ -278,6 +278,7 @@
             this.saveChangesButton.TabIndex = 25;
             this.saveChangesButton.Text = "Save Changes";
             this.saveChangesButton.UseVisualStyleBackColor = true;
+            this.saveChangesButton.Click += new System.EventHandler(this.saveChangesButton_Click);
             // 
             // updateButton
             // 
@@ -311,7 +312,7 @@
             this.Controls.Add(this.payedBox);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.newPaymentButton);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.newPaymentBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panel1);
             this.MaximumSize = new System.Drawing.Size(633, 354);
@@ -343,7 +344,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox titleBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox newPaymentBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button newPaymentButton;
         private System.Windows.Forms.TextBox payedBox;

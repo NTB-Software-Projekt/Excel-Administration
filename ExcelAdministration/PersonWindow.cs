@@ -13,9 +13,12 @@ namespace MemberAdministration
     public partial class PersonWindow : Form
     {
         private Person person;
+        DatabaseHelper dbHelper = new DatabaseHelper();
+        private MainWindow form;
 
-        public PersonWindow()
+        public PersonWindow(MainWindow form)
         {
+            this.form = form;
             InitializeComponent();
         }
 
@@ -53,15 +56,29 @@ namespace MemberAdministration
 
         public void saveChangesButton_Click(object sender, EventArgs e)
         {
-
+            Person toUpdate = new Person(person.ID, titleBox.Text, surnameBox.Text, nameBox.Text, addressBox.Text, zipBox.Text, stateBox.Text, phoneBox.Text, emailBox.Text, payedBox.Text);
+            dbHelper.updateMember(toUpdate);
+            disableTextBoxes();
+            form.populateTable();
         }
 
         private void newPaymentButton_Click(object sender, EventArgs e)
         {
+            if (!String.IsNullOrEmpty(newPaymentBox.Text))
+            {
+                Int32 alreadyPayed = Int32.Parse(payedBox.Text);
+                Int32 newPayment = Int32.Parse(newPaymentBox.Text);
 
+                payedBox.Text = (alreadyPayed + newPayment).ToString();
+            }
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
+        {
+            disableTextBoxes();
+        }
+
+        private void disableTextBoxes()
         {
             titleBox.Enabled = false;
             surnameBox.Enabled = false;

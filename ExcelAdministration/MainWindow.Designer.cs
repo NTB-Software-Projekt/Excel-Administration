@@ -46,6 +46,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.textBoxPath = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.refreshButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -114,6 +115,7 @@
             // 
             this.panel1.AutoSize = true;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.refreshButton);
             this.panel1.Controls.Add(this.newMemberButton);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label1);
@@ -226,12 +228,22 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Enabled = false;
-            this.label2.Location = new System.Drawing.Point(574, 6);
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label2.Location = new System.Drawing.Point(574, 4);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 13);
             this.label2.TabIndex = 7;
             this.label2.Text = "Database Path:";
+            // 
+            // refreshButton
+            // 
+            this.refreshButton.Location = new System.Drawing.Point(15, 173);
+            this.refreshButton.Name = "refreshButton";
+            this.refreshButton.Size = new System.Drawing.Size(138, 23);
+            this.refreshButton.TabIndex = 6;
+            this.refreshButton.Text = "Refresh Table";
+            this.refreshButton.UseVisualStyleBackColor = true;
+            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
             // 
             // MainWindow
             // 
@@ -281,5 +293,6 @@
         private System.Windows.Forms.TextBox textBoxPath;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripMenuItem aboutMenuItem;
+        private System.Windows.Forms.Button refreshButton;
     }
 }

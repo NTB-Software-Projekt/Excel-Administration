@@ -12,9 +12,12 @@ namespace MemberAdministration
 {
     public partial class NewMember : Form
     {
-        public NewMember()
+        MainWindow form;
+
+        public NewMember(MainWindow form)
         {
             InitializeComponent();
+            this.form = form;
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
