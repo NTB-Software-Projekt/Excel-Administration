@@ -12,9 +12,23 @@ namespace MemberAdministration
 {
     public partial class PersonWindow : Form
     {
+
         public PersonWindow()
         {
             InitializeComponent();
+        }
+
+        public void loadInformation(Person person)
+        {
+            titleBox.Text = person.Title;
+            surnameBox.Text = person.Surname;
+            nameBox.Text = person.Name;
+            addressBox.Text = person.Address;
+            zipBox.Text = person.Plz;
+            stateBox.Text = person.State;
+            phoneBox.Text = person.Telephone.ToString();
+            emailBox.Text = person.Mail;
+            payedBox.Text = person.Amount.ToString();
         }
 
         private void closeButton_Click(object sender, EventArgs e)
@@ -41,5 +55,6 @@ namespace MemberAdministration
         {
 
         }
+
     }
 }

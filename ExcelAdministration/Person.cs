@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MemberAdministration
 {
-    class Person 
+    public class Person
     {
         public String ID { get; set; }
         public String Title { get; set; }
@@ -19,7 +19,7 @@ namespace MemberAdministration
         public String Mail { get; set; }
         public Int32 Amount { get; set; }
 
-        public Person(String ID, String title, String surname, String name, String address, String plz, String state, String telephone, String mail, String amount )
+        public Person(String ID, String title, String surname, String name, String address, String plz, String state, String telephone, String mail, String amount)
         {
             this.ID = ID;
             this.Title = title;
@@ -28,7 +28,7 @@ namespace MemberAdministration
             this.Address = address;
             this.Plz = plz;
             this.State = state;
-            this.Telephone = Int32.Parse(telephone) ;
+            this.Telephone = Int32.Parse(telephone);
             this.Mail = mail;
             this.Amount = Int32.Parse(amount);
         }
