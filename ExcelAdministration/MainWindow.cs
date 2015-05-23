@@ -22,7 +22,7 @@ namespace MemberAdministration
         {
             if (String.IsNullOrEmpty(MemberAdministration.Properties.Settings.Default.dbPath))
             {
-                MessageBox.Show("No Database Selected");
+                MessageBox.Show("First Time starting the Application.\nWelcome to Excel2DB");
             }
             else
             {
@@ -32,7 +32,7 @@ namespace MemberAdministration
             }
         }
 
-        private void exitStripMenuItem_Click(object sender, EventArgs e)
+        private void exit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -57,15 +57,15 @@ namespace MemberAdministration
             }
         }
 
-        private void writeTextBoxPath(String dbPath)
-        {
-            textBoxPath.Text = dbPath;
-        }
-
-        private void exitApplicationMenu_Click(object sender, EventArgs e)
+        private void aboutUs_Click(object sender, EventArgs e)
         {
             AboutBox1 a = new AboutBox1();
             a.Show();
+        }
+
+        private void writeTextBoxPath(String dbPath)
+        {
+            textBoxPath.Text = dbPath;
         }
 
         public void populateTable()
@@ -100,7 +100,7 @@ namespace MemberAdministration
             newMember.Show();
         }
 
-        private void dataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void cellClick(object sender, DataGridViewCellEventArgs e)
         {
             PersonWindow pWindow = new PersonWindow();
             pWindow.Show();

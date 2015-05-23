@@ -112,7 +112,7 @@ namespace MemberAdministration
             String state = person.State;
             Int32 telephone = person.Telephone;
             String mail = person.Mail;
-            String amount = person.Amount;
+            Int32 amount = person.Amount;
 
             dbPath = MemberAdministration.Properties.Settings.Default.dbPath;
             if (dbPath != null)

@@ -31,10 +31,10 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.otvoriExcellToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.izaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitStripMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.posaljiMailRijaduToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.newMemberButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -69,7 +69,7 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.otvoriExcellToolStripMenuItem,
-            this.izaToolStripMenuItem});
+            this.exitStripMenu});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -81,18 +81,18 @@
             this.otvoriExcellToolStripMenuItem.Text = "Choose Excel File";
             this.otvoriExcellToolStripMenuItem.Click += new System.EventHandler(this.openExcelMenu_Click);
             // 
-            // izaToolStripMenuItem
+            // exitStripMenu
             // 
-            this.izaToolStripMenuItem.Name = "izaToolStripMenuItem";
-            this.izaToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
-            this.izaToolStripMenuItem.Text = "Exit the Application";
-            this.izaToolStripMenuItem.Click += new System.EventHandler(this.exitStripMenuItem_Click);
+            this.exitStripMenu.Name = "exitStripMenu";
+            this.exitStripMenu.Size = new System.Drawing.Size(178, 22);
+            this.exitStripMenu.Text = "Exit the Application";
+            this.exitStripMenu.Click += new System.EventHandler(this.exit_Click);
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.posaljiMailRijaduToolStripMenuItem,
-            this.toolStripMenuItem1});
+            this.aboutMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.helpToolStripMenuItem.Text = "Help";
@@ -103,12 +103,12 @@
             this.posaljiMailRijaduToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.posaljiMailRijaduToolStripMenuItem.Text = "Excel Sheet Format Example";
             // 
-            // toolStripMenuItem1
+            // aboutMenuItem
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(221, 22);
-            this.toolStripMenuItem1.Text = "About";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.exitApplicationMenu_Click);
+            this.aboutMenuItem.Name = "aboutMenuItem";
+            this.aboutMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.aboutMenuItem.Text = "About";
+            this.aboutMenuItem.Click += new System.EventHandler(this.aboutUs_Click);
             // 
             // panel1
             // 
@@ -206,7 +206,7 @@
             this.dataView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataView.Size = new System.Drawing.Size(930, 531);
             this.dataView.TabIndex = 0;
-            this.dataView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataView_CellContentClick);
+            this.dataView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cellClick);
             // 
             // openFileDialog1
             // 
@@ -267,7 +267,7 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem otvoriExcellToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem izaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitStripMenu;
         private System.Windows.Forms.ToolStripMenuItem posaljiMailRijaduToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
@@ -280,6 +280,6 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TextBox textBoxPath;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem aboutMenuItem;
     }
 }

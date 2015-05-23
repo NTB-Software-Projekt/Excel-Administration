@@ -17,7 +17,7 @@ namespace MemberAdministration
         public String State { get; set; }
         public Int32 Telephone { get; set; }
         public String Mail { get; set; }
-        public String Amount { get; set; }
+        public Int32 Amount { get; set; }
 
         public Person(String ID, String title, String surname, String name, String address, String plz, String state, String telephone, String mail, String amount )
         {
@@ -30,7 +30,7 @@ namespace MemberAdministration
             this.State = state;
             this.Telephone = Int32.Parse(telephone) ;
             this.Mail = mail;
-            this.Amount = amount;
+            this.Amount = Int32.Parse(amount);
         }
     }
 }
