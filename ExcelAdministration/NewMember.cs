@@ -28,10 +28,19 @@ namespace MemberAdministration
 
         private void addMemberButton_Click(object sender, EventArgs e)
         {
-            Int32 maxID = Int32.Parse(dbHelper.maxID());
-            Int32 nextID = maxID + 1;
-            String ID = nextID.ToString();
+            String ID;
 
+            if (!String.IsNullOrEmpty(dbHelper.maxID()))
+            {
+                Int32 maxID = Int32.Parse(dbHelper.maxID());
+                Int32 nextID = maxID + 1;
+                ID = nextID.ToString();
+            }
+            else
+            {
+                ID = "1";
+            }
+            
             if (!String.IsNullOrEmpty(titleBox.Text) && !String.IsNullOrEmpty(surnameBox.Text) && !String.IsNullOrEmpty(nameBox.Text) && !String.IsNullOrEmpty(addressBox.Text)
                 && !String.IsNullOrEmpty(zipBox.Text) && !String.IsNullOrEmpty(stateBox.Text) && !String.IsNullOrEmpty(phoneBox.Text) && !String.IsNullOrEmpty(mailBox.Text)
                 && !String.IsNullOrEmpty(paymentBox.Text))

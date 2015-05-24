@@ -94,7 +94,7 @@ namespace MemberAdministration
         private void deleteButton_Click(object sender, EventArgs e)
         {
             dbHelper.deleteMember(person.ID);
-            mainForm.populateTable();
+            mainForm.populateTable("");
             this.Close();
         }
 

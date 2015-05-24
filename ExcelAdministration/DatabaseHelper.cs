@@ -221,6 +221,28 @@ namespace MemberAdministration
                                 connection.Close();
                             }
                         }
+
+                        connection.Open();
+                        cmd = new OleDbCommand("INSERT INTO [Sheet1$](ID, Anrede, Nachname, Vorname, Adresse, PLZ, Ort, Telefon, EMail, Betrag) VALUES(@ID, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)", connection);
+                        if (connection.State == ConnectionState.Open)
+                        {
+                            Int32 nextID = Int32.Parse(ID) + 1;
+                            ID = nextID.ToString();
+                            cmd.Parameters.Add("@ID", OleDbType.VarChar, 50).Value = ID;
+
+                            try
+                            {
+                                cmd.ExecuteNonQuery();
+                                connection.Close();
+                            }
+                            catch (OleDbException expe)
+                            {
+                                MessageBox.Show(expe.Message);
+                                connection.Close();
+                            }
+                        }
+
+
                     }
 
                     catch (OleDbException)
@@ -237,7 +259,8 @@ namespace MemberAdministration
         /// <param name="personID">String with the wanted ID</param>
         public void deleteMember(String personID)
         {
-            String checkID = personID; 
+
+            String checkID = personID;
 
             dbPath = MemberAdministration.Properties.Settings.Default.dbPath;
             if (dbPath != null)
@@ -314,7 +337,6 @@ namespace MemberAdministration
                                     while (reader.Read())
                                     {
                                         maxID = reader.GetValue(0).ToString();
-                                        MessageBox.Show(maxID);
                                         return maxID;
                                     }
                                 }
