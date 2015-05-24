@@ -32,7 +32,7 @@ namespace MemberAdministration
             {
                 dbHelper.setDatabase(MemberAdministration.Properties.Settings.Default.dbPath);
                 writeTextBoxPath(MemberAdministration.Properties.Settings.Default.dbPath);
-                populateTable();
+                populateTable("");
             }
         }
 
@@ -77,7 +77,9 @@ namespace MemberAdministration
             BindingSource source = new BindingSource();
             source.DataSource = dbHelper.getAllMembers().Tables[0];
             dataView.DataSource = source;
-            DataGridViewColumn column = dataView.Columns[0];
+            dataView.Columns[0].Visible = false;
+
+            DataGridViewColumn column = dataView.Columns[1];
             column.Width = 50;
         }
 
@@ -88,8 +90,9 @@ namespace MemberAdministration
             {
                 source.DataSource = dbHelper.getThisMember(name).Tables[0];
                 dataView.DataSource = source;
+                dataView.Columns[0].Visible = false;
 
-                DataGridViewColumn column = dataView.Columns[0];
+                DataGridViewColumn column = dataView.Columns[1];
                 column.Width = 50;
             }
             catch (Exception ex)
@@ -147,8 +150,10 @@ namespace MemberAdministration
 
         private void refreshButton_Click(object sender, EventArgs e)
         {
-            populateTable();
+            populateTable("");
         }
+
+
 
     }
 }

@@ -36,6 +36,7 @@
             this.posaljiMailRijaduToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.refreshButton = new System.Windows.Forms.Button();
             this.newMemberButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.textBoxPath = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.refreshButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -124,6 +124,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(166, 569);
             this.panel1.TabIndex = 1;
+            // 
+            // refreshButton
+            // 
+            this.refreshButton.Location = new System.Drawing.Point(15, 173);
+            this.refreshButton.Name = "refreshButton";
+            this.refreshButton.Size = new System.Drawing.Size(138, 23);
+            this.refreshButton.TabIndex = 6;
+            this.refreshButton.Text = "Refresh Table";
+            this.refreshButton.UseVisualStyleBackColor = true;
+            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
             // 
             // newMemberButton
             // 
@@ -234,16 +244,6 @@
             this.label2.Size = new System.Drawing.Size(81, 13);
             this.label2.TabIndex = 7;
             this.label2.Text = "Database Path:";
-            // 
-            // refreshButton
-            // 
-            this.refreshButton.Location = new System.Drawing.Point(15, 173);
-            this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(138, 23);
-            this.refreshButton.TabIndex = 6;
-            this.refreshButton.Text = "Refresh Table";
-            this.refreshButton.UseVisualStyleBackColor = true;
-            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
             // 
             // MainWindow
             // 

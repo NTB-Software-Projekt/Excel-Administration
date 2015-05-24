@@ -59,7 +59,7 @@ namespace MemberAdministration
             Person toUpdate = new Person(person.ID, titleBox.Text, surnameBox.Text, nameBox.Text, addressBox.Text, zipBox.Text, stateBox.Text, phoneBox.Text, emailBox.Text, payedBox.Text);
             dbHelper.updateMember(toUpdate);
             disableTextBoxes();
-            mainForm.populateTable();
+            mainForm.populateTable("");
         }
 
         private void newPaymentButton_Click(object sender, EventArgs e)
@@ -89,6 +89,13 @@ namespace MemberAdministration
             phoneBox.Enabled = false;
             emailBox.Enabled = false;
             payedBox.Enabled = false;
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            dbHelper.deleteMember(person.ID);
+            mainForm.populateTable();
+            this.Close();
         }
 
     }

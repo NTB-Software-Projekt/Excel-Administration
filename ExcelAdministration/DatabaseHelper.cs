@@ -98,7 +98,7 @@ namespace MemberAdministration
         }
 
         /// <summary>
-        /// Inserting the new person into the DB. We strip all the information from the Person object and pass it to the query.
+        /// Updating the existing information of the Member in the DB with the new ones taken from the Form
         /// </summary>
         /// <param name="person">Person object containing all the needed informatino</param>
         public void updateMember(Person person)
@@ -128,7 +128,6 @@ namespace MemberAdministration
                     {
                         connection.Open();
                         //this next line assumes that the file is in default Excel format with Sheet1 as the first sheet name, adjust accordingly
-                        //OleDbCommand cmd = new OleDbCommand("UPDATE [Sheet1$] SET Anrede = ?, Nachname = ?, Vorname = ?, Adresse = ?, PLZ = ?, Ort = ?, Telefon = ?, E-Mail = ?, Betrag = ? WHERE ID = ?", connection);
                         OleDbCommand cmd = new OleDbCommand("UPDATE [Sheet1$] SET Anrede = ?, Nachname = ?, Vorname = ?, Adresse = ?, PLZ = ?, Ort = ?, Telefon = ?, EMail = ?, Betrag = ? WHERE ID = ?", connection);
 
                         if (connection.State == ConnectionState.Open)
@@ -166,7 +165,7 @@ namespace MemberAdministration
         }
 
         /// <summary>
-        /// Inserting the new person into the DB. We strip all the information from the Person object and pass it to the query.
+        /// Inserting the new person into the DB. We strip all the information from the Person object and pass it to the query
         /// </summary>
         /// <param name="person">Person object containing all the needed informatino</param>
         public void insertNewMember(Person person)
@@ -233,12 +232,13 @@ namespace MemberAdministration
         }
 
         /// <summary>
-        /// Deleting one specific member, filtered by the ID in the Person object.
+        /// Deleting one specific member, filtered by the personID
         /// </summary>
-        /// <param name="person">Person object containing the needed ID</param>
-        public void deleteMember(Person person)
+        /// <param name="personID">String with the wanted ID</param>
+        public void deleteMember(String personID)
         {
-            String ID = person.ID;
+            String checkID = personID; 
+
             dbPath = MemberAdministration.Properties.Settings.Default.dbPath;
             if (dbPath != null)
             {
@@ -253,15 +253,15 @@ namespace MemberAdministration
                     {
                         connection.Open();
                         //this next line assumes that the file is in default Excel format with Sheet1 as the first sheet name, adjust accordingly
-                        OleDbCommand cmd = new OleDbCommand("DELETE FROM [Sheet1$] * WHERE ID = @ID", connection);
+                        OleDbCommand cmd = new OleDbCommand("UPDATE [Sheet1$] SET Anrede = NULL, Nachname = NULL, Vorname = NULL, Adresse = NULL, PLZ = NULL, Ort = NULL, Telefon = NULL, EMail = NULL, Betrag = NULL WHERE ID = ?", connection);
 
                         if (connection.State == ConnectionState.Open)
                         {
-                            cmd.Parameters.Add("@ID", OleDbType.VarChar, 50).Value = ID;
+                            cmd.Parameters.Add("@ID", OleDbType.VarChar, 50).Value = checkID;
                             try
                             {
                                 cmd.ExecuteNonQuery();
-                                MessageBox.Show("Person :" + person.Name + " DELETED");
+                                MessageBox.Show("Person DELETED");
                                 connection.Close();
                             }
                             catch (OleDbException expe)
@@ -274,17 +274,16 @@ namespace MemberAdministration
 
                     catch (OleDbException)
                     {
-                        Console.WriteLine("Something went wrong with DB connecting for addin new member");
+                        Console.WriteLine("Something went wrong with DB connecting for Updating");
                     }
                 }
             }
         }
 
-
         /// <summary>
-        /// Deleting one specific member, filtered by the ID in the Person object.
+        /// Getting the max (latest) ID from the Excel Database column "ID"
         /// </summary>
-        /// <param name="person">Person object containing the needed ID</param>
+        /// <returns>String containing the maximum ID</returns>
         public String maxID()
         {
             String maxID;
@@ -315,6 +314,7 @@ namespace MemberAdministration
                                     while (reader.Read())
                                     {
                                         maxID = reader.GetValue(0).ToString();
+                                        MessageBox.Show(maxID);
                                         return maxID;
                                     }
                                 }
@@ -334,7 +334,7 @@ namespace MemberAdministration
                 }
             }
 
-            return "100";
+            return "30";
         }
     }
 }

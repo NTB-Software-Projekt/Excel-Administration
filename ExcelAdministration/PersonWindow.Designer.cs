@@ -54,6 +54,7 @@
             this.saveChangesButton = new System.Windows.Forms.Button();
             this.updateButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -219,7 +220,7 @@
             // 
             // newPaymentBox
             // 
-            this.newPaymentBox.Location = new System.Drawing.Point(423, 108);
+            this.newPaymentBox.Location = new System.Drawing.Point(423, 135);
             this.newPaymentBox.Name = "newPaymentBox";
             this.newPaymentBox.Size = new System.Drawing.Size(162, 20);
             this.newPaymentBox.TabIndex = 20;
@@ -227,7 +228,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(335, 111);
+            this.label9.Location = new System.Drawing.Point(335, 138);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(90, 13);
             this.label9.TabIndex = 19;
@@ -235,7 +236,7 @@
             // 
             // newPaymentButton
             // 
-            this.newPaymentButton.Location = new System.Drawing.Point(442, 137);
+            this.newPaymentButton.Location = new System.Drawing.Point(442, 164);
             this.newPaymentButton.Name = "newPaymentButton";
             this.newPaymentButton.Size = new System.Drawing.Size(123, 23);
             this.newPaymentButton.TabIndex = 21;
@@ -246,7 +247,7 @@
             // payedBox
             // 
             this.payedBox.Enabled = false;
-            this.payedBox.Location = new System.Drawing.Point(423, 49);
+            this.payedBox.Location = new System.Drawing.Point(423, 76);
             this.payedBox.Name = "payedBox";
             this.payedBox.Size = new System.Drawing.Size(162, 20);
             this.payedBox.TabIndex = 23;
@@ -254,7 +255,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(335, 52);
+            this.label10.Location = new System.Drawing.Point(335, 79);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(40, 13);
             this.label10.TabIndex = 22;
@@ -300,11 +301,22 @@
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(325, 12);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(123, 23);
+            this.deleteButton.TabIndex = 28;
+            this.deleteButton.Text = "Delete This Member";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
             // PersonWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(625, 327);
+            this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.updateButton);
             this.Controls.Add(this.saveChangesButton);
@@ -354,6 +366,7 @@
         private System.Windows.Forms.Button updateButton;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.TextBox addressBox;
+        private System.Windows.Forms.Button deleteButton;
 
     }
 }

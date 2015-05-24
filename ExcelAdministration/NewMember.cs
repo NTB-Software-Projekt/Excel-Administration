@@ -38,9 +38,8 @@ namespace MemberAdministration
             {
                 Person person = new Person(ID, titleBox.Text, surnameBox.Text, nameBox.Text, addressBox.Text, zipBox.Text, stateBox.Text, phoneBox.Text, mailBox.Text, paymentBox.Text);
                 dbHelper.insertNewMember(person);
-                mainForm.populateTable();
+                mainForm.populateTable("");
                 this.Close();
-
             }
             else
             {
