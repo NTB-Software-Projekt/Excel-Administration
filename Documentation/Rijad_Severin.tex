@@ -1,7 +1,10 @@
 \documentclass{article}
 \usepackage{geometry}
+\usepackage[landscape]{geometry}
 \usepackage{enumitem}
 \usepackage{parskip}
+\usepackage{pdflscape}
+//\usepackage{lscape}
 \geometry{
 	a4paper,
 	total={210mm,297mm},
@@ -97,13 +100,16 @@ Wir enschieden uns für den iterativen Scrum-Prozess. Es erschien uns Ideal, da 
 \end{description}
 
 \subsection{Ablauf}
-Die Stand-up Meetings erfolgten immer am Anfang der Lektionen am Dienstag bei einem Kaffee oder bei schönem Wetter kurz draussen. Dank des Online-Tools Trello.com konnten wir die Aufgabenpakete sogleich zuteilen und die Meetings waren dank unserer Vorbereitung sehr speditiv. 
+Die Stand-up Meetings erfolgten immer am Anfang der Lektionen am Dienstag bei einem Kaffee oder bei schönem Wetter kurz draussen. Unter der Woche haben wir uns oft via Google Hangouts abgeglichen oder Fragen direkt mit der freigabe eines Bildschirmes besprochen. 
+Dank des Online-Tools Trello.com konnten wir die Aufgabenpakete sogleich zuteilen und die Meetings waren dank unserer Vorbereitung sehr speditiv. 
 
 \subsection{Programmiersprache}
-Die Excel Software lauft ausschließlich auf Microsoft Windows Betriebssystemen, deshalb haben wir uns für die Windows Spezifische Programmiersprache C\# entschieden. \\ Diese in Kombination mit der IDE Visual Studio ermöglichten uns eine angenehme Entwicklung sowohl der Funktionalität und auch des GUI's. 
+Da der Verein zuvor bereits Microsoft Excel verwendete und als Betriebssystem Microsoft Windows verwendete, lag es nahe, dass wir uns für die Windows Spezifische Programmiersprache C\# entschieden. \\ Dies in Kombination mit der IDE Visual Studio ermöglichte uns eine Praxis nahe und angenehme Entwicklung sowohl der Funktionalitäten,wie und auch des GUI's. 
 
 \subsection{Verwaltungssystem}
-Die Auswahl des Verwaltungssystem war sehr einfach da wir die Software als Open Source ausgeben wollten. Wir haben uns für das Git System entschieden und hosteten unser code auf der Website GitHub.
+Die Auswahl des Verwaltungssystem war sehr einfach, da wir uns im Vorhinein geeinigt haben die Software als Open Source entwickeln zu wollen. Somit haben wir uns für das OpenSource Git Projekt Verwaltungssystem entschieden und hosteten unser Code auf der Website GitHub.
+
+Mit Hilfe dieser Collaboration Platform war es uns möglich, gleichzeitig, in unabhängigen Codeteilen, zu arbeiten und den jeweiligen Stand zu synchronisieren
 
 \newpage
 
@@ -120,7 +126,7 @@ Die Auswahl des Verwaltungssystem war sehr einfach da wir die Software als Open 
 \subsection{Modellierung}
 Die erste Phase der Entwicklung war das Strukturieren der Software. Wir wollten ein klares Design haben das uns die Weiterentwicklung in der Zukunft ermöglicht. 
 
-\subsubsection{Klassen Diagramm}
+\subsubsection{Klassen Diagramm}//
 \begin{figure}
 	\centering
 	\includegraphics[width=1.05 \textwidth]{KlassendiagrammBild}
@@ -131,9 +137,25 @@ Die erste Phase der Entwicklung war das Strukturieren der Software. Wir wollten 
 
 \subsubsection{Sequenz Diagramm}
 
-\subsection{Stunden Journal}
-Bild oder tabelle rekreiren von der Stunden template vom Sevi.
+\newpage
 
+\begin{landscape}
+
+
+\begin{figure}
+	\subsection{Projektplan}
+	\bigskip
+\begin{center}
+		\centering
+		\includegraphics[width=1.05 \paperwidth]{PJPlanung}
+		\caption{Projektplan}
+\end{center}
+\end{figure}
+
+\end{landscape}
+\newpage
+
+\subsection{Stunden Journal}
 \subsection{GUI}
 Vorgang bei Gestaltung des GUI's, bedenken usw.
 
