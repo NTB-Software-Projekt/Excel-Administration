@@ -14,11 +14,11 @@ namespace MemberAdministration
     {
         private Person person;
         DatabaseHelper dbHelper = new DatabaseHelper();
-        private MainWindow form;
+        private MainWindow mainForm;
 
-        public PersonWindow(MainWindow form)
+        public PersonWindow(MainWindow mainForm)
         {
-            this.form = form;
+            this.mainForm = mainForm;
             InitializeComponent();
         }
 
@@ -59,7 +59,7 @@ namespace MemberAdministration
             Person toUpdate = new Person(person.ID, titleBox.Text, surnameBox.Text, nameBox.Text, addressBox.Text, zipBox.Text, stateBox.Text, phoneBox.Text, emailBox.Text, payedBox.Text);
             dbHelper.updateMember(toUpdate);
             disableTextBoxes();
-            form.populateTable();
+            mainForm.populateTable();
         }
 
         private void newPaymentButton_Click(object sender, EventArgs e)

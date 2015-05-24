@@ -30,23 +30,23 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.paymentBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.mailBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.phoneBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.stateBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.zipBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.addressBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.nameBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.surnameBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.titleBox = new System.Windows.Forms.TextBox();
             this.cancelButton = new System.Windows.Forms.Button();
             this.addMemberButton = new System.Windows.Forms.Button();
             this.resetButton = new System.Windows.Forms.Button();
@@ -65,35 +65,35 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.textBox9);
+            this.panel1.Controls.Add(this.paymentBox);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.textBox8);
+            this.panel1.Controls.Add(this.mailBox);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.textBox7);
+            this.panel1.Controls.Add(this.phoneBox);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.textBox6);
+            this.panel1.Controls.Add(this.stateBox);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.zipBox);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.addressBox);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.nameBox);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.surnameBox);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.titleBox);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(335, 368);
             this.panel1.TabIndex = 1;
             // 
-            // textBox9
+            // paymentBox
             // 
-            this.textBox9.Location = new System.Drawing.Point(130, 216);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(162, 20);
-            this.textBox9.TabIndex = 17;
+            this.paymentBox.Location = new System.Drawing.Point(130, 216);
+            this.paymentBox.Name = "paymentBox";
+            this.paymentBox.Size = new System.Drawing.Size(162, 20);
+            this.paymentBox.TabIndex = 17;
             // 
             // label9
             // 
@@ -104,12 +104,12 @@
             this.label9.TabIndex = 16;
             this.label9.Text = "Payment Amount:";
             // 
-            // textBox8
+            // mailBox
             // 
-            this.textBox8.Location = new System.Drawing.Point(130, 190);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(162, 20);
-            this.textBox8.TabIndex = 15;
+            this.mailBox.Location = new System.Drawing.Point(130, 190);
+            this.mailBox.Name = "mailBox";
+            this.mailBox.Size = new System.Drawing.Size(162, 20);
+            this.mailBox.TabIndex = 15;
             // 
             // label8
             // 
@@ -120,12 +120,12 @@
             this.label8.TabIndex = 14;
             this.label8.Text = "E-Mail:";
             // 
-            // textBox7
+            // phoneBox
             // 
-            this.textBox7.Location = new System.Drawing.Point(130, 164);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(162, 20);
-            this.textBox7.TabIndex = 13;
+            this.phoneBox.Location = new System.Drawing.Point(130, 164);
+            this.phoneBox.Name = "phoneBox";
+            this.phoneBox.Size = new System.Drawing.Size(162, 20);
+            this.phoneBox.TabIndex = 13;
             // 
             // label7
             // 
@@ -136,12 +136,12 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Phone:";
             // 
-            // textBox6
+            // stateBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(130, 138);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(162, 20);
-            this.textBox6.TabIndex = 11;
+            this.stateBox.Location = new System.Drawing.Point(130, 138);
+            this.stateBox.Name = "stateBox";
+            this.stateBox.Size = new System.Drawing.Size(162, 20);
+            this.stateBox.TabIndex = 11;
             // 
             // label6
             // 
@@ -152,12 +152,12 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "State:";
             // 
-            // textBox5
+            // zipBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(130, 112);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(162, 20);
-            this.textBox5.TabIndex = 9;
+            this.zipBox.Location = new System.Drawing.Point(130, 112);
+            this.zipBox.Name = "zipBox";
+            this.zipBox.Size = new System.Drawing.Size(162, 20);
+            this.zipBox.TabIndex = 9;
             // 
             // label5
             // 
@@ -168,12 +168,12 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Zip Code:";
             // 
-            // textBox4
+            // addressBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(130, 86);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(162, 20);
-            this.textBox4.TabIndex = 7;
+            this.addressBox.Location = new System.Drawing.Point(130, 86);
+            this.addressBox.Name = "addressBox";
+            this.addressBox.Size = new System.Drawing.Size(162, 20);
+            this.addressBox.TabIndex = 7;
             // 
             // label4
             // 
@@ -184,12 +184,12 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Address:";
             // 
-            // textBox3
+            // nameBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(130, 60);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(162, 20);
-            this.textBox3.TabIndex = 5;
+            this.nameBox.Location = new System.Drawing.Point(130, 60);
+            this.nameBox.Name = "nameBox";
+            this.nameBox.Size = new System.Drawing.Size(162, 20);
+            this.nameBox.TabIndex = 5;
             // 
             // label3
             // 
@@ -200,12 +200,12 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Name:";
             // 
-            // textBox2
+            // surnameBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(130, 34);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(162, 20);
-            this.textBox2.TabIndex = 3;
+            this.surnameBox.Location = new System.Drawing.Point(130, 34);
+            this.surnameBox.Name = "surnameBox";
+            this.surnameBox.Size = new System.Drawing.Size(162, 20);
+            this.surnameBox.TabIndex = 3;
             // 
             // label2
             // 
@@ -216,12 +216,12 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Surname:";
             // 
-            // textBox1
+            // titleBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(130, 8);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(162, 20);
-            this.textBox1.TabIndex = 1;
+            this.titleBox.Location = new System.Drawing.Point(130, 8);
+            this.titleBox.Name = "titleBox";
+            this.titleBox.Size = new System.Drawing.Size(162, 20);
+            this.titleBox.TabIndex = 1;
             // 
             // cancelButton
             // 
@@ -276,24 +276,24 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox stateBox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox zipBox;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox addressBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox nameBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox surnameBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox titleBox;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button addMemberButton;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox phoneBox;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox mailBox;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox paymentBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button resetButton;
     }

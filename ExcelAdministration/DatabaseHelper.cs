@@ -196,7 +196,7 @@ namespace MemberAdministration
                     {
                         connection.Open();
                         //this next line assumes that the file is in default Excel format with Sheet1 as the first sheet name, adjust accordingly
-                        OleDbCommand cmd = new OleDbCommand("INSERT INTO [Sheet1$](ID, Anrede, Nachname, Vorname, Adresse, PLZ, Ort, Telefon, Email, Betrag) VALUES(@ID, @Anrede, @Nachname, @Vorname, @Adresse, @PLZ, @Ort, @Telefon, @Email, @Betrag)", connection);
+                        OleDbCommand cmd = new OleDbCommand("INSERT INTO [Sheet1$](ID, Anrede, Nachname, Vorname, Adresse, PLZ, Ort, Telefon, EMail, Betrag) VALUES(@ID, @Anrede, @Nachname, @Vorname, @Adresse, @PLZ, @Ort, @Telefon, @EMail, @Betrag)", connection);
 
                         if (connection.State == ConnectionState.Open)
                         {
@@ -208,7 +208,7 @@ namespace MemberAdministration
                             cmd.Parameters.Add("@PLZ", OleDbType.VarChar, 50).Value = plz;
                             cmd.Parameters.Add("@Ort", OleDbType.VarChar, 50).Value = state;
                             cmd.Parameters.Add("@Telefon", OleDbType.VarChar, 50).Value = telephone;
-                            cmd.Parameters.Add("@Email", OleDbType.VarChar, 50).Value = mail;
+                            cmd.Parameters.Add("@EMail", OleDbType.VarChar, 50).Value = mail;
                             cmd.Parameters.Add("@Betrag", OleDbType.VarChar, 50).Value = amount;
                             try
                             {
@@ -278,6 +278,63 @@ namespace MemberAdministration
                     }
                 }
             }
+        }
+
+
+        /// <summary>
+        /// Deleting one specific member, filtered by the ID in the Person object.
+        /// </summary>
+        /// <param name="person">Person object containing the needed ID</param>
+        public String maxID()
+        {
+            String maxID;
+
+            dbPath = MemberAdministration.Properties.Settings.Default.dbPath;
+            if (dbPath != null)
+            {
+                /*
+                 * Connection begins here when dbPath is set   ********   *********   *********
+                 */
+                String connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + dbPath + "; Extended Properties='Excel 12.0 Xml;HDR=YES'";
+
+                using (OleDbConnection connection = new OleDbConnection(connectionString))
+                {
+                    try
+                    {
+                        //this next line assumes that the file is in default Excel format with Sheet1 as the first sheet name, adjust accordingly
+                        OleDbCommand cmd = new OleDbCommand("SELECT MAX(ID) FROM [Sheet1$]", connection);
+                        connection.Open();
+
+                        if (connection.State == ConnectionState.Open)
+                        {
+                            try
+                            {
+                                using (OleDbDataReader reader = cmd.ExecuteReader())
+                                {
+
+                                    while (reader.Read())
+                                    {
+                                        maxID = reader.GetValue(0).ToString();
+                                        return maxID;
+                                    }
+                                }
+                            }
+                            catch (OleDbException expe)
+                            {
+                                MessageBox.Show(expe.Message);
+                                connection.Close();
+                            }
+                        }
+                    }
+
+                    catch (OleDbException)
+                    {
+                        Console.WriteLine("Something went wrong with DB connection");
+                    }
+                }
+            }
+
+            return "100";
         }
     }
 }
