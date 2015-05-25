@@ -55,6 +55,12 @@
     </Compile>
     <Compile Include="BackupManager.cs" />
     <Compile Include="DatabaseHelper.cs" />
+    <Compile Include="ExcelExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExcelExample.Designer.cs">
+      <DependentUpon>ExcelExample.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AboutBox1.resx">
       <DependentUpon>AboutBox1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExcelExample.resx">
+      <DependentUpon>ExcelExample.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

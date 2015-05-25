@@ -33,7 +33,7 @@
             this.otvoriExcellToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitStripMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.posaljiMailRijaduToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exampleMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.refreshButton = new System.Windows.Forms.Button();
@@ -92,17 +92,18 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.posaljiMailRijaduToolStripMenuItem,
+            this.exampleMenu,
             this.aboutMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
-            // posaljiMailRijaduToolStripMenuItem
+            // exampleMenu
             // 
-            this.posaljiMailRijaduToolStripMenuItem.Name = "posaljiMailRijaduToolStripMenuItem";
-            this.posaljiMailRijaduToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.posaljiMailRijaduToolStripMenuItem.Text = "Excel Sheet Format Example";
+            this.exampleMenu.Name = "exampleMenu";
+            this.exampleMenu.Size = new System.Drawing.Size(221, 22);
+            this.exampleMenu.Text = "Excel Sheet Format Example";
+            this.exampleMenu.Click += new System.EventHandler(this.exampleMenu_Click);
             // 
             // aboutMenuItem
             // 
@@ -280,7 +281,7 @@
         private System.Windows.Forms.ToolStripMenuItem otvoriExcellToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitStripMenu;
-        private System.Windows.Forms.ToolStripMenuItem posaljiMailRijaduToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exampleMenu;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;

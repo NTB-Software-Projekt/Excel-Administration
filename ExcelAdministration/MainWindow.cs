@@ -153,6 +153,12 @@ namespace MemberAdministration
             populateTable("");
         }
 
+        private void exampleMenu_Click(object sender, EventArgs e)
+        {
+            ExcelExample exampleBox = new ExcelExample();
+            exampleBox.Show();
+        }
+
 
 
     }
