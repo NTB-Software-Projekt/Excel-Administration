@@ -15,10 +15,14 @@
 }
 \setlist[description]{leftmargin=\parindent,labelindent=\parindent}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern} % load a font with all the characters
 \usepackage{graphicx}
 \graphicspath{{Bilder/}}
 
 \renewcommand{\contentsname}{Inhaltsverzeichnis}
+\renewcommand{\listfigurename}{Abbildungsverzeichnis}
+
 \begin{document}
 
 \pagenumbering{roman}
@@ -28,13 +32,14 @@
 
 \maketitle
 
-\vspace{80mm}
+\vspace{75mm}
 \begin{center}
-		\includegraphics{SoftwareLogo}
+		\includegraphics[width=0.8 \textwidth]{SoftwareLogo}
 \end{center}
 
 \newpage
 \tableofcontents
+\listoffigures
 \newpage
 
 \pagenumbering{arabic}
@@ -44,18 +49,20 @@ Das Projekt wurde von uns in der Freizeit für den Bosnischen Club St. Gallen er
 Für Sie war dies das einfachste Werkzeug, jedoch gab es immer wieder Probleme, wie zum Beispiel das ungewollte löschen ganzer Zeilen, oder das verrutschen in den Zeilen / Spalten. Wir wollten jedoch nicht eine komplett neue Datenbank erarbeiten, und entschieden uns, Ihnen ein Werkzeug für die Verwaltung der vorhandenen Excel Tabelle zur Verfügung zu stellen, welches eine einfache, intuitive GUI zur Verfügung stellt.
 
 \subsection{Ausgangssituation}
-Nebst den Problemen bei unaufmerksamer Bearbeitung, ist das Auslesen eines grösseren Excel Files deutlich langsamer als bei einer SQL Datenbank der gleichen bzw. einer vielfachen Grösse, deshalb ist es sinnvoll das Excel File in eine SQL Tabelle umzuwandeln und so zu Verarbeiten. \newline 
+Nebst den Problemen bei unaufmerksamer Bearbeitung, ist das Auslesen eines grösseren Excel Files deutlich langsamer als bei einer SQL Datenbank der gleichen bzw. einer vielfachen Grösse, deshalb ist es sinnvoll das Excel File in eine SQL Tabelle umzuwandeln und so zu Verarbeiten.
 
-Die Konversion würde zusätzliche Software Kenntnisse erfordern, so griffen wir auf Vorhandene Office Werkzeuge zurück. \\
+Die Konversion würde zusätzliche Software Kenntnisse erfordern, so griffen wir auf Vorhandene Office Werkzeuge zurück.
 
 Mit unserer x2dB Applikation wurde das Problem gelöst. Die Umwandlung ist dank ODBC Connector unnötig und somit kann das Excel File bestehend bleiben.
 
 \subsection{Lösungsidee}
-Wir legten vor allem Wert auf ein simples User-Interface mit allen nötigen Funktionen. Die Software verarbeitet das Excel File im Hintergrund als SQL Tabelle und verbindet sich mit entsprechenden Treibern über ein File das via GUI (Dateibrowser) eingebunden werden kann. Das ermöglichen uns die Microsoft.Office.Core und Microsoft.Office.Excel.Interop Treiber. \\
+Wir legten vor allem Wert auf ein simples User-Interface mit allen nötigen Funktionen. Die Software verarbeitet das Excel File im Hintergrund als SQL Tabelle und verbindet sich mit entsprechenden Treibern über ein File das via GUI (Dateibrowser) eingebunden werden kann. Das ermöglichen uns die Microsoft.Office.Core und Microsoft.Office.Excel.Interop Treiber.
 
 Mit unserer Applikation hat der User einen begrenzten Einfluss auf das File und kann so weniger Schaden am File anrichten. Schaden können auch gleichzeitige Lese- / Speicherzugriffe auf ein Shared File auf einem Netzwerklaufwerk. In unserer Applikation dauert die Verbindung nur kurz, bis die Daten gelesen/geschrieben wurden und danach wird das File wieder freigegeben.
 
 Für zusätzliche Datenintegrität wird jeweils ein Backup des Files erstellt und kann nötigen Falls zurück gespielt werden. Dies ist nicht die 'ultimative Lösung', aber wir konnten so die Sicherheit bei Veränderungen am Excel File erhöhen und trotzdem ein 'für jeden lesbares' Dateiformat weiter verwenden; dass zum Beispiel auch mit einem USB Stick übertragen und auf heimischen Computern (weiter-)bearbeitet werden kann.
+
+\newpage
 
 \section{Anforderungsliste}
 Um die Bedürfnisse der Verwalter dieser Excel Liste bestmöglich abdecken zu können, haben wir uns mit Ihnen zusammen gesetzt und die nachfolgenden Anforderungen definiert. 
@@ -66,7 +73,7 @@ Die Applikation muss:
 		\item[M1:] Das vorhandene Excel File als Datenbasis verwenden.
 		\item[M2:] Das Excel File lesen und beschreiben können.
 		\item[M3:] Nach dem Lesen bzw. Schreiben die Verbindung trennen.
-		\item[M4:] In regelmässigen Abständen Backups erstellen.
+		\item[M4:] Bei Änderungen im File Backups erstellen.
 	\end{description}
 
 \subsection{Soll-Anforderung}
@@ -114,6 +121,16 @@ Mit Hilfe dieser Collaboration Platform war es uns möglich, gleichzeitig, in un
 \newpage
 
 \section{Projekt Planung}
+	\begin{figure}[h]
+		\subsection{Projektplan}
+		\bigskip
+		\begin{center}
+			\centering
+			\includegraphics[width=0.83\paperwidth]{PJPlanung}
+			\caption{Projektplan}
+		\end{center}
+	\end{figure}	
+	
 \subsection{Product Backlog}
 \subsection{Sprints}
 \subsection{Sprint Stand-up Meetings}
@@ -125,36 +142,45 @@ Mit Hilfe dieser Collaboration Platform war es uns möglich, gleichzeitig, in un
 
 \subsection{Modellierung}
 Die erste Phase der Entwicklung war das Strukturieren der Software - eine sehr wichtige Phase. Wir wollten ein klares Design von Beginn an, dass uns die Weiterentwicklung ermöglicht.\\
-Hier haben wir sehr viel Zeit aufgewendet, mit den Beteiligten sehr viele Szenarien durchgespielt und uns selbst einige Tage Zeit gelassen um über den Funktionsumfang und die Gimmicks eine klare Vorstellung zu erhalten. Die GUI sollte möglichst einfach gehalten sein, was aber nicht heisst, dass sich viele Funktionen dahinter verbergen. 
+Hier haben wir sehr viel Zeit aufgewendet, mit den Beteiligten sehr viele Szenarien durchgespielt und uns selbst einige Tage Zeit gelassen um über den Funktionsumfang und die Gimmicks eine klare Vorstellung zu erhalten. Die GUI sollte möglichst einfach gehalten sein, was aber nicht heisst, dass sich wenige Funktionen dahinter verbergen. 
 
-\subsubsection{Klassen Diagramm}
+\subsubsection{Klassendiagramm}
 	
-\begin{figure}
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=1.05 \textwidth]{KlassendiagrammBild}
 	\caption{Klassendiagramm}
 \end{figure}
 
-\subsubsection{Aktivitäts-Diagramm}
+Hier erkläre ich das was eigentlich dargestellt wurde im Klassendiagramm.
 
-\subsubsection{Sequenz Diagramm}
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+\newpage
+
+\subsubsection{Aktivitäts-Diagramm}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8 \textwidth]{Aktivtaetsdiagramm}
+	\caption{Aktivitätsdiagramm}
+\end{figure}
+
+Hier erkläre ich das was eigentlich dargestellt wurde im Aktivitadosdiagramm.
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 
 \newpage
 
-\begin{landscape}
-
-
-\begin{figure}
-	\subsection{Projektplan}
-	\bigskip
-\begin{center}
-		\centering
-		\includegraphics[width=1.05 \paperwidth]{PJPlanung}
-		\caption{Projektplan}
-\end{center}
+\subsubsection{Sequenzdiagramm}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8 \textwidth]{Sequenz-Diagramm_v1}
+	\caption{Sequenzdiagramm}
 \end{figure}
 
-\end{landscape}
+Hier erkläre ich das was eigentlich dargestellt wurde im Sequenzeli.
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
 \newpage
 
 \subsection{Stunden Journal}
