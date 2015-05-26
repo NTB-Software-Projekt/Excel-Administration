@@ -1,10 +1,17 @@
 \documentclass{article}
 \usepackage{geometry}
-
 \usepackage{parskip}
 \usepackage{pdflscape}
 \usepackage{lscape}
 \usepackage{enumitem}
+\setlist[description]{leftmargin=\parindent,labelindent=\parindent}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern} % load a font with all the characters
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\graphicspath{{Bilder/}}
 \geometry{
 	a4paper,
 	total={210mm,297mm},
@@ -13,12 +20,6 @@
 	top=25mm,
 	bottom=25mm
 }
-\setlist[description]{leftmargin=\parindent,labelindent=\parindent}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern} % load a font with all the characters
-\usepackage{graphicx}
-\graphicspath{{Bilder/}}
 
 \renewcommand{\contentsname}{Inhaltsverzeichnis}
 \renewcommand{\listfigurename}{Abbildungsverzeichnis}
@@ -90,14 +91,21 @@ Die Applikation könnte:
 	\item[W1:] Eine Benutzungsanleitung haben.
 	\item[W2:] Mehrere Sprachen unterstützen.
 	\item[W3:] Dem User Hilfe anbieten.
+	\\
 \end{description}
+
+Die Soll-Anforderungen wurden soweit erfüllt oder vernachlässigt wie es sich mit der Entwicklungszeit ergeben hat. 
+
+[W2] Einbau mehrerer Sprachen wäre ein sehr Zeitintensives verfahren und deshalb vernachlässigt.
+
+[W1]-[W3] Benutzeranleitung und Hilfe anbieten wurde integriert und in einem Hilfe Untermenü eingebaut. Dies stellt das benötigte Format des Excel Files und wie es beschriftet sein müsste.
 
 \newpage
 
 \section{Projektumgebung}
 \vspace{5mm}
 \subsection{Entwicklungsprozess	}
-Wir enschieden uns für den iterativen Scrum-Prozess. Es erschien uns Ideal, da wir jede Woche Dienstag mindestens zwei Lektionen Zeit hatten. Somit entschieden wir uns, dass die Sprints 7 Tage dauerten und nicht wie gewöhnlich 30. Wir teilten die Rollen wie folgt auf:
+Wir entschieden uns für den iterativen Scrum-Prozess. Es erschien uns Ideal, da wir jede Woche Dienstag mindestens zwei Lektionen Zeit hatten. Somit entschieden wir uns, dass die Sprints 7 Tage dauerten und nicht wie gewöhnlich 30. Wir teilten die Rollen wie folgt auf:
 
 \begin{description}
 	\item[Scrum Master:] Rijad Zuzo
@@ -107,7 +115,7 @@ Wir enschieden uns für den iterativen Scrum-Prozess. Es erschien uns Ideal, da 
 \end{description}
 
 \subsection{Ablauf}
-Die Stand-up Meetings erfolgten immer am Anfang der Lektionen am Dienstag bei einem Kaffee oder bei schönem Wetter kurz draussen. Unter der Woche haben wir uns oft via Google Hangouts abgeglichen oder Fragen direkt mit der freigabe eines Bildschirmes besprochen. 
+Die Stand-up Meetings erfolgten immer am Anfang der Lektionen am Dienstag bei einem Kaffee oder bei schönem Wetter kurz draußen. Unter der Woche haben wir uns oft via Google Hangouts abgeglichen oder Fragen direkt mit der Freigabe eines Bildschirmes besprochen. 
 Dank des Online-Tools Trello.com konnten wir die Aufgabenpakete sogleich zuteilen und die Meetings waren dank unserer Vorbereitung sehr speditiv. 
 
 \subsection{Programmiersprache}
@@ -185,8 +193,33 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 
 \subsection{Stunden Journal}
 \subsection{GUI}
+\subsubsection{Hauptfenster}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.0 \textwidth]{MainGUI}
+	\caption{Hauptfenster}
+\end{figure}
 Vorgang bei Gestaltung des GUI's, bedenken usw.
 
+\subsubsection{Neues Mitglied - Fenster}
+ \begin{figure}
+ 	\centering
+ 	\begin{subfigure}{.4\textwidth}
+ 		\centering
+ 		\includegraphics[width=.5\linewidth]{NewMemberGui}
+ 		\caption{A subfigure}
+ 		\label{fig:sub1}
+ 	\end{subfigure}%
+ 	\begin{subfigure}{.5\textwidth}
+ 		\centering
+ 		\includegraphics[width=.7\linewidth]{MemberInfoGUI}
+ 		\caption{A subfigure}
+ 		\label{fig:sub2}
+ 	\end{subfigure}
+ 	\caption{A figure with two subfigures}
+ 	\label{fig:test}
+ \end{figure}
+ 
 \subsection{Database Handling}
 Schwierigkeiten bei den Referenzen, Voraussetzungen zur Verbindung usw.
 
