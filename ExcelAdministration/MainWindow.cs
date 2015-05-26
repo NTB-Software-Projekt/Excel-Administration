@@ -57,7 +57,7 @@ namespace MemberAdministration
                 writeTextBoxPath(dbPath);
                 backupMannager.setFileName(System.IO.Path.GetFileName(ofd.FileName));
                 dbHelper.setDatabase(dbPath);
-                populateTable();
+                populateTable("");
             }
         }
 
