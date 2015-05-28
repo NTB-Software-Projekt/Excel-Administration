@@ -23,21 +23,25 @@
 
 \renewcommand{\contentsname}{Inhaltsverzeichnis}
 \renewcommand{\listfigurename}{Abbildungsverzeichnis}
+\renewcommand{\figurename}{Bild}
 
 \begin{document}
+\begin{titlepage}
+
 
 \pagenumbering{roman}
 
 \title{Software Projekt - Excel als SQL Datenbank}
 \author{Authoren: Rijad \v{Z}u\v{z}o, Séverin Müller \\ \\ Dozent: Ulrich Hauser}
 
-\maketitle
+\clearpage\maketitle
+\thispagestyle{empty}
 
 \vspace{75mm}
 \begin{center}
 		\includegraphics[width=0.8 \textwidth]{SoftwareLogo}
 \end{center}
-
+\end{titlepage}
 \newpage
 \tableofcontents
 \listoffigures
@@ -122,7 +126,7 @@ Dank des Online-Tools Trello.com konnten wir die Aufgabenpakete sogleich zuteile
 Da der Verein zuvor bereits Microsoft Excel verwendete und als Betriebssystem Microsoft Windows verwendete, lag es nahe, dass wir uns für die Windows Spezifische Programmiersprache C\# entschieden. \\ Dies in Kombination mit der IDE Visual Studio ermöglichte uns eine Praxis nahe und angenehme Entwicklung sowohl der Funktionalitäten,wie und auch des GUI's. 
 
 \subsection{Verwaltungssystem}
-Die Auswahl des Verwaltungssystem war sehr einfach, da wir uns im Vorhinein geeinigt haben die Software als Open Source entwickeln zu wollen. Somit haben wir uns für das OpenSource Git Projekt Verwaltungssystem entschieden und hosteten unser Code auf der Website GitHub.
+Die Auswahl des Verwaltungssystem war sehr einfach, da wir uns im Vorhinein geeinigt haben die Software als OpenSource entwickeln zu wollen. Somit haben wir uns für das OpenSource Git Projekt Verwaltungssystem entschieden und unser Code auf der Website www.GitHub.com gehostet.
 
 Mit Hilfe dieser Collaboration Platform war es uns möglich, gleichzeitig, in unabhängigen Codeteilen, zu arbeiten und den jeweiligen Stand zu synchronisieren
 
@@ -130,16 +134,23 @@ Mit Hilfe dieser Collaboration Platform war es uns möglich, gleichzeitig, in un
 
 \section{Projekt Planung}
 	\begin{figure}[h]
-		\subsection{Projektplan}
+		\subsection{Zeitplan}
 		\bigskip
 		\begin{center}
 			\centering
-			\includegraphics[width=0.83\paperwidth]{PJPlanung}
-			\caption{Projektplan}
+			\includegraphics[width=0.8\paperwidth]{PJPlanung}
+			\caption{Zeitplanung}
 		\end{center}
 	\end{figure}	
 	
 \subsection{Product Backlog}
+\begin{figure}[h]
+		\begin{center}
+			\centering
+			\includegraphics[width=0.8\paperwidth]{ProductBacklog1}
+			\caption{Der Produkt Backlog}
+		\end{center}
+	\end{figure}
 \subsection{Sprints}
 \subsection{Sprint Stand-up Meetings}
 \subsection{Sprint Review}
@@ -191,7 +202,7 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 
 \newpage
 
-\subsection{Stunden Journal}
+
 \subsection{GUI}
 \subsubsection{Hauptfenster}
 \begin{figure}[h]
@@ -199,24 +210,25 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 	\includegraphics[width=1.0 \textwidth]{MainGUI}
 	\caption{Hauptfenster}
 \end{figure}
-Vorgang bei Gestaltung des GUI's, bedenken usw.
+Das GUI wurde so einfach und intuitiv wie möglich gestaltet. Ein einfaches text-input Feld im linken teil lässt den Benutzer schnell den gesuchten Mitglied finden. Ein klick auf den Mitglied in der Tabellenansicht eröffnet ein neues Fenster wie im Bild 7.b) und zeigt alle nötigen Informationen die man auch leicht anpassen kann.
 
-\subsubsection{Neues Mitglied - Fenster}
- \begin{figure}
+
+\subsubsection{Aufrufbare Fenster}
+ \begin{figure}[h]
  	\centering
  	\begin{subfigure}{.4\textwidth}
  		\centering
  		\includegraphics[width=.5\linewidth]{NewMemberGui}
- 		\caption{A subfigure}
+ 		\caption{Neues Mitglied Formular}
  		\label{fig:sub1}
  	\end{subfigure}%
  	\begin{subfigure}{.5\textwidth}
  		\centering
- 		\includegraphics[width=.7\linewidth]{MemberInfoGUI}
- 		\caption{A subfigure}
+ 		\includegraphics[width=.8\linewidth]{MemberInfoGUI}
+ 		\caption{Mitgliedsinformation Fenster}
  		\label{fig:sub2}
  	\end{subfigure}
- 	\caption{A figure with two subfigures}
+ 	\caption{Aufrufbare Fenster}
  	\label{fig:test}
  \end{figure}
  
@@ -226,13 +238,15 @@ Schwierigkeiten bei den Referenzen, Voraussetzungen zur Verbindung usw.
 \subsection{Backup Management}
 Ansätze für ein effizientes Backuping :).
 
-\subsection{Testen}
+\subsection{Stunden Journal}
+
+\section{Testen}
 Wie beim Testen vorgegangen wurde!
 
 \newpage
 
 \section{Ziel}
 \subsection{Resultat}
-
+\subsection{Gelerntes}
 
 \end{document}
