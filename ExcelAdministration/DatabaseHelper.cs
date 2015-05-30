@@ -9,6 +9,9 @@ using System.Windows.Forms;
 
 namespace MemberAdministration
 {
+    /// <summary>
+    /// All CRUD operations are handled in this class.
+    /// </summary>
     class DatabaseHelper
     {
         private String dbPath;
@@ -43,7 +46,6 @@ namespace MemberAdministration
                     try
                     {
                         connection.Open();
-
                         //this next line assumes that the file is in default Excel format with Sheet1 as the first sheet name, we need to adjust accordingly
                         OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT * FROM [Sheet1$]", connection);
                         DataSet ds = new DataSet();
@@ -66,7 +68,6 @@ namespace MemberAdministration
         /// <returns> DataSet with the specific person information.</returns>
         public DataSet getThisMember(String member)
         {
-
             dbPath = MemberAdministration.Properties.Settings.Default.dbPath;
             if (dbPath != null)
             {
@@ -129,7 +130,6 @@ namespace MemberAdministration
                         connection.Open();
                         //this next line assumes that the file is in default Excel format with Sheet1 as the first sheet name, adjust accordingly
                         OleDbCommand cmd = new OleDbCommand("UPDATE [Sheet1$] SET Anrede = ?, Nachname = ?, Vorname = ?, Adresse = ?, PLZ = ?, Ort = ?, Telefon = ?, EMail = ?, Betrag = ? WHERE ID = ?", connection);
-
                         if (connection.State == ConnectionState.Open)
                         {
                             cmd.Parameters.Add("@Anrede", OleDbType.VarChar, 50).Value = title;
@@ -155,7 +155,6 @@ namespace MemberAdministration
                             }
                         }
                     }
-
                     catch (OleDbException)
                     {
                         Console.WriteLine("Something went wrong with DB connecting for Updating");
@@ -188,7 +187,6 @@ namespace MemberAdministration
                  * Connection begins here when dbPath is set   ********   *********   *********
                  */
                 String connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + dbPath + "; Extended Properties='Excel 12.0 Xml;HDR=YES'";
-
                 using (OleDbConnection connection = new OleDbConnection(connectionString))
                 {
                     try
@@ -196,7 +194,6 @@ namespace MemberAdministration
                         connection.Open();
                         //this next line assumes that the file is in default Excel format with Sheet1 as the first sheet name, adjust accordingly
                         OleDbCommand cmd = new OleDbCommand("INSERT INTO [Sheet1$](ID, Anrede, Nachname, Vorname, Adresse, PLZ, Ort, Telefon, EMail, Betrag) VALUES(@ID, @Anrede, @Nachname, @Vorname, @Adresse, @PLZ, @Ort, @Telefon, @EMail, @Betrag)", connection);
-
                         if (connection.State == ConnectionState.Open)
                         {
                             cmd.Parameters.Add("@ID", OleDbType.VarChar, 50).Value = ID;
@@ -221,7 +218,6 @@ namespace MemberAdministration
                                 connection.Close();
                             }
                         }
-
                         connection.Open();
                         cmd = new OleDbCommand("INSERT INTO [Sheet1$](ID, Anrede, Nachname, Vorname, Adresse, PLZ, Ort, Telefon, EMail, Betrag) VALUES(@ID, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)", connection);
                         if (connection.State == ConnectionState.Open)
@@ -241,10 +237,7 @@ namespace MemberAdministration
                                 connection.Close();
                             }
                         }
-
-
                     }
-
                     catch (OleDbException)
                     {
                         Console.WriteLine("Something went wrong with DB connecting for addin new member");
@@ -259,9 +252,7 @@ namespace MemberAdministration
         /// <param name="personID">String with the wanted ID</param>
         public void deleteMember(String personID)
         {
-
             String checkID = personID;
-
             dbPath = MemberAdministration.Properties.Settings.Default.dbPath;
             if (dbPath != null)
             {
@@ -269,7 +260,6 @@ namespace MemberAdministration
                  * Connection begins here when dbPath is set   ********   *********   *********
                  */
                 String connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + dbPath + "; Extended Properties='Excel 12.0 Xml;HDR=YES'";
-
                 using (OleDbConnection connection = new OleDbConnection(connectionString))
                 {
                     try
@@ -277,7 +267,6 @@ namespace MemberAdministration
                         connection.Open();
                         //this next line assumes that the file is in default Excel format with Sheet1 as the first sheet name, adjust accordingly
                         OleDbCommand cmd = new OleDbCommand("UPDATE [Sheet1$] SET Anrede = NULL, Nachname = NULL, Vorname = NULL, Adresse = NULL, PLZ = NULL, Ort = NULL, Telefon = NULL, EMail = NULL, Betrag = NULL WHERE ID = ?", connection);
-
                         if (connection.State == ConnectionState.Open)
                         {
                             cmd.Parameters.Add("@ID", OleDbType.VarChar, 50).Value = checkID;
@@ -294,7 +283,6 @@ namespace MemberAdministration
                             }
                         }
                     }
-
                     catch (OleDbException)
                     {
                         Console.WriteLine("Something went wrong with DB connecting for Updating");
@@ -310,7 +298,6 @@ namespace MemberAdministration
         public String maxID()
         {
             String maxID;
-
             dbPath = MemberAdministration.Properties.Settings.Default.dbPath;
             if (dbPath != null)
             {
@@ -318,7 +305,6 @@ namespace MemberAdministration
                  * Connection begins here when dbPath is set   ********   *********   *********
                  */
                 String connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + dbPath + "; Extended Properties='Excel 12.0 Xml;HDR=YES'";
-
                 using (OleDbConnection connection = new OleDbConnection(connectionString))
                 {
                     try
@@ -348,15 +334,13 @@ namespace MemberAdministration
                             }
                         }
                     }
-
                     catch (OleDbException)
                     {
                         Console.WriteLine("Something went wrong with DB connection");
                     }
                 }
             }
-
-            return "30";
+            return "100";
         }
     }
 }

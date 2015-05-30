@@ -10,6 +10,10 @@ using System.Windows.Forms;
 
 namespace MemberAdministration
 {
+    /// <summary>
+    /// Simple example how a Excel File should be formatted for this application to work.
+    /// It only serves as Help so there is no additional functionality.
+    /// </summary>
     public partial class ExcelExample : Form
     {
         public ExcelExample()

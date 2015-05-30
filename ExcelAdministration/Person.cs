@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MemberAdministration
 {
+    /// <summary>
+    /// The Datamodel for a Person
+    /// </summary>
     public class Person
     {
         public String ID { get; set; }

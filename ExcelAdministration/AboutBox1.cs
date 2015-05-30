@@ -9,6 +9,10 @@ using System.Windows.Forms;
 
 namespace MemberAdministration
 {
+    /// <summary>
+    /// Just a simple About us Form. 
+    /// Only showing the releveant information from the project.
+    /// </summary>
     partial class AboutBox1 : Form
     {
         public AboutBox1()
@@ -110,16 +114,6 @@ namespace MemberAdministration
         private void okButton_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void textBoxDescription_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

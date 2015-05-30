@@ -38,7 +38,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.refreshButton = new System.Windows.Forms.Button();
             this.newMemberButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.inputBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -118,7 +118,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.refreshButton);
             this.panel1.Controls.Add(this.newMemberButton);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.inputBox);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 24);
@@ -148,12 +148,12 @@
             // 
             // textBox1
             // 
-            this.textBox1.AcceptsReturn = true;
-            this.textBox1.Location = new System.Drawing.Point(7, 50);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(154, 20);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.nameInput_TextChanged);
+            this.inputBox.AcceptsReturn = true;
+            this.inputBox.Location = new System.Drawing.Point(7, 50);
+            this.inputBox.Name = "textBox1";
+            this.inputBox.Size = new System.Drawing.Size(154, 20);
+            this.inputBox.TabIndex = 1;
+            this.inputBox.TextChanged += new System.EventHandler(this.nameInput_TextChanged);
             // 
             // label1
             // 
@@ -285,7 +285,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox inputBox;
         private System.Windows.Forms.Button newMemberButton;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;

@@ -10,23 +10,34 @@ using System.Windows.Forms;
 
 namespace MemberAdministration
 {
+    /// <summary>
+    /// This Class handles the main logic.
+    /// </summary>
     public partial class MainWindow : Form
     {
         DatabaseHelper dbHelper = new DatabaseHelper();
         BackupManager backupMannager = new BackupManager();
         PersonWindow pWindow;
 
+        /// <summary>
+        /// Upon creating the Main Window the backupManager saves the last state of the Excel File.
+        /// When something goes wrong the old Excel File is then secured in the backup folder.
+        /// </summary>
         public MainWindow()
         {
             backupMannager.saveFile();
             InitializeComponent();
         }
 
+        /// <summary>
+        /// If a Database (Excel File) has been chosen in a previous session it will be loaded from the application properties.
+        /// Otherwise it will alert the user to choose one.
+        /// </summary>
         public void MainWindow_Load(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(MemberAdministration.Properties.Settings.Default.dbPath))
             {
-                MessageBox.Show("First Time starting the Application.\nWelcome to xl2DB");
+                MessageBox.Show("First Time starting the Application.\nWelcome to xl2DB \nPlease choose a Database from the Menu");
             }
             else
             {
@@ -41,9 +52,12 @@ namespace MemberAdministration
             this.Close();
         }
 
+        /// <summary>
+        /// On every text change a SQL query is sent to populate the table with the Text from the Textbox.
+        /// </summary>
         private void nameInput_TextChanged(object sender, EventArgs e)
         {
-            String inputName = textBox1.Text;
+            String inputName = inputBox.Text;
             populateTable(inputName);
         }
 
@@ -61,17 +75,27 @@ namespace MemberAdministration
             }
         }
 
+        /// <summary>
+        /// Opens the About us box with the project information.
+        /// </summary>
         private void aboutUs_Click(object sender, EventArgs e)
         {
             AboutBox1 a = new AboutBox1();
             a.Show();
         }
 
+        /// <summary>
+        /// Writes the Path to the current Database on the GUI 
+        /// </summary>
+        /// <param name="dbPath">Path of the current/selected Database</param>
         private void writeTextBoxPath(String dbPath)
         {
             textBoxPath.Text = dbPath;
         }
 
+        /// <summary>
+        /// Populates the Table from the database with all members
+        /// </summary>
         public void populateTable()
         {
             BindingSource source = new BindingSource();
@@ -83,6 +107,10 @@ namespace MemberAdministration
             column.Width = 50;
         }
 
+        /// <summary>
+        /// Populates the table from the database with the member that matches the name, surname, address or state with the parameter.
+        /// </summary>
+        /// <param name="name">String which we want to match in the database</param>
         public void populateTable(String name)
         {
             BindingSource source = new BindingSource();
@@ -101,12 +129,20 @@ namespace MemberAdministration
             }
         }
 
+        /// <summary>
+        /// Opens the new member form
+        /// </summary>
         private void newMemberButton_Click(object sender, EventArgs e)
         {
             NewMember newMember = new NewMember(this);
             newMember.Show();
         }
 
+        /// <summary>
+        /// Opens the Person Window with all the needed information from the Table.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (pWindow != null)
@@ -148,18 +184,22 @@ namespace MemberAdministration
             }
         }
 
+        /// <summary>
+        /// Refreshes the table, hiding the empty entries from the Excel File
+        /// </summary>
         private void refreshButton_Click(object sender, EventArgs e)
         {
             populateTable("");
         }
 
+        /// <summary>
+        /// Opens the Excel Example form which only shows how the Excel File needs to be formated.
+        /// </summary>
         private void exampleMenu_Click(object sender, EventArgs e)
         {
             ExcelExample exampleBox = new ExcelExample();
             exampleBox.Show();
         }
-
-
 
     }
 }

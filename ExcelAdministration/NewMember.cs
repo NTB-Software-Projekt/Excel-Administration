@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace MemberAdministration
 {
+    /// <summary>
+    /// Handles the Addition of new members trough a form.
+    /// </summary>
     public partial class NewMember : Form
     {
         private MainWindow mainForm;
         DatabaseHelper dbHelper = new DatabaseHelper();
 
+        /// <summary>
+        /// Init of all the components and specially the mainForm which is needed for the refreshing of the member table upon closing of this Window.
+        /// </summary>
+        /// <param name="mainForm">The mainForm window passed by reference for refreshing the table</param>
         public NewMember(MainWindow mainForm)
         {
             InitializeComponent();
@@ -26,6 +33,11 @@ namespace MemberAdministration
             this.Close();
         }
 
+        /// <summary>
+        /// Adding a new Member to the Database with all the Information in the Form.
+        /// If the Database is empty it will add a new Member in the first position, 
+        /// else it will search the last added ID and add a new member with the last ID + 1.
+        /// </summary>
         private void addMemberButton_Click(object sender, EventArgs e)
         {
             String ID;
@@ -56,6 +68,10 @@ namespace MemberAdministration
             }
 
         }
+
+        /// <summary>
+        /// Clears the TextBoxes.
+        /// </summary>
         private void resetButton_Click(object sender, EventArgs e)
         {
             titleBox.Text = "";

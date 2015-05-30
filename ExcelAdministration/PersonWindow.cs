@@ -10,18 +10,29 @@ using System.Windows.Forms;
 
 namespace MemberAdministration
 {
+    /// <summary>
+    /// This class manages the specific information of a chosen Person.
+    /// </summary>
     public partial class PersonWindow : Form
     {
         private Person person;
         DatabaseHelper dbHelper = new DatabaseHelper();
         private MainWindow mainForm;
 
+        /// <summary>
+        /// Init of all the components and specially the mainForm which is needed for the refreshing of the member table upon closing of this Window.
+        /// </summary>
+        /// <param name="mainForm">The mainForm window passed by reference for refreshing the table</param>
         public PersonWindow(MainWindow mainForm)
         {
             this.mainForm = mainForm;
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Loading the Text in the TextBoxes of the GUI.
+        /// </summary>
+        /// <param name="person">Datamodel passed by reference containing all needed data</param>
         public void loadInformation(Person person)
         {
             this.person = person;
@@ -41,6 +52,9 @@ namespace MemberAdministration
             this.Close();
         }
 
+        /// <summary>
+        /// Enables the TexBoxes so that the Data can be edited and later updated
+        /// </summary>
         private void updateButton_Click(object sender, EventArgs e)
         {
             titleBox.Enabled = true;
@@ -54,6 +68,10 @@ namespace MemberAdministration
             payedBox.Enabled = true;
         }
 
+        /// <summary>
+        /// Packages all the new Data into the Datamodel Person and saves it in the Database.
+        /// Upon saving the Data it disables the textboxes again and refreshes the table in the Mainfrom;
+        /// </summary>
         public void saveChangesButton_Click(object sender, EventArgs e)
         {
             Person toUpdate = new Person(person.ID, titleBox.Text, surnameBox.Text, nameBox.Text, addressBox.Text, zipBox.Text, stateBox.Text, phoneBox.Text, emailBox.Text, payedBox.Text);
@@ -62,6 +80,10 @@ namespace MemberAdministration
             mainForm.populateTable("");
         }
 
+        /// <summary>
+        /// Adds the inputed payment to the already payed ammount from the Database and updates the TextBox with the new Data.
+        /// Doesn't save anything to the Database. 
+        /// </summary>
         private void newPaymentButton_Click(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(newPaymentBox.Text))
@@ -78,6 +100,9 @@ namespace MemberAdministration
             disableTextBoxes();
         }
 
+        /// <summary>
+        /// Disables the TextBoxes so nothing can be written.
+        /// </summary>
         private void disableTextBoxes()
         {
             titleBox.Enabled = false;
@@ -91,6 +116,12 @@ namespace MemberAdministration
             payedBox.Enabled = false;
         }
 
+        /// <summary>
+        /// Deletes the chosen Person from the Database*.
+        /// As the driver doesn't support the direct deletition of Entries in the Excel File, the solution to this was sending a "null" update to the Excel File
+        /// where all columns in this row are set to null.
+        /// This method has a bug. If we were to delete the last entry in the Table all function of the application stop working.
+        /// </summary>
         private void deleteButton_Click(object sender, EventArgs e)
         {
             dbHelper.deleteMember(person.ID);

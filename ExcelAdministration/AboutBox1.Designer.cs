@@ -146,7 +146,6 @@
             this.textBox1.TabIndex = 25;
             this.textBox1.Text = "Simple Member Administration based on Microsoft Excel as a DB connected with OleD" +
     "B.\r\n\r\nBy: Rijad Zuzo, Séverin Müller";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // AboutBox1
             // 
