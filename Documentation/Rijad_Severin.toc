@@ -1,6 +1,6 @@
 \contentsline {section}{\numberline {1}Motivation}{1}
 \contentsline {subsection}{\numberline {1.1}Ausgangssituation}{1}
-\contentsline {subsection}{\numberline {1.2}L\IeC {\"o}sungsidee}{1}
+\contentsline {subsection}{\numberline {1.2}Lösungsidee}{1}
 \contentsline {section}{\numberline {2}Anforderungsliste}{2}
 \contentsline {subsection}{\numberline {2.1}Muss-Anforderungen}{2}
 \contentsline {subsection}{\numberline {2.2}Soll-Anforderung}{2}
@@ -19,7 +19,7 @@
 \contentsline {section}{\numberline {5}Ablauf der Entwicklung}{6}
 \contentsline {subsection}{\numberline {5.1}Modellierung}{6}
 \contentsline {subsubsection}{\numberline {5.1.1}Klassendiagramm}{6}
-\contentsline {subsubsection}{\numberline {5.1.2}Aktivit\IeC {\"a}ts-Diagramm}{7}
+\contentsline {subsubsection}{\numberline {5.1.2}Aktivitäts-Diagramm}{7}
 \contentsline {subsubsection}{\numberline {5.1.3}Sequenzdiagramm}{8}
 \contentsline {subsection}{\numberline {5.2}GUI}{9}
 \contentsline {subsubsection}{\numberline {5.2.1}Hauptfenster}{9}

@@ -79,6 +79,7 @@ Die Applikation muss:
 		\item[M2:] Das Excel File lesen und beschreiben können.
 		\item[M3:] Nach dem Lesen bzw. Schreiben die Verbindung trennen.
 		\item[M4:] Bei Änderungen im File Backups erstellen.
+		\item[M5:] Dem User das Handling des Excel Files abnehmen.
 	\end{description}
 
 \subsection{Soll-Anforderung}
@@ -86,7 +87,8 @@ Die Applikation soll:
 \begin{description}
 	\item[S1:] Leicht Bedienbar sein.
 	\item[S2:] Ein intuitives, einfaches User-Interface haben.
-	\item[S3:] Dem User das Handling des Excel Files abnehmen.
+	\item[S3:] Kompatibel mit Windows XP und höher sein.
+	\item[S4:] Kompatibel mit Excel 2003 und höher sein.
 \end{description}
 
 \subsection{Wunsch-Anforderung}
@@ -95,6 +97,8 @@ Die Applikation könnte:
 	\item[W1:] Eine Benutzungsanleitung haben.
 	\item[W2:] Mehrere Sprachen unterstützen.
 	\item[W3:] Dem User Hilfe anbieten.
+	\item[W4:] Einträge sortieren.
+	\item[W5:] Auf Grund von Kriterien farbig hervorheben.
 	\\
 \end{description}
 
@@ -191,9 +195,13 @@ Hier haben wir sehr viel Zeit aufgewendet, mit den Beteiligten sehr viele Szenar
 	\caption{Klassendiagramm}
 \end{figure}
 
-Hier erkläre ich das was eigentlich dargestellt wurde im Klassendiagramm.
+Eintritt in die Applikation geschieht durch die Main() Methode in der Klasse Program. Diese ruft den Konstruktor von MainWindow auf welche die weitere Logik übernimmt. Im Microsoft Visual Studio 2013 werden die GUI Gestaltung und Logik automatisch getrennt, deshalb wurde im Klassendiagramm nur der Logische teil dargestellt.
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+Die MainWindow Klasse ist das Gehirn der Applikation, es nimmt die Eingaben vom User und leitet sie den entsprechenden Methoden und Klassen weiter. 
+
+Die in Rot dargestellten Referenzen die den OleDB Treiber Beinhalten ermöglichen uns die Verbindung zu Excel Files uns lassen uns diese Auslesen und Beschreiben.
+
+
 \newpage
 
 \subsubsection{Aktivitäts-Diagramm}
