@@ -248,13 +248,27 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 
 \subsection{GUI}
 \subsubsection{Hauptfenster}
+Die Oberfläche (GUI) wurde so einfach und intuitiv (selbsterklärend) wie möglich gestaltet. Dies auch auf Wunsche des Kunden:
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.0 \textwidth]{MainGUI}
 	\caption{Hauptfenster}
 \end{figure}
-Das GUI wurde so einfach und intuitiv wie möglich gestaltet. Ein einfaches text-input Feld im linken teil lässt den Benutzer schnell den gesuchten Mitglied finden. Ein klick auf den Mitglied in der Tabellenansicht eröffnet ein neues Fenster wie im Bild 7.b) und zeigt alle nötigen Informationen die man auch leicht anpassen kann.
 
+\begin{description}
+	\begin{itemize} 
+	\item Das Excel File kann via File - Choose Excel File kann die vorhandene Datei eingebunden werden
+	\item Oben rechts wird der Pfad zur Datei "Database Path" angezeigt.
+	\item Ein einfaches Texteingabe (text-input) Feld "Name Input" links, ermöglicht "on text change" (Eingaben werden sofort übergeben) die Suche nach: Nachname, Vorname, Adresse, Ort.
+	\item Ein Klick auf ein Mitglied in der Tabellenansicht öffnet ein neues Fenster (Bild 9.b) und zeigt alle erfassten Details dessen.
+	\item Unter Help gibt es eine einfache Anleitung "Excel Sheet Format Example" und ein Info Dialog mit Kontaktinformationen "About".
+	\item Der Button "New Member" öffnet das Fenster (Bild 9.a) zum erstellen eines neuen Mitgliedes mit den nötigen Informationen.
+	\item Der Button "Refresh Table" lädt das Excel File erneut.
+	 
+\end{itemize}
+\end{description}
+
+\newpage
 
 \subsubsection{Aufrufbare Fenster}
  \begin{figure}[h]
@@ -274,12 +288,25 @@ Das GUI wurde so einfach und intuitiv wie möglich gestaltet. Ein einfaches text
  	\caption{Aufrufbare Fenster}
  	\label{fig:test}
  \end{figure}
+ \begin{description}
+ 	\begin{itemize} 
+ \item Im Fenster "PersonWindow" (Bild 9.b) kann durch die Schaltfläche "Update Information" das Mitglied bearbeitet werden oder mit der Schaltfläche "Delete This Member" gelöscht werden.
+ \item Ausserdem ist es Möglich den einbezahlten Mitgliederbeitrag (Payed) zu erhöhen (positver Betrag) oder ausstehende Beträge (negativer Betrag) ein zu pflegen (Payment Amount). Dies muss mit "New Payment" bestätigt werden.
+ \item Ein Klick auf "Save Changes" speichert oder "Close" schliesst dieses Fenster ohne Speicherung.
  
+\end{itemize}
+\end{description}
+\vspace{45mm}
+\textit{\textbf{Anmerkung}: Alle Änderungen werden sofort in das Excel File geschrieben. Es gibt keine zusätzlichen Abfragen! Änderungen werden jedoch beim Klick auf Close im jeweiligen Fenster verworfen.}
+
+	\newpage
 \subsection{Database Handling}
 Schwierigkeiten bei den Referenzen, Voraussetzungen zur Verbindung usw.
 
 \subsection{Backup Management}
-Ansätze für ein effizientes Backuping :).
+Wir unterstützen ein rudimentäres Backup des eingelesenen Excel Files. Die Datei wird bei der ersten Verwendung unter dem Pfad: \%username\%\textbackslash Desktop\textbackslash xlBackup gespeichert und umfasst jeweils eine Version beziehungsweise wird beim nächsten Aufruf überschrieben.
+
+\textit{Anmerkung: Diese kann durch den Windows Schattenkopie Dienst (VSS) in weiteren Versionen geschützt werden.}
 
 \subsection{Stunden Journal}
 
