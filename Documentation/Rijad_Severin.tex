@@ -3,6 +3,17 @@
 \usepackage{parskip}
 \usepackage{pdflscape}
 \usepackage{lscape}
+\usepackage[colorlinks,pdfpagelabels,pdfstartview = FitH,bookmarksnumbered = true,linkcolor = black,citecolor = black]{hyperref}		% Inhaltsverzeichnis anklickbar
+\usepackage{scrpage2} 									% Kopf- und Fusszeile
+\pagestyle{scrheadings}
+\renewcommand{\headfont}{\small}
+\ihead{\includegraphics[width=3cm]{NTB-FHO_LOGO}} % Kopfzeile links
+\setlength{\headsep}{15mm}
+\ohead{xl2DB}												 % Kopfzeile rechts
+\ifoot{} 													 % Fusszeile links
+\cfoot{\thepage}					 							     % Fusszeile mitte
+\ofoot{}													 % Fusszeile rechts
+\setheadsepline{0.4pt}										 % fügt horizontale linie ein 
 \usepackage{enumitem}
 \setlist[description]{leftmargin=\parindent,labelindent=\parindent}
 \usepackage[utf8]{inputenc}
@@ -34,13 +45,17 @@
 \title{Software Projekt - Excel als SQL Datenbank}
 \author{Authoren: Rijad \v{Z}u\v{z}o, Séverin Müller \\ \\ Dozent: Ulrich Hauser}
 
+
+
+\date{} 
 \clearpage\maketitle
 \thispagestyle{empty}
 
-\vspace{75mm}
+\vspace{80mm}
 \begin{center}
 		\includegraphics[width=0.8 \textwidth]{SoftwareLogo}
 \end{center}
+\centering Version: 0.9 vom 24.05.2015
 \end{titlepage}
 \newpage
 \tableofcontents
@@ -275,6 +290,36 @@ Wie beim Testen vorgegangen wurde!
 
 \section{Ziel}
 \subsection{Resultat}
+
+Die Software "xl2DB" erfüllt die Muss- \& Soll-Anforderungen und erleichtert dem Verein das Handling der Mitglieder Datenbank nach ersten Rückmeldungen enorm. Dies ist für uns ein Erfolg. \\
+Es sind noch Verbesserungen möglich, welche wir in Zukunft gerne noch einpflegen. Ausserdem sind die Wunsch-Anforderungen noch offen und bieten die Möglichkeit die Software noch attraktiver zu machen.
+
+Wir haben in überschaubarer Zeit, erfolgreich eine Software entwickelt, die auch wirklich im Alltag eingesetzt werden kann. Der "Kunde" ist zufrieden und hat ein 'Wunsch' Werkzeug für sein Problem erhalten, dass ihn bei einem Individual-Softwarelieferanten ein ganzes Stück Geld gekostet hätte.
+
 \subsection{Gelerntes}
+
+In diesem Softwareprojekt haben wir sowohl den Software-Entwicklungs-Prozess "Scrum" angewendet, sowie eine neue Sprache C\# kennengelernt.
+
+"Scrum" wurde uns im ersten Teil von IuK näher gebracht. Jedoch ist es etwas anderes sich an die Prozesse und Abläufe halten zu müssen, als in der Theorie / Vorlesungsraum dem Dozenten zu hören zu müssen. Wir denken den Prozess erfolgreich umgesetzt zu haben, auch wenn es ein paar Stolper-Steine gab, und dies können wir in unseren Rucksack packen.
+
+Die Sprache C\# in Zusammenhang mit der Visual Studio Entwicklungsplattform war eine spannende Erfahrung. Besonders der Umgang mit den referenzierten Treibern und deren Eigenheiten, war für uns neu und benötigte einiges an Recherche und Testing. Jedoch war es unserer Meinung nach die Richtige Entscheidung auf diese Platform zu setzten, da die Software auch ausschliesslich auf und für Microsoft Produkte entwickelt wurde.
+
+\section{Selbstständigkeitserklärung}
+Wir bestätigen hiermit, dass wir die vorstehende Arbeit selbstständig angefertigt,
+keine anderen als die angegebenen Hilfsmittel benutzt und sowohl wörtliche, als auch sinngemäss
+verwendete Texteile, Grafiken oder Bilder kenntlich gemacht haben.
+Diese Arbeit ist in gleicher oder ähnlicher Form noch keiner anderen Prüfungsbehörde vorgelegt
+worden. 
+\\
+\\
+
+\centering
+Rijad \v{Z}u\v{z}o \hspace{80mm}Séverin Müller
+
+
+\vspace{15mm}
+
+
+--------------------- \hspace{73mm}---------------------
 
 \end{document}
