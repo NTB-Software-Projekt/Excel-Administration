@@ -138,7 +138,7 @@ Wir entschieden uns für den iterativen Scrum-Prozess. Es erschien uns Ideal, da
 \end{description}
 
 \subsection{Ablauf}
-Die Stand-up Meetings erfolgten immer am Anfang der Lektionen am Dienstag bei einem Kaffee oder bei schönem Wetter kurz draußen. Unter der Woche haben wir uns oft via Google Hangouts abgeglichen oder Fragen direkt mit der Freigabe eines Bildschirmes besprochen. 
+Die Stand-up Meetings erfolgten immer am Anfang der Lektionen am Dienstag bei einem Kaffee oder bei schönem Wetter kurz draussen. Unter der Woche haben wir uns oft via Google Hangouts abgeglichen oder Fragen direkt mit der Freigabe eines Bildschirmes besprochen. 
 Dank des Online-Tools Trello.com konnten wir die Aufgabenpakete sogleich zuteilen und die Meetings waren dank unserer Vorbereitung sehr speditiv. 
 
 \subsection{Programmiersprache}
@@ -162,7 +162,9 @@ Mit Hilfe dieser Collaboration Platform war es uns möglich, gleichzeitig, in un
 		\end{center}
 	\end{figure}	
 	
-Vielleicht noch was zum Zeitplan sagen ? 
+Wir haben uns auf eine Sprintdauer von 10 Tagen geeinigt. So hatten wir jeweils am Dienstag die Möglichkeit parallel weiter zu arbeiten und konnten Probleme oder offene Fragen klären. Die Sprints schlossen wir am Montag jeweils ab. Dies diskutierten wir entweder in der Waldau, St. Gallen am NTB oder kurz via Google Hangouts Videochat.
+
+Das hat für uns sehr gut gepasst und die Atmosphäre sowie die Arbeiten waren angenehm. Die Sprintdauer war jeweils gerade richtig und der eingespielte Ablauf hat uns beiden sehr geholfen, wenn auch mal etwas dazwischen kam wie Prüfungen, Arbeit ... etc.
 	
 \subsection{Product Backlog}
 \begin{figure}[h]
@@ -210,11 +212,11 @@ Hier haben wir sehr viel Zeit aufgewendet, mit den Beteiligten sehr viele Szenar
 	\caption{Klassendiagramm}
 \end{figure}
 
-Eintritt in die Applikation geschieht durch die Main() Methode in der Klasse Program. Diese ruft den Konstruktor von MainWindow auf welche die weitere Logik übernimmt. Im Microsoft Visual Studio 2013 werden die GUI Gestaltung und Logik automatisch getrennt, deshalb wurde im Klassendiagramm nur der Logische teil dargestellt.
+Eintritt in die Applikation geschieht durch die Main() Methode in der Klasse Program. Diese ruft den Konstruktor von MainWindow auf welcher die weitere Logik übernimmt. Im Microsoft Visual Studio 2013 werden die GUI Gestaltung und Logik automatisch getrennt, deshalb wurde im Klassendiagramm nur der Logische-Teil dargestellt.
 
-Die MainWindow Klasse ist das Gehirn der Applikation, es nimmt die Eingaben vom User und leitet sie den entsprechenden Methoden und Klassen weiter. 
+Die MainWindow Klasse ist der Core der Applikation. Dieser nimmt die Eingaben vom User entgegen und leitet sie den entsprechenden Methoden und Klassen weiter. 
 
-Die in Rot dargestellten Referenzen die den OleDB Treiber Beinhalten ermöglichen uns die Verbindung zu Excel Files uns lassen uns diese Auslesen und Beschreiben.
+Die in Rot dargestellten Referenzen die den OleDB Treiber Beinhalten ermöglichen uns die Verbindung zu Excel Files. Das Excel File dient als Datenbank und kann mit diesen Treibern Asugelesen und Beschreiben werden.
 
 
 \newpage
@@ -255,18 +257,18 @@ Die Oberfläche (GUI) wurde so einfach und intuitiv (selbsterklärend) wie mögl
 	\caption{Hauptfenster}
 \end{figure}
 
-\begin{description}
-	\begin{itemize} 
-	\item Das Excel File kann via File - Choose Excel File kann die vorhandene Datei eingebunden werden
-	\item Oben rechts wird der Pfad zur Datei "Database Path" angezeigt.
-	\item Ein einfaches Texteingabe (text-input) Feld "Name Input" links, ermöglicht "on text change" (Eingaben werden sofort übergeben) die Suche nach: Nachname, Vorname, Adresse, Ort.
-	\item Ein Klick auf ein Mitglied in der Tabellenansicht öffnet ein neues Fenster (Bild 9.b) und zeigt alle erfassten Details dessen.
-	\item Unter Help gibt es eine einfache Anleitung "Excel Sheet Format Example" und ein Info Dialog mit Kontaktinformationen "About".
-	\item Der Button "New Member" öffnet das Fenster (Bild 9.a) zum erstellen eines neuen Mitgliedes mit den nötigen Informationen.
-	\item Der Button "Refresh Table" lädt das Excel File erneut.
-	 
-\end{itemize}
-\end{description}
+\begin{itemize}
+
+		\item Das Excel File kann via File - Choose Excel File kann die vorhandene Datei eingebunden werden
+		\item Oben rechts wird der Pfad zur Datei "Database Path" angezeigt.
+		\item Ein einfaches Texteingabe (text-input) Feld "Name Input" links, ermöglicht "on text change" (Eingaben werden sofort übergeben) die Suche nach: Nachname, Vorname, Adresse, Ort.
+		\item Ein Klick auf ein Mitglied in der Tabellenansicht öffnet ein neues Fenster (Bild 9.b) und zeigt alle erfassten Details dessen.
+		\item Unter Help gibt es eine einfache Anleitung "Excel Sheet Format Example" und ein Info Dialog mit Kontaktinformationen "About".
+		\item Der Button "New Member" öffnet das Fenster (Bild 9.a) zum erstellen eines neuen Mitgliedes mit den nötigen Informationen.
+		\item Der Button "Refresh Table" lädt das Excel File erneut.
+	 \end{itemize}
+
+
 
 \newpage
 
@@ -288,14 +290,15 @@ Die Oberfläche (GUI) wurde so einfach und intuitiv (selbsterklärend) wie mögl
  	\caption{Aufrufbare Fenster}
  	\label{fig:test}
  \end{figure}
- \begin{description}
- 	\begin{itemize} 
- \item Im Fenster "PersonWindow" (Bild 9.b) kann durch die Schaltfläche "Update Information" das Mitglied bearbeitet werden oder mit der Schaltfläche "Delete This Member" gelöscht werden.
+ 	\begin{itemize}
+ 	
+
+	 \item Im Fenster "PersonWindow" (Bild 9.b) kann durch die Schaltfläche "Update Information" das Mitglied bearbeitet werden 				oder mit der Schaltfläche "Delete This Member" gelöscht werden.
  \item Ausserdem ist es Möglich den einbezahlten Mitgliederbeitrag (Payed) zu erhöhen (positver Betrag) oder ausstehende Beträge (negativer Betrag) ein zu pflegen (Payment Amount). Dies muss mit "New Payment" bestätigt werden.
  \item Ein Klick auf "Save Changes" speichert oder "Close" schliesst dieses Fenster ohne Speicherung.
- 
-\end{itemize}
-\end{description}
+ 	\end{itemize} 
+
+
 \vspace{45mm}
 \textit{\textbf{Anmerkung}: Alle Änderungen werden sofort in das Excel File geschrieben. Es gibt keine zusätzlichen Abfragen! Änderungen werden jedoch beim Klick auf Close im jeweiligen Fenster verworfen.}
 

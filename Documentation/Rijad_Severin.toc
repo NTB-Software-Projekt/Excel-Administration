@@ -14,7 +14,7 @@
 \contentsline {subsection}{\numberline {4.1}Zeitplan}{4}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Product Backlog}{4}{subsection.4.2}
 \contentsline {subsection}{\numberline {4.3}Sprints}{4}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}Sprint Stand-up Meetings}{4}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.4}Sprint Stand-up Meetings}{5}{subsection.4.4}
 \contentsline {subsection}{\numberline {4.5}Sprint Review}{5}{subsection.4.5}
 \contentsline {section}{\numberline {5}Ablauf der Entwicklung}{6}{section.5}
 \contentsline {subsection}{\numberline {5.1}Modellierung}{6}{subsection.5.1}
