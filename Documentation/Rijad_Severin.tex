@@ -1,4 +1,7 @@
 \documentclass{article}
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
 \usepackage{geometry}
 \usepackage{parskip}
 \usepackage{pdflscape}
@@ -55,7 +58,9 @@
 \begin{center}
 		\includegraphics[width=0.8 \textwidth]{SoftwareLogo}
 \end{center}
-\centering Version: 0.9 vom 24.05.2015
+\centering \huge "xl2DB"
+
+\centering \normalsize Version: 0.9 vom 24.05.2015
 \end{titlepage}
 \newpage
 \tableofcontents
@@ -326,6 +331,40 @@ Es sind noch Verbesserungen möglich, welche wir in Zukunft gerne noch einpflege
 
 Wir haben in überschaubarer Zeit, erfolgreich eine Software entwickelt, die auch wirklich im Alltag eingesetzt werden kann. Der "Kunde" ist zufrieden und hat ein 'Wunsch' Werkzeug für sein Problem erhalten, dass ihn bei einem Individual-Softwarelieferanten ein ganzes Stück Geld gekostet hätte.
 
+\subsection{Resultat: Muss-Anforderungen}
+Die Applikation muss:
+	\begin{description}
+		\item[M1:] Das vorhandene Excel File als Datenbasis verwenden. \color{green} {\ding{51}}
+		\color{black}\item[M2:] Das Excel File lesen und beschreiben können. \color{green} {\ding{51}}
+		\color{black}\item[M3:] Nach dem Lesen bzw. Schreiben die Verbindung trennen. \color{green} {\ding{51}}
+		\color{black}\item[M4:] Bei Änderungen im File Backups erstellen. \color{green} {\ding{51}}
+		\color{black}\item[M5:] Dem User das Handling des Excel Files abnehmen. \color{green} {\ding{51}}
+	\end{description}
+\vspace{5mm}
+\textit{Es sind alle Muss-Anforderungen erfüllt.}
+
+\subsection{Resultat: Soll-Anforderung}
+Die Applikation soll:
+\begin{description}
+	\color{black}\item[S1:] Leicht Bedienbar sein. \color{green} {\ding{51}}
+	\color{black}\item[S2:] Ein intuitives, einfaches User-Interface haben. \color{green} {\ding{51}}
+	\color{black}\item[S3:] Kompatibel mit Windows XP und höher sein. \color{green} {\ding{51}}
+	\color{black}\item[S4:] Kompatibel mit Excel 2003 und höher sein. \color{green} {\ding{51}}
+\end{description}
+\vspace{5mm}
+\textit{Es sind alle Soll-Anforderungen erfüllt.}
+
+\subsection{Resultat: Wunsch-Anforderung}
+Die Applikation könnte:
+\begin{description}
+	\color{black}\item[W1:] Eine Benutzungsanleitung haben. \color{green} {\ding{51}}
+	\color{black}\item[W2:] Mehrere Sprachen unterstützen.  \color{red}\ding{55}
+	\color{black}\item[W3:] Dem User Hilfe anbieten. \color{red}\ding{55}
+	\color{black}\item[W4:] Einträge sortieren. \color{red}\ding{55}
+	\color{black}\item[W5:] Auf Grund von Kriterien farbig hervorheben. \color{red}\ding{55}
+\end{description}
+\vspace{5mm}
+\textit{Leider sind wir nicht dazu gekommen alle Wunsch-Anforderungen zu erfüllen. Hier gibt es Raum die Software weiter auszubauen und zu verbessern. Ein Projekt für die Zukunft!}
 \subsection{Gelerntes}
 
 In diesem Softwareprojekt haben wir sowohl den Software-Entwicklungs-Prozess "Scrum" angewendet, sowie eine neue Sprache C\# kennengelernt.
