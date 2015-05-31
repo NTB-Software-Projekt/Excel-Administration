@@ -14,6 +14,12 @@ namespace MemberAdministration
     /// </summary>
     class DatabaseHelper
     {
+
+        public DatabaseHelper()
+        {
+
+        }
+
         private String dbPath;
 
         /// <summary>

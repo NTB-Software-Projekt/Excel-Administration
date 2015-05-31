@@ -17,14 +17,14 @@
 \cfoot{\thepage}					 							     % Fusszeile mitte
 \ofoot{}													 % Fusszeile rechts
 \setheadsepline{0.4pt}										 % fügt horizontale linie ein 
-\usepackage{enumitem}
-\setlist[description]{leftmargin=\parindent,labelindent=\parindent}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern} % load a font with all the characters
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{enumitem}
+\setlist[description]{leftmargin=\parindent,labelindent=\parindent}
 \graphicspath{{Bilder/}}
 \geometry{
 	a4paper,
@@ -94,7 +94,7 @@ Um die Bedürfnisse der Verwalter dieser Excel Liste bestmöglich abdecken zu k�
 	
 \subsection{Muss-Anforderungen}
 Die Applikation muss:
-	\begin{description}
+	\begin{description}[labelindent=1cm]
 		\item[M1:] Das vorhandene Excel File als Datenbasis verwenden.
 		\item[M2:] Das Excel File lesen und beschreiben können.
 		\item[M3:] Nach dem Lesen bzw. Schreiben die Verbindung trennen.
@@ -104,7 +104,7 @@ Die Applikation muss:
 
 \subsection{Soll-Anforderung}
 Die Applikation soll:
-\begin{description}
+\begin{description}[labelindent=1cm]
 	\item[S1:] Leicht Bedienbar sein.
 	\item[S2:] Ein intuitives, einfaches User-Interface haben.
 	\item[S3:] Kompatibel mit Windows XP und höher sein.
@@ -113,7 +113,7 @@ Die Applikation soll:
 
 \subsection{Wunsch-Anforderung}
 Die Applikation könnte:
-\begin{description}
+\begin{description}[labelindent=1cm]
 	\item[W1:] Eine Benutzungsanleitung haben.
 	\item[W2:] Mehrere Sprachen unterstützen.
 	\item[W3:] Dem User Hilfe anbieten.
@@ -226,16 +226,19 @@ Die in Rot dargestellten Referenzen die den OleDB Treiber Beinhalten ermögliche
 
 \newpage
 
-\subsubsection{Aktivitäts-Diagramm}
+\subsubsection{Aktivitätsdiagramm}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.8 \textwidth]{Aktivtaetsdiagramm}
+	\includegraphics[width=0.9 \textwidth]{Aktivtaetsdiagramm}
 	\caption{Aktivitätsdiagramm}
 \end{figure}
 
-Hier erkläre ich das was eigentlich dargestellt wurde im Aktivitadosdiagramm.
+Beim aufrufen der Applikation wird überprüft ob es einen Datenbankpfad schon gibt oder nicht. Falls es einen gibt werden alle Mitglieder automatisch aus der entsprechenden Datenbank ausgelesen und in der Tabelle dargestellt. Im anderen Fall wird auf den User gewartet bis er im File Chooser die gewünschte Datei (Datenbankpfad) auswählt. 
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+Nach auslesen der Mitglieder kann der User weitere Aktionen ausführen wie, einen neuen Mitglied anlegen oder Mitglied auswählen und detaillierte Informationen ansehen oder ändern.
+
+Bei jeder Aktion kann der User seine Änderungen Abspeichern oder alles verwerfen. Nach diesen Aktionen werden die Mitglieder nochmals ausgelesen.
+
 
 \newpage
 
@@ -246,9 +249,18 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 	\caption{Sequenzdiagramm}
 \end{figure}
 
-Hier erkläre ich das was eigentlich dargestellt wurde im Sequenzeli.
+Wenn der User einen Datenbankpfad setzt werden automatisch alle Mitglieder ausgelesen und angezeigt.
+Im Sequenzdiagramm wurden mehrere Abläufe dargestellt: 
+\begin{description}
+	\item[Bestimmte Mitgliederinformationen Abrufen] \hfill \\ 
+		Falls der User nach einer Bestimmten Person sucht, gibt er den Namen, Nachnamen, Adresse oder Ort ein und es wird bei jeder Text Änderung eine SQL abfrage geschickt und entsprechende Datasets zurückgeliefert.
+	
+	\item[Neues Mitglied anlegen] \hfill \\  
+		Falls der User ein neues Mitglied registrieren will, öffnet er das entsprechende Formular, gibt die neuen Daten ein und drückt den Save Button. Alle Daten werden in ein Datamodel gepackt und in der Datenbank angelegt.
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+	\item[Mitgliedsinformationen Aktualisieren] \hfill \\ 
+		 Falls der User einen Mitglied in der Liste anklickt, kann er die Informationen aktualisieren oder das Mitglied löschen. Beim löschen wird einfach eine NULL update geschickt weil das direkte löschen nicht vom Treiber unterstützt wird.
+\end{description}
 
 \newpage
 
@@ -264,13 +276,13 @@ Die Oberfläche (GUI) wurde so einfach und intuitiv (selbsterklärend) wie mögl
 
 \begin{itemize}
 
-		\item Das Excel File kann via File - Choose Excel File kann die vorhandene Datei eingebunden werden
+		\item Das Excel File kann via FileChooser eingebunden werden
 		\item Oben rechts wird der Pfad zur Datei "Database Path" angezeigt.
 		\item Ein einfaches Texteingabe (text-input) Feld "Name Input" links, ermöglicht "on text change" (Eingaben werden sofort übergeben) die Suche nach: Nachname, Vorname, Adresse, Ort.
 		\item Ein Klick auf ein Mitglied in der Tabellenansicht öffnet ein neues Fenster (Bild 9.b) und zeigt alle erfassten Details dessen.
 		\item Unter Help gibt es eine einfache Anleitung "Excel Sheet Format Example" und ein Info Dialog mit Kontaktinformationen "About".
 		\item Der Button "New Member" öffnet das Fenster (Bild 9.a) zum erstellen eines neuen Mitgliedes mit den nötigen Informationen.
-		\item Der Button "Refresh Table" lädt das Excel File erneut.
+		\item Der Button "Refresh Table" lädt das Excel File erneut. (Nützlich bei unerwartetem applikationsbenehmen)
 	 \end{itemize}
 
 

@@ -62,9 +62,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(279, 18);
+            this.label1.Size = new System.Drawing.Size(293, 18);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Anleitung für das Format des Excel Files: ";
+            this.label1.Text = "This is how the Excel Files should look like:";
             // 
             // label2
             // 
@@ -72,9 +72,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(328, 160);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(328, 18);
+            this.label2.Size = new System.Drawing.Size(475, 18);
             this.label2.TabIndex = 3;
-            this.label2.Text = "WICHTIG !! Tabellen name muss Sheet1 heissen";
+            this.label2.Text = "ATTENTION !! The Tables must be names Sheet1 like in the picture Left";
             // 
             // closeButton
             // 

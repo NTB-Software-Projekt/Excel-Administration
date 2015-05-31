@@ -13,6 +13,14 @@ namespace MemberAdministration
     /// </summary>
     class BackupManager
     {
+        /// <summary>
+        /// Test
+        /// </summary>
+        public BackupManager()
+        {
+
+        }
+
         private DateTime currentSavedDate = MemberAdministration.Properties.Settings.Default.currentSavedDate;
         private String dbPath;
         private String targetDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop)+@"\xlBackup";
