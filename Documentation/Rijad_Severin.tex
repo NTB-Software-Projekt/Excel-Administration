@@ -11,7 +11,7 @@
 \pagestyle{scrheadings}
 \renewcommand{\headfont}{\small}
 \ihead{\includegraphics[width=3cm]{NTB-FHO_LOGO}} % Kopfzeile links
-\setlength{\headsep}{15mm}
+\setlength{\headsep}{18mm}
 \ohead{xl2DB}												 % Kopfzeile rechts
 \ifoot{} 													 % Fusszeile links
 \cfoot{\thepage}					 							     % Fusszeile mitte
@@ -31,13 +31,15 @@
 	total={210mm,297mm},
 	left=25mm,
 	right=25mm,
-	top=25mm,
+	top=28mm,
 	bottom=25mm
 }
 
 \renewcommand{\contentsname}{Inhaltsverzeichnis}
 \renewcommand{\listfigurename}{Abbildungsverzeichnis}
 \renewcommand{\figurename}{Bild}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% BEGIN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 \begin{titlepage}
@@ -69,6 +71,8 @@
 
 \pagenumbering{arabic}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%  ERSTE SEITE  %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Motivation}
 Das Projekt wurde von uns in der Freizeit für den Bosnischen Club St. Gallen erarbeitet. Diese führen seit langem eine Excel-Liste für die Mitgliederverwaltung. \newline 
 Für Sie war dies das einfachste Werkzeug, jedoch gab es immer wieder Probleme, wie zum Beispiel das ungewollte löschen ganzer Zeilen, oder das verrutschen in den Zeilen / Spalten. Wir wollten jedoch nicht eine komplett neue Datenbank erarbeiten, und entschieden uns, Ihnen ein Werkzeug für die Verwaltung der vorhandenen Excel Tabelle zur Verfügung zu stellen, welches eine einfache, intuitive GUI zur Verfügung stellt.
@@ -88,6 +92,8 @@ Mit unserer Applikation hat der User einen begrenzten Einfluss auf das File und 
 Für zusätzliche Datenintegrität wird jeweils ein Backup des Files erstellt und kann nötigen Falls zurück gespielt werden. Dies ist nicht die 'ultimative Lösung', aber wir konnten so die Sicherheit bei Veränderungen am Excel File erhöhen und trotzdem ein 'für jeden lesbares' Dateiformat weiter verwenden; dass zum Beispiel auch mit einem USB Stick übertragen und auf heimischen Computern (weiter-)bearbeitet werden kann.
 
 \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%  ZWEITE  SEITE  %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Anforderungsliste}
 Um die Bedürfnisse der Verwalter dieser Excel Liste bestmöglich abdecken zu können, haben wir uns mit Ihnen zusammen gesetzt und die nachfolgenden Anforderungen definiert. 
@@ -122,13 +128,14 @@ Die Applikation könnte:
 	\\
 \end{description}
 
-Die Soll-Anforderungen wurden soweit erfüllt oder vernachlässigt wie es sich mit der Entwicklungszeit ergeben hat. 
+\vspace{2cm}
 
-[W2] Einbau mehrerer Sprachen wäre ein sehr Zeitintensives verfahren und deshalb vernachlässigt.
-
-[W1]-[W3] Benutzeranleitung und Hilfe anbieten wurde integriert und in einem Hilfe Untermenü eingebaut. Dies stellt das benötigte Format des Excel Files und wie es beschriftet sein müsste.
+\textit{\textbf{Anmerkung}: Der Verein hatte noch einige Anforderungen an die Software die aber nichts mit der Applikation zu tun hatte sondern mehr vom OS abhängt, deshalb wurden diese hier vernachlässigt.}
+	
 
 \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%  DRITTE SEITE  %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Projektumgebung}
 \vspace{5mm}
@@ -156,6 +163,8 @@ Mit Hilfe dieser Collaboration Platform war es uns möglich, gleichzeitig, in un
 
 \newpage
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%  VIERTE SEITE  %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Projekt Planung}
 	\begin{figure}[h]
 		\subsection{Zeitplan}
@@ -180,7 +189,17 @@ Das hat für uns sehr gut gepasst und die Atmosphäre sowie die Arbeiten waren a
 		\end{center}
 	\end{figure}
 	
-Lage des Produkt Backlogs noch erklären oder ähnliches.
+Wie schon erwähnt haben wir für die Planung der Applikation die Website Trello.com benutzt wo wir das Produkt Backlog im Bild 2. definiert haben.
+
+Das grösste Problem im Anfang war die Aufteilung dieses Backlogs in sinnvolle und erreichbare Sprints. Dies haben wir dynamisch gelöst und erfasst.
+
+Wir haben einige Features zur Implementation ausgewählt und in einem Sprint mit einer entsprechenden Deadline eingepackt. Falls jeweilige Features nicht in der gegebenen Zeit implementiert werden konnten, wurden die in den nächsten Sprint weitergeleitet.
+
+So sind wir auf fünf Sprints gekommen die in Bild 3. und Bild 4. dargestellt sind.
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%  FÜNFTE SEITE  %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Sprints}
 \begin{figure}[h]
@@ -203,6 +222,8 @@ Review über all die Funktionalitäten und ob wir alles so erledigt haben wie es
 
 \newpage
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%  SECHSTE SEITE  %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Ablauf der Entwicklung}
 
 \subsection{Modellierung}
@@ -223,8 +244,9 @@ Die MainWindow Klasse ist der Core der Applikation. Dieser nimmt die Eingaben vo
 
 Die in Rot dargestellten Referenzen die den OleDB Treiber Beinhalten ermöglichen uns die Verbindung zu Excel Files. Das Excel File dient als Datenbank und kann mit diesen Treibern Asugelesen und Beschreiben werden.
 
-
 \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%  SIEBTE SEITE  %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Aktivitätsdiagramm}
 \begin{figure}[h]
@@ -239,8 +261,9 @@ Nach auslesen der Mitglieder kann der User weitere Aktionen ausführen wie, eine
 
 Bei jeder Aktion kann der User seine Änderungen Abspeichern oder alles verwerfen. Nach diesen Aktionen werden die Mitglieder nochmals ausgelesen.
 
-
 \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%  NEUNTE SEITE  %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Sequenzdiagramm}
 \begin{figure}[h]
@@ -264,6 +287,7 @@ Im Sequenzdiagramm wurden mehrere Abläufe dargestellt:
 
 \newpage
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%  ZEHNTE SEITE  %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{GUI}
 \subsubsection{Hauptfenster}
@@ -288,6 +312,8 @@ Die Oberfläche (GUI) wurde so einfach und intuitiv (selbsterklärend) wie mögl
 
 
 \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%  ELFTE SEITE  %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Aufrufbare Fenster}
  \begin{figure}[h]
@@ -316,12 +342,16 @@ Die Oberfläche (GUI) wurde so einfach und intuitiv (selbsterklärend) wie mögl
  	\end{itemize} 
 
 
-\vspace{45mm}
+\vspace{10mm}
 \textit{\textbf{Anmerkung}: Alle Änderungen werden sofort in das Excel File geschrieben. Es gibt keine zusätzlichen Abfragen! Änderungen werden jedoch beim Klick auf Close im jeweiligen Fenster verworfen.}
 
-	\newpage
 \subsection{Database Handling}
-Schwierigkeiten bei den Referenzen, Voraussetzungen zur Verbindung usw.
+Wir haben die Klasse DatabaseHelper implementiert welche alle Interaktion mit der Datenbank, in unserem Fall mit dem Excel File, übernimmt.
+
+Aus den Referenzen Microsoft.Office.Core und Microsoft.Office.Excel.Interop haben wir den sogenannten OleDB Treiber nutzen können. Dieser hat uns das Auslesen und Beschreiben des Excel Files ermöglicht, jedoch unterstützt es keine direkte lösch Operation. Dies haben wir umgangen in dem wir das Excel File mit NULL werten beschrieben haben und solche Zeilen im GUI (in der Tabelle) ignoriert haben.
+
+% Man kann das sicher besser formulieren
+Da Zugriffkolision ein grosses Problem bei Verteilten Dateien ist, haben wir sichergestellt das nach jeder Interaktion mit dem Excel File die Verbindung unterbrochen wird. Der Verbindungsmanager merkt ob mit dem Excel File kommuniziert wird und solange hält er die Verbindung aufrecht.
 
 \subsection{Backup Management}
 Wir unterstützen ein rudimentäres Backup des eingelesenen Excel Files. Die Datei wird bei der ersten Verwendung unter dem Pfad: \%username\%\textbackslash Desktop\textbackslash xlBackup gespeichert und umfasst jeweils eine Version beziehungsweise wird beim nächsten Aufruf überschrieben.
@@ -331,9 +361,20 @@ Wir unterstützen ein rudimentäres Backup des eingelesenen Excel Files. Die Dat
 \subsection{Stunden Journal}
 
 \section{Testen}
-Wie beim Testen vorgegangen wurde!
-
+% Ab hier kopieren.
+\textbf{GUI Tests\\}
+\rule[2mm]{1\linewidth}{0.3mm}
+\begin{tabular}{r|p{12cm}}
+	1. Filechooser Test & Im Menu Strip -> File -> Choose Excel File \\
+						& Ein File Chooser Menu wird aufgerufen. \hspace{5cm} \color{green} {\ding{51}} \\ \\
+						
+	2. Excel File Auswahl & Im File Chooser die gewünschte Datei auswählen und auf OK drücken. \\
+							&	FileChooser wird geschlossen und die Tabelle mit Daten gefüllt \hspace{1.5cm} \color{green} {\ding{51}} \\
+\end{tabular}
+% Bis hier.
 \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%  ZWÖLFTE SEITE  %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Ziel}
 \subsection{Resultat}
