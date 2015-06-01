@@ -2,6 +2,8 @@
 \usepackage{amssymb}% http://ctan.org/pkg/amssymb
 \usepackage{pifont}% http://ctan.org/pkg/pifont
 \newcommand{\cmark}{\ding{51}}%
+% Updated definition, see explanation below
+\newcommand*{\fullref}[1]{\hyperref[{#1}]{\autoref*{#1} \nameref*{#1}}} % One single link
 \usepackage{geometry}
 \usepackage{parskip}
 \usepackage{pdflscape}
@@ -80,14 +82,14 @@ Für Sie war dies das einfachste Werkzeug, jedoch gab es immer wieder Probleme, 
 \subsection{Ausgangssituation}
 Nebst den Problemen bei unaufmerksamer Bearbeitung, ist das Auslesen eines grösseren Excel Files deutlich langsamer als bei einer SQL Datenbank der gleichen bzw. einer vielfachen Grösse, deshalb ist es sinnvoll das Excel File in eine SQL Tabelle umzuwandeln und so zu Verarbeiten.
 
-Die Konversion würde zusätzliche Software Kenntnisse erfordern, so griffen wir auf Vorhandene Office Werkzeuge zurück.
+Die Konvertierung würde zusätzliche Software Kenntnisse erfordern, so griffen wir auf Vorhandene Office Werkzeuge bzw. vorhandene Excel Tabelle zurück.
 
 Mit unserer x2dB Applikation wurde das Problem gelöst. Die Umwandlung ist dank ODBC Connector unnötig und somit kann das Excel File bestehend bleiben.
 
 \subsection{Lösungsidee}
-Wir legten vor allem Wert auf ein simples User-Interface mit allen nötigen Funktionen. Die Software verarbeitet das Excel File im Hintergrund als SQL Tabelle und verbindet sich mit entsprechenden Treibern über ein File das via GUI (Dateibrowser) eingebunden werden kann. Das ermöglichen uns die Microsoft.Office.Core und Microsoft.Office.Excel.Interop Treiber.
+Wir legten vor allem Wert auf ein simples User-Interface mit allen nötigen Funktionen. Die Software verarbeitet das Excel File im Hintergrund als SQL Tabelle und verbindet sich mit entsprechenden Treibern über ein File das via GUI (Dateibrowser) eingebunden werden kann. Das ermöglichen uns die Microsoft.Office.Core\footnote{https://msdn.microsoft.com/en-us/library/microsoft.office.core.aspx}  und Microsoft.Office.Excel.Interop\footnote{https://msdn.microsoft.com/en-us/library/microsoft.office.interop.excel\%28v=office.15\%29.aspx} Treiber.
 
-Mit unserer Applikation hat der User einen begrenzten Einfluss auf das File und kann so weniger Schaden am File anrichten. Schaden können auch gleichzeitige Lese- / Speicherzugriffe auf ein Shared File auf einem Netzwerklaufwerk. In unserer Applikation dauert die Verbindung nur kurz, bis die Daten gelesen/geschrieben wurden und danach wird das File wieder freigegeben.
+Mit unserer Applikation hat der User einen begrenzten Einfluss auf das File und kann so weniger Schaden am File anrichten. Schaden können auch gleichzeitige Lese- / Speicherzugriffe auf ein Shared File auf einem Netzwerklaufwerk. In unserer Applikation dauert die Verbindung nur kurz, bis die Daten gelesen/geschrieben wurden und danach wird das File wieder freigegeben. Parallele Bearbeitung ist in dieser Version nicht implementiert.
 
 Für zusätzliche Datenintegrität wird jeweils ein Backup des Files erstellt und kann nötigen Falls zurück gespielt werden. Dies ist nicht die 'ultimative Lösung', aber wir konnten so die Sicherheit bei Veränderungen am Excel File erhöhen und trotzdem ein 'für jeden lesbares' Dateiformat weiter verwenden; dass zum Beispiel auch mit einem USB Stick übertragen und auf heimischen Computern (weiter-)bearbeitet werden kann.
 
@@ -96,41 +98,41 @@ Für zusätzliche Datenintegrität wird jeweils ein Backup des Files erstellt un
 %%%%%%%%%%%%%%%%%%%%%%%%%%%  ZWEITE  SEITE  %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Anforderungsliste}
-Um die Bedürfnisse der Verwalter dieser Excel Liste bestmöglich abdecken zu können, haben wir uns mit Ihnen zusammen gesetzt und die nachfolgenden Anforderungen definiert. 
+Um die Bedürfnisse der Verwalter dieser Excel Liste bestmöglich abdecken zu können, haben wir uns mit Ihnen zusammengesetzt und die nachfolgenden Anforderungen definiert.
 	
 \subsection{Muss-Anforderungen}
 Die Applikation muss:
 	\begin{description}[labelindent=1cm]
-		\item[M1:] Das vorhandene Excel File als Datenbasis verwenden.
-		\item[M2:] Das Excel File lesen und beschreiben können.
-		\item[M3:] Nach dem Lesen bzw. Schreiben die Verbindung trennen.
-		\item[M4:] Bei Änderungen im File Backups erstellen.
-		\item[M5:] Dem User das Handling des Excel Files abnehmen.
+		\item[M1:] das vorhandene Excel File als Datenbasis verwenden.
+		\item[M2:] das Excel File lesen und beschreiben können.
+		\item[M3:] nach dem Lesen bzw. Schreiben die Verbindung trennen.
+		\item[M4:] bei Änderungen im File Backups erstellen.
+		\item[M5:] dem User das Handling des Excel Files abnehmen.
 	\end{description}
 
 \subsection{Soll-Anforderung}
 Die Applikation soll:
 \begin{description}[labelindent=1cm]
-	\item[S1:] Leicht Bedienbar sein.
-	\item[S2:] Ein intuitives, einfaches User-Interface haben.
-	\item[S3:] Kompatibel mit Windows XP und höher sein.
-	\item[S4:] Kompatibel mit Excel 2003 und höher sein.
+	\item[S1:] leicht Bedienbar sein.
+	\item[S2:] ein intuitives, einfaches User-Interface haben.
+	\item[S3:] kompatibel mit Windows XP\footnote{http://windows.microsoft.com/de-de/windows/home} und höher sein.
+	\item[S4:] kompatibel mit Excel 2003\footnote{http://www.office.com} und höher sein.
 \end{description}
 
 \subsection{Wunsch-Anforderung}
 Die Applikation könnte:
 \begin{description}[labelindent=1cm]
-	\item[W1:] Eine Benutzungsanleitung haben.
-	\item[W2:] Mehrere Sprachen unterstützen.
-	\item[W3:] Dem User Hilfe anbieten.
-	\item[W4:] Einträge sortieren.
-	\item[W5:] Auf Grund von Kriterien farbig hervorheben.
+	\item[W1:] eine Benutzungsanleitung haben.
+	\item[W2:] mehrere Sprachen unterstützen.
+	\item[W3:] dem User Hilfe anbieten.
+	\item[W4:] einträge sortieren.
+	\item[W5:] auf Grund von Kriterien farbig hervorheben.
 	\\
 \end{description}
 
 \vspace{2cm}
 
-\textit{\textbf{Anmerkung}: Der Verein hatte noch einige Anforderungen an die Software die aber nichts mit der Applikation zu tun hatte sondern mehr vom OS abhängt, deshalb wurden diese hier vernachlässigt.}
+\textit{\textbf{Anmerkung}: Der Verein hatte noch einige Anforderungen an die Software, die rein vom Betriebssystem abhängig sind, deshalb wurden diese hier vernachlässigt.}
 	
 
 \newpage
@@ -140,24 +142,24 @@ Die Applikation könnte:
 \section{Projektumgebung}
 \vspace{5mm}
 \subsection{Entwicklungsprozess	}
-Wir entschieden uns für den iterativen Scrum-Prozess. Es erschien uns Ideal, da wir jede Woche Dienstag mindestens zwei Lektionen Zeit hatten. Somit entschieden wir uns, dass die Sprints 7 Tage dauerten und nicht wie gewöhnlich 30. Wir teilten die Rollen wie folgt auf:
+Wir entschieden uns für den iterativen Scrum-Prozess\footnote{http://en.wikipedia.org/wiki/Scrum\_software\_development}. Es erschien uns Ideal, da wir jede Woche Dienstag mindestens zwei Lektionen Zeit hatten. Die Sprint Dauer passten wir aufgrund des Stundenplanes an (siehe: \nameref{sec:projektplanung}). Die Rollen teilten wir wie folgt auf:
 
 \begin{description}
-	\item[Scrum Master:] Rijad Zuzo
+	\item[Scrum Master:] Rijad \v{Z}u\v{z}o
 	\item[Management:] Séverin Müller
-	\item[Product Owner \& Entwicklung] Rijad Zuzo, Séverin Müller
+	\item[Product Owner \& Entwicklung] Rijad \v{Z}u\v{z}o, Séverin Müller
 	\item[Customer] Verein
 \end{description}
 
 \subsection{Ablauf}
-Die Stand-up Meetings erfolgten immer am Anfang der Lektionen am Dienstag bei einem Kaffee oder bei schönem Wetter kurz draussen. Unter der Woche haben wir uns oft via Google Hangouts abgeglichen oder Fragen direkt mit der Freigabe eines Bildschirmes besprochen. 
-Dank des Online-Tools Trello.com konnten wir die Aufgabenpakete sogleich zuteilen und die Meetings waren dank unserer Vorbereitung sehr speditiv. 
+Die Stand-up Meetings erfolgten immer am Anfang der Lektionen am Dienstag bei einem Kaffee oder bei schönem Wetter kurz draussen. Wir benötigten jeweils kaum 10 Minuten, auch dank der guten Vorbereitung jeweils. Unter der Woche haben wir uns oft via Google Hangouts\footnote{https://google.com/hangouts} abgeglichen oder Fragen direkt mit der Freigabe eines Bildschirmes besprochen. 
+Dank des Online-Tools Trello\footnote{http://www.trello.com/}  konnten wir die Aufgabenpakete sogleich zuteilen und die Meetings waren dank unserer Vorbereitung sehr speditiv. 
 
 \subsection{Programmiersprache}
-Da der Verein zuvor bereits Microsoft Excel verwendete und als Betriebssystem Microsoft Windows verwendete, lag es nahe, dass wir uns für die Windows Spezifische Programmiersprache C\# entschieden. \\ Dies in Kombination mit der IDE Visual Studio ermöglichte uns eine Praxis nahe und angenehme Entwicklung sowohl der Funktionalitäten,wie und auch des GUI's. 
+Da der Verein zuvor bereits Microsoft Excel verwendete und als Betriebssystem Microsoft Windows verwendete, lag es nahe, dass wir uns für die Windows Spezifische Programmiersprache C\# entschieden. \\ Dies in Kombination mit der IDE Visual Studio\footnote{https://www.visualstudio.com/} ermöglichte uns eine Praxis nahe und angenehme Entwicklung sowohl der Funktionalitäten,wie und auch des GUI's. 
 
 \subsection{Verwaltungssystem}
-Die Auswahl des Verwaltungssystem war sehr einfach, da wir uns im Vorhinein geeinigt haben die Software als OpenSource entwickeln zu wollen. Somit haben wir uns für das OpenSource Git Projekt Verwaltungssystem entschieden und unser Code auf der Website www.GitHub.com gehostet.
+Die Auswahl des Verwaltungssystem war sehr einfach, da wir uns im Vorhinein geeinigt haben die Software als OpenSource\footnote{http://de.wikipedia.org/wiki/Open\_Source} entwickeln zu wollen. Somit haben wir uns für das OpenSource Git Projekt Verwaltungssystem\footnote{http://git-scm.com/} entschieden und unser Code auf der Website www.GitHub.com gehostet.
 
 Mit Hilfe dieser Collaboration Platform war es uns möglich, gleichzeitig, in unabhängigen Codeteilen, zu arbeiten und den jeweiligen Stand zu synchronisieren
 
@@ -166,6 +168,7 @@ Mit Hilfe dieser Collaboration Platform war es uns möglich, gleichzeitig, in un
 %%%%%%%%%%%%%%%%%%%%%%%%%%%  VIERTE SEITE  %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Projekt Planung}
+\label{sec:projektplanung}
 	\begin{figure}[h]
 		\subsection{Zeitplan}
 		\bigskip
@@ -185,15 +188,15 @@ Das hat für uns sehr gut gepasst und die Atmosphäre sowie die Arbeiten waren a
 		\begin{center}
 			\centering
 			\includegraphics[width=0.8\paperwidth]{ProductBacklog1}
-			\caption{Der Produkt Backlog}
+			\caption{Das Produkt Backlog}
 		\end{center}
 	\end{figure}
 	
-Wie schon erwähnt haben wir für die Planung der Applikation die Website Trello.com benutzt wo wir das Produkt Backlog im Bild 2. definiert haben.
+Wie schon erwähnt haben wir für die Planung der Applikation die Website Trello.com benutzt. Das Produkt Backlog ist im Bild 2 abgebildet.
 
-Das grösste Problem im Anfang war die Aufteilung dieses Backlogs in sinnvolle und erreichbare Sprints. Dies haben wir dynamisch gelöst und erfasst.
+Das grösste Problem Anfangs war die Aufteilung dieses Backlogs in sinnvolle und erreichbare Sprints. Dies haben wir dynamisch gelöst.
 
-Wir haben einige Features zur Implementation ausgewählt und in einem Sprint mit einer entsprechenden Deadline eingepackt. Falls jeweilige Features nicht in der gegebenen Zeit implementiert werden konnten, wurden die in den nächsten Sprint weitergeleitet.
+Wir haben einige Features zur Implementation ausgewählt und in einen Sprint mit entsprechender Deadline gepackt. Konnte ein Feature nicht in der gegebenen Zeit implementiert werden, wurde der Task in den nächsten Sprint mitgenommen oder zurück gestellt.
 
 So sind wir auf fünf Sprints gekommen die in Bild 3. und Bild 4. dargestellt sind.
 
@@ -242,7 +245,7 @@ Eintritt in die Applikation geschieht durch die Main() Methode in der Klasse Pro
 
 Die MainWindow Klasse ist der Core der Applikation. Dieser nimmt die Eingaben vom User entgegen und leitet sie den entsprechenden Methoden und Klassen weiter. 
 
-Die in Rot dargestellten Referenzen die den OleDB Treiber Beinhalten ermöglichen uns die Verbindung zu Excel Files. Das Excel File dient als Datenbank und kann mit diesen Treibern Asugelesen und Beschreiben werden.
+Die in Rot dargestellten Referenzen die den OleDB Treiber Beinhalten ermöglichen uns die Verbindung zu Excel Files. Das Excel File dient als Datenbank und kann mit diesen Treibern Ausgelesen und Beschreiben werden.
 
 \newpage
 
@@ -255,11 +258,11 @@ Die in Rot dargestellten Referenzen die den OleDB Treiber Beinhalten ermögliche
 	\caption{Aktivitätsdiagramm}
 \end{figure}
 
-Beim aufrufen der Applikation wird überprüft ob es einen Datenbankpfad schon gibt oder nicht. Falls es einen gibt werden alle Mitglieder automatisch aus der entsprechenden Datenbank ausgelesen und in der Tabelle dargestellt. Im anderen Fall wird auf den User gewartet bis er im File Chooser die gewünschte Datei (Datenbankpfad) auswählt. 
+Beim Start der Applikation wird überprüft ob bereits eine Datenbank hinterlegt ist oder nicht. Falls dieser vorhanden ist und verfügbar, werden alle Mitglieder automatisch aus der entsprechenden Datenbank ausgelesen und in der Tabelle dargestellt. Anderenfalls wird auf den User gewartet, bis dieser im File Chooser die gewünschte Datei (Datenbankpfad) manuell auswählt. 
 
-Nach auslesen der Mitglieder kann der User weitere Aktionen ausführen wie, einen neuen Mitglied anlegen oder Mitglied auswählen und detaillierte Informationen ansehen oder ändern.
+Nach dem Auslesen der Mitglieder kann der User weitere Aktionen ausführen, wie z.B. ein neues Mitglied anlegen oder Mitglieder auswählen und detaillierte Informationen zur Person ansehen oder ändern.
 
-Bei jeder Aktion kann der User seine Änderungen Abspeichern oder alles verwerfen. Nach diesen Aktionen werden die Mitglieder nochmals ausgelesen.
+Bei jeder Aktion kann der User seine Änderungen speichern oder alles verwerfen. Die Datenbank wird jeweils aktualisiert.
 
 \newpage
 
@@ -272,17 +275,17 @@ Bei jeder Aktion kann der User seine Änderungen Abspeichern oder alles verwerfe
 	\caption{Sequenzdiagramm}
 \end{figure}
 
-Wenn der User einen Datenbankpfad setzt werden automatisch alle Mitglieder ausgelesen und angezeigt.
+Setzt der User einen Datenbankpfad werden automatisch alle Mitglieder ausgelesen und angezeigt.
 Im Sequenzdiagramm wurden mehrere Abläufe dargestellt: 
 \begin{description}
-	\item[Bestimmte Mitgliederinformationen Abrufen] \hfill \\ 
-		Falls der User nach einer Bestimmten Person sucht, gibt er den Namen, Nachnamen, Adresse oder Ort ein und es wird bei jeder Text Änderung eine SQL abfrage geschickt und entsprechende Datasets zurückgeliefert.
+	\item[Bestimmte Mitgliederinformationen Auslesen] \hfill \\ 
+		Um nach einer Bestimmten Person zu suchen, gibt der User Name, Nachname, Adresse oder Ort ein. Jeder Tastenschlag setzt eine SQL Abfrage ab und entsprechende Datasets werden zurückgeliefert.
 	
 	\item[Neues Mitglied anlegen] \hfill \\  
-		Falls der User ein neues Mitglied registrieren will, öffnet er das entsprechende Formular, gibt die neuen Daten ein und drückt den Save Button. Alle Daten werden in ein Datamodel gepackt und in der Datenbank angelegt.
+		Falls der User ein neues Mitglied anlegen will, öffnet er das entsprechende Formular, gibt die neuen Daten ein und drückt den Save Button. Alle Daten werden in ein Datamodel gepackt und in der Datenbank angelegt.
 
-	\item[Mitgliedsinformationen Aktualisieren] \hfill \\ 
-		 Falls der User einen Mitglied in der Liste anklickt, kann er die Informationen aktualisieren oder das Mitglied löschen. Beim löschen wird einfach eine NULL update geschickt weil das direkte löschen nicht vom Treiber unterstützt wird.
+	\item[Mitgliederinformationen Aktualisieren] \hfill \\ 
+		 Falls der User ein Mitglied in der Liste anklickt, wird das Mitglied angezeigt. Hier kann er die Informationen aktualisieren oder das Mitglied löschen. Beim Löschen wird einfach ein "NULL update" gesendet, da das direkte Löschen im File nicht vom Treiber unterstützt wird.
 \end{description}
 
 \newpage
@@ -346,12 +349,13 @@ Die Oberfläche (GUI) wurde so einfach und intuitiv (selbsterklärend) wie mögl
 \textit{\textbf{Anmerkung}: Alle Änderungen werden sofort in das Excel File geschrieben. Es gibt keine zusätzlichen Abfragen! Änderungen werden jedoch beim Klick auf Close im jeweiligen Fenster verworfen.}
 
 \subsection{Database Handling}
-Wir haben die Klasse DatabaseHelper implementiert welche alle Interaktion mit der Datenbank, in unserem Fall mit dem Excel File, übernimmt.
+Wir haben die Klasse DatabaseHelper implementiert, in welcher alle Interaktion mit der Datenbank, in unserem Fall mit dem Excel File, stattfinden.
 
-Aus den Referenzen Microsoft.Office.Core und Microsoft.Office.Excel.Interop haben wir den sogenannten OleDB Treiber nutzen können. Dieser hat uns das Auslesen und Beschreiben des Excel Files ermöglicht, jedoch unterstützt es keine direkte lösch Operation. Dies haben wir umgangen in dem wir das Excel File mit NULL werten beschrieben haben und solche Zeilen im GUI (in der Tabelle) ignoriert haben.
+Aus den Referenzen Microsoft.Office.Core und Microsoft.Office.Excel.Interop haben wir den sogenannten OleDB Treiber nutzen können. Dieser hat uns das Auslesen und Beschreiben des Excel Files ermöglicht, jedoch unterstützt es keine direkte Löschen Operation. Dies haben wir umgangen, in dem wir das Excel File mit NULL Werten Beschreiben und solche Zeilen im GUI (in der Tabelle) ignorieren.
 
 % Man kann das sicher besser formulieren
-Da Zugriffkolision ein grosses Problem bei Verteilten Dateien ist, haben wir sichergestellt das nach jeder Interaktion mit dem Excel File die Verbindung unterbrochen wird. Der Verbindungsmanager merkt ob mit dem Excel File kommuniziert wird und solange hält er die Verbindung aufrecht.
+Um Zugriffskollisionen zu vermeiden, wird nach jeder Interaktion mit dem Excel File die Verbindung unterbrochen. Der Verbindungsmanager hält die Verbindung aufrecht, solange mit dem File gearbeitet wird (lesen/schreiben).
+Das parallele bzw. gleichzeitige Bearbeiten des Excel Files ist in dieser Version noch nicht vollständig implementiert.
 
 \subsection{Backup Management}
 Wir unterstützen ein rudimentäres Backup des eingelesenen Excel Files. Die Datei wird bei der ersten Verwendung unter dem Pfad: \%username\%\textbackslash Desktop\textbackslash xlBackup gespeichert und umfasst jeweils eine Version beziehungsweise wird beim nächsten Aufruf überschrieben.
@@ -372,6 +376,28 @@ Wir unterstützen ein rudimentäres Backup des eingelesenen Excel Files. Die Dat
 							&	FileChooser wird geschlossen und die Tabelle mit Daten gefüllt \hspace{1.5cm} \color{green} {\ding{51}} \\
 \end{tabular}
 % Bis hier.
+% Ab hier kopieren.
+\textbf{GUI Tests Tests\\}
+\rule[2mm]{1\linewidth}{0.3mm}
+\begin{tabular}{r|p{12cm}}
+	1. Filechooser Test & Im Menu Strip -> File -> Choose Excel File \\
+						& Ein File Chooser Menu wird aufgerufen. \hspace{5cm} \color{green} {\ding{51}} \\ \\
+						
+	2. Excel File Auswahl & Im File Chooser die gewünschte Datei auswählen und auf OK drücken. \\
+							&	FileChooser wird geschlossen und die Tabelle mit Daten gefüllt \hspace{1.5cm} \color{green} {\ding{51}} \\
+\end{tabular}
+% Bis hier.
+% Ab hier kopieren.
+\textbf{Failed Test\\}
+\rule[2mm]{1\linewidth}{0.3mm}
+\begin{tabular}{r|p{12cm}}
+	1. Filechooser Test & Im Menu Strip -> File -> Choose Excel File \\
+						& Ein File Chooser Menu wird aufgerufen. \hspace{5cm} \color{red}\ding{55} \\ \\
+						
+	2. Excel File Auswahl & Im File Chooser die gewünschte Datei auswählen und auf OK drücken. \\
+							&	FileChooser wird geschlossen und die Tabelle mit Daten gefüllt \hspace{1.5cm} \color{red}\ding{55} \\
+\end{tabular}
+% Bis hier.
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%  ZWÖLFTE SEITE  %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -387,11 +413,11 @@ Wir haben in überschaubarer Zeit, erfolgreich eine Software entwickelt, die auc
 \subsection{Resultat: Muss-Anforderungen}
 Die Applikation muss:
 	\begin{description}
-		\item[M1:] Das vorhandene Excel File als Datenbasis verwenden. \color{green} {\ding{51}}
-		\color{black}\item[M2:] Das Excel File lesen und beschreiben können. \color{green} {\ding{51}}
-		\color{black}\item[M3:] Nach dem Lesen bzw. Schreiben die Verbindung trennen. \color{green} {\ding{51}}
-		\color{black}\item[M4:] Bei Änderungen im File Backups erstellen. \color{green} {\ding{51}}
-		\color{black}\item[M5:] Dem User das Handling des Excel Files abnehmen. \color{green} {\ding{51}}
+		\item[M1:] das vorhandene Excel File als Datenbasis verwenden. \color{green} {\ding{51}}
+		\color{black}\item[M2:] das Excel File lesen und beschreiben können. \color{green} {\ding{51}}
+		\color{black}\item[M3:] nach dem Lesen bzw. Schreiben die Verbindung trennen. \color{green} {\ding{51}}
+		\color{black}\item[M4:] bei Änderungen im File Backups erstellen. \color{green} {\ding{51}}
+		\color{black}\item[M5:] dem User das Handling des Excel Files abnehmen. \color{green} {\ding{51}}
 	\end{description}
 \vspace{5mm}
 \textit{Es sind alle Muss-Anforderungen erfüllt.}
@@ -399,10 +425,10 @@ Die Applikation muss:
 \subsection{Resultat: Soll-Anforderung}
 Die Applikation soll:
 \begin{description}
-	\color{black}\item[S1:] Leicht Bedienbar sein. \color{green} {\ding{51}}
-	\color{black}\item[S2:] Ein intuitives, einfaches User-Interface haben. \color{green} {\ding{51}}
-	\color{black}\item[S3:] Kompatibel mit Windows XP und höher sein. \color{green} {\ding{51}}
-	\color{black}\item[S4:] Kompatibel mit Excel 2003 und höher sein. \color{green} {\ding{51}}
+	\color{black}\item[S1:] leicht Bedienbar sein. \color{green} {\ding{51}}
+	\color{black}\item[S2:] ein intuitives, einfaches User-Interface haben. \color{green} {\ding{51}}
+	\color{black}\item[S3:] kompatibel mit Windows XP und höher sein. \color{green} {\ding{51}}
+	\color{black}\item[S4:] kompatibel mit Excel 2003 und höher sein. \color{green} {\ding{51}}
 \end{description}
 \vspace{5mm}
 \textit{Es sind alle Soll-Anforderungen erfüllt.}
@@ -410,11 +436,11 @@ Die Applikation soll:
 \subsection{Resultat: Wunsch-Anforderung}
 Die Applikation könnte:
 \begin{description}
-	\color{black}\item[W1:] Eine Benutzungsanleitung haben. \color{green} {\ding{51}}
-	\color{black}\item[W2:] Mehrere Sprachen unterstützen.  \color{red}\ding{55}
-	\color{black}\item[W3:] Dem User Hilfe anbieten. \color{red}\ding{55}
-	\color{black}\item[W4:] Einträge sortieren. \color{red}\ding{55}
-	\color{black}\item[W5:] Auf Grund von Kriterien farbig hervorheben. \color{red}\ding{55}
+	\color{black}\item[W1:] eine Benutzungsanleitung haben. \color{green} {\ding{51}} \color{black}[rudimentär]
+	\color{black}\item[W2:] mehrere Sprachen unterstützen.  \color{red}\ding{55}
+	\color{black}\item[W3:] dem User Hilfe anbieten. \color{red}\ding{55}
+	\color{black}\item[W4:] einträge sortieren. \color{red}\ding{55}
+	\color{black}\item[W5:] auf Grund von Kriterien farbig hervorheben. \color{red}\ding{55}
 \end{description}
 \vspace{5mm}
 \textit{Leider sind wir nicht dazu gekommen alle Wunsch-Anforderungen zu erfüllen. Hier gibt es Raum die Software weiter auszubauen und zu verbessern. Ein Projekt für die Zukunft!}
@@ -441,6 +467,7 @@ Rijad \v{Z}u\v{z}o \hspace{80mm}Séverin Müller
 
 \vspace{15mm}
 
+[Platzhalter digital] \hspace{70mm} [Platzhalter digital]
 
 --------------------- \hspace{73mm}---------------------
 
