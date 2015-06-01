@@ -65,7 +65,7 @@
 \end{center}
 \centering \huge "xl2DB"
 
-\centering \normalsize Version: 0.9 vom 24.05.2015
+\centering \normalsize Version: 0.9 vom 31.05.2015
 \end{titlepage}
 \newpage
 \tableofcontents
@@ -220,10 +220,17 @@ So sind wir auf fünf Sprints gekommen die in Bild 3. und Bild 4. dargestellt si
 \end{figure}
 
 \subsection{Sprint Stand-up Meetings}
-Protokoll-artig auflisten was wir so besprochen haben usw.
+Im Scrum Prozess werden die Meetings bewusst "Stand-up Meetings" genannt. Dies um unnötige Diskussionen  beim bequemen Sitzen auf den Leder Stühlen eines in Glas gefassten Sitzungszimmers zu vermeiden.\\
+Die Meetings sollen \textbf{kurz, prägnant und Informativ} sein.
+Dies haben wir auch immer versucht einzuhalten; kurz den Stand des jeweiligen Sprints und die darin befindlichen Tasks stehend besprochen und Probleme oder Ideen erst nachher am Laptop besprochen.
+Das hat im Grossen und Ganzen sehr gut funktioniert. Dies aber auch, weil wir immer wieder über das Projekt gesprochen, gechattet oder telefoniert hatten unter der Woche.
 
 \subsection{Sprint Review}
-Review über all die Funktionalitäten und ob wir alles so erledigt haben wie es uns passt.
+Die Sprint Review fanden bei uns zumeist kurz nach den Stand-up Meetings statt, weil wir beides jeweils am Dienstag unter vier Augen besprochen haben.
+Hier hatten wir dank Trello auch eine sehr gute Übersicht und wussten anhand der Tasks immer was zu erledigen waren.\\
+Wir denken aber, es wäre sinnvoll gewesen - vor allem bei einem grösseren Projekt - diese Reviews seperat und in einem geschlossenen Team an einem abgemachten Termin zu besprechen. Um auch eventuelle Ideen noch besser einbringen zu können und noch mehr Brainstorming zu betreiben.
+
+In unserem zweier Team aber hat das so gut funktioniert und es blieb so oder so nicht viel Zeit für noch mehr Ideen. Was aber nicht heissen soll, dass wir an dem Tool nicht noch das Eine oder Andere hinzufügen möchten.
 
 \newpage
 
@@ -375,7 +382,12 @@ Wir unterstützen ein rudimentäres Backup des eingelesenen Excel Files. Die Dat
 	\caption{Stunden Journal der Software Entwicklung}
 \end{figure}
 
-Vielleicht noch was über das Stunden Journal ? 
+Wir benötigten für das Projekt 47.50 Stunden. Im Anbetracht der Tatsache, dass wir in einer neuen Sprache und einem unbekannten IDE gearbeitet haben, sind wir zufrieden. Es war etwas mehr Aufwand als wir zuerst annahmen, jedoch hat uns das persönlich weitergebracht.
+
+Für die Dokumentation in Latex\footnote{http://www.latex-project.org/} haben wir auch nochmals sehr viel Zeit aufgewendet. Freuten uns aber über die Fortschritte und sind am Schluss stolz, eine saubere, professionelle und ansprechende Dokumentation zu liefern.
+
+Das Projekt ging ohne grössere Zwischenfälle - mit Ausnahme des Löschens - über die Bühne und die Software ist mehr als zufriedenstellend. Dies war unser erstes gemeinsames Projekt und wir sind uns einig, ein gutes Team zu sein!
+\newpage
 
 \section{Testen}
 % Ab hier kopieren.
@@ -452,17 +464,26 @@ Vielleicht noch was über das Stunden Journal ?
 		Durchführung:			& Im "PersonWindow" auf "Save Changes" klicken.\\
 		Erwartetes Ergebnis: 	& Neue Daten sind in der Datenbank vorhanden. \\
 								& Resultat:  \textbf{Pass}\hspace{7.8cm} \color{green} {\ding{51}} \\
+								\\
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\textbf{2.5 Aktualisieren von Daten:} & Mitgliederbeitrag erhöhen und verringern\\
+		Durchführung:			& Betrag in "Payment Amount" eingeben und "New Payment" klicken.\\
+		Erwartetes Ergebnis: 	& Betrag aktualisiert sich pos. bzw. neg. gemäss Eingabe im Feld \\
+								& Resultat:  \textbf{Pass*}\hspace{7.6cm} \color{green} {\ding{51}} \\
 								\\	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\textbf{2.5 Löschen von Daten:} & Ganze Zeilen (Mitglieder) in der Datenbank löschen.\\
+	\textbf{2.6 Löschen von Daten:} & Ganze Zeilen (Mitglieder) in der Datenbank löschen.\\
 		Durchführung:			& Im "PersonWindow" auf "Delete This Member" klicken.\\
 		Erwartetes Ergebnis: 	& Gelöschtes Mitglied nicht mehr vorhanden in der Datenbank. \\
-								& Resultat:  \textbf{Pass*}\hspace{7.6cm} \color{carrotorange} {\ding{51}} \\
+								& Resultat:  \textbf{Pass}*\hspace{7.6cm} \color{carrotorange} {\ding{51}} \\
 								\\								
+	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%							
 \end{tabular}
 
-* Da unser OleDB Connector mit dem ISAM Treiber das direkte löschen von Zeilen (SQL-DELETE) in einer gelinkten Liste nicht unterstützt, mussten wir dies wie früher erklärt umgehen. Jedoch funktioniert unsere Lösung nicht ganz wie erwartet. Der Bug wird offensichtlich \textbf{nur} wenn wir den letzten Eintrag in der Tabelle "löschen". Nach der "DELETE Erfolgsmeldung" funktionieren keine neuen Interaktionen mit der Datenbank. In diesem Fall liefert die Applikation auch im Debug Modus keine Fehlermeldungen, weshalb wir vermuten das dies ein Excel-Ordnungsproblem ist. \\
+* \textit{Da unser OleDB Connector mit dem ISAM Treiber das direkte löschen von Zeilen (SQL-DELETE) in einer gelinkten Liste nicht unterstützt, mussten wir dies wie vorhergehend erklärt umgehen. 
+\\
+Jedoch funktioniert unsere Lösung nicht ganz wie erwartet. Der Bug wird erst offensichtlich wenn wir den letzten Eintrag in der Tabelle "löschen". Nach der "DELETE Erfolgsmeldung" kann nicht mehr mit der Datenbank interagiert werden. In diesem Fall liefert die Applikation auch im Debug Modus keine Fehlermeldungen, weshalb wir vermuten das dies ein Excel-Ordnungsproblem ist.} \\
 
 
 % Bis hier.
