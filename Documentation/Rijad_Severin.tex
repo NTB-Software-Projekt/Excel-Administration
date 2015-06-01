@@ -84,7 +84,7 @@ Nebst den Problemen bei unaufmerksamer Bearbeitung, ist das Auslesen eines grös
 
 Die Konvertierung würde zusätzliche Software Kenntnisse erfordern, so griffen wir auf Vorhandene Office Werkzeuge bzw. vorhandene Excel Tabelle zurück.
 
-Mit unserer x2dB Applikation wurde das Problem gelöst. Die Umwandlung ist dank ODBC Connector unnötig und somit kann das Excel File bestehend bleiben.
+Mit unserer xl2dB Applikation wurde das Problem gelöst. Die Umwandlung ist dank OleDB Connector unnötig und somit kann das Excel File bestehend bleiben.
 
 \subsection{Lösungsidee}
 Wir legten vor allem Wert auf ein simples User-Interface mit allen nötigen Funktionen. Die Software verarbeitet das Excel File im Hintergrund als SQL Tabelle und verbindet sich mit entsprechenden Treibern über ein File das via GUI (Dateibrowser) eingebunden werden kann. Das ermöglichen uns die Microsoft.Office.Core\footnote{https://msdn.microsoft.com/en-us/library/microsoft.office.core.aspx}  und Microsoft.Office.Excel.Interop\footnote{https://msdn.microsoft.com/en-us/library/microsoft.office.interop.excel\%28v=office.15\%29.aspx} Treiber.
@@ -161,7 +161,7 @@ Da der Verein zuvor bereits Microsoft Excel verwendete und als Betriebssystem Mi
 \subsection{Verwaltungssystem}
 Die Auswahl des Verwaltungssystem war sehr einfach, da wir uns im Vorhinein geeinigt haben die Software als OpenSource\footnote{http://de.wikipedia.org/wiki/Open\_Source} entwickeln zu wollen. Somit haben wir uns für das OpenSource Git Projekt Verwaltungssystem\footnote{http://git-scm.com/} entschieden und unser Code auf der Website www.GitHub.com gehostet.
 
-Mit Hilfe dieser Collaboration Platform war es uns möglich, gleichzeitig, in unabhängigen Codeteilen, zu arbeiten und den jeweiligen Stand zu synchronisieren
+Mit Hilfe dieser Collaboration Plattform war es uns möglich, gleichzeitig, in unabhängigen Codeteilen, zu arbeiten und den jeweiligen Stand zu synchronisieren
 
 \newpage
 
@@ -266,7 +266,7 @@ Bei jeder Aktion kann der User seine Änderungen speichern oder alles verwerfen.
 
 \newpage
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%  NEUNTE SEITE  %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%  ACHTE SEITE  %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Sequenzdiagramm}
 \begin{figure}[h]
@@ -290,7 +290,7 @@ Im Sequenzdiagramm wurden mehrere Abläufe dargestellt:
 
 \newpage
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%  ZEHNTE SEITE  %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%  NEUNTE SEITE  %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{GUI}
 \subsubsection{Hauptfenster}
@@ -316,7 +316,7 @@ Die Oberfläche (GUI) wurde so einfach und intuitiv (selbsterklärend) wie mögl
 
 \newpage
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%  ELFTE SEITE  %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%  ZEHNTE SEITE  %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Aufrufbare Fenster}
  \begin{figure}[h]
@@ -338,14 +338,18 @@ Die Oberfläche (GUI) wurde so einfach und intuitiv (selbsterklärend) wie mögl
  \end{figure}
  	\begin{itemize}
  	
-
+	\item Im Fenster "NewMember"(Bild 9.a), falls alle Felder im Formular ausgefüllt wurden, kann man die Schaltfläche "Add Member" betätigen welche den Speicherprozess ausführt.
+	\item Beim klick auf "Reset" werden alle Felder zurückgesetzt und deren Text gelöscht. Ein klick auf "Cancel" schliesst das Formular.
+	
+	\vspace{5mm}
+	
 	 \item Im Fenster "PersonWindow" (Bild 9.b) kann durch die Schaltfläche "Update Information" das Mitglied bearbeitet werden 				oder mit der Schaltfläche "Delete This Member" gelöscht werden.
  \item Ausserdem ist es Möglich den einbezahlten Mitgliederbeitrag (Payed) zu erhöhen (positver Betrag) oder ausstehende Beträge (negativer Betrag) ein zu pflegen (Payment Amount). Dies muss mit "New Payment" bestätigt werden.
  \item Ein Klick auf "Save Changes" speichert oder "Close" schliesst dieses Fenster ohne Speicherung.
  	\end{itemize} 
 
 
-\vspace{10mm}
+\vspace{5mm}
 \textit{\textbf{Anmerkung}: Alle Änderungen werden sofort in das Excel File geschrieben. Es gibt keine zusätzlichen Abfragen! Änderungen werden jedoch beim Klick auf Close im jeweiligen Fenster verworfen.}
 
 \subsection{Database Handling}
@@ -363,21 +367,34 @@ Wir unterstützen ein rudimentäres Backup des eingelesenen Excel Files. Die Dat
 \textit{Anmerkung: Diese kann durch den Windows Schattenkopie Dienst (VSS) in weiteren Versionen geschützt werden.}
 
 \subsection{Stunden Journal}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1 \textwidth]{StundenJournal}
+	\caption{Stunden Journal der Software Entwicklung}
+\end{figure}
 
 \section{Testen}
 % Ab hier kopieren.
 \textbf{GUI Tests\\}
 \rule[2mm]{1\linewidth}{0.3mm}
 \begin{tabular}{r|p{12cm}}
-	1. Filechooser Test & Im Menu Strip -> File -> Choose Excel File \\
-						& Ein File Chooser Menu wird aufgerufen. \hspace{5cm} \color{green} {\ding{51}} \\ \\
+	1. Filechooser Test & Im Menu Strip: File -> Choose Excel File \\
+						& Ein File Chooser Menu wird aufgerufen. \\
+						& Status:  Pass\hspace{9.5cm} \color{green} {\ding{51}} \\
+						\\
 						
 	2. Excel File Auswahl & Im File Chooser die gewünschte Datei auswählen und auf OK drücken. \\
-							&	FileChooser wird geschlossen und die Tabelle mit Daten gefüllt \hspace{1.5cm} \color{green} {\ding{51}} \\
+						&	FileChooser wird geschlossen und die Tabelle mit Daten gefüllt. \\
+						& Status:  Pass\hspace{9.5cm} \color{green} {\ding{51}} \\
+						\\
+	3. Mitglied Anklicken & In der Tabelle das entsprechende Mitglied anklicken. \\
+							& Das PersonWindow wird geöffnet mit allen Informationen über das Mitglied.\\
+							& Status:  Pass\hspace{9.5cm} \color{green} {\ding{51}} \\
+							\\
 \end{tabular}
 % Bis hier.
 % Ab hier kopieren.
-\textbf{GUI Tests Tests\\}
+\textbf{Datenbank Tests\\}
 \rule[2mm]{1\linewidth}{0.3mm}
 \begin{tabular}{r|p{12cm}}
 	1. Filechooser Test & Im Menu Strip -> File -> Choose Excel File \\
