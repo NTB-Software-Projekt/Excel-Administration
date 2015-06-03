@@ -12,17 +12,21 @@ namespace MemberAdministration
     /// <summary>
     /// Just a simple About us Form. 
     /// Only showing the releveant information from the project.
+    /// Content of this Class is automatically generated.
     /// </summary>
-    partial class AboutBox1 : Form
+    partial class AboutBox : Form
     {
-        public AboutBox1()
+        /// <summary>
+        /// Initializing the text fields with the wanted text.
+        /// </summary>
+        public AboutBox()
         {
             InitializeComponent();
             this.Text = String.Format("Info über {0}", AssemblyTitle);
             this.labelProductName.Text = AssemblyProduct;
             this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
             this.labelCopyright.Text = AssemblyCopyright;
-            this.labelCompanyName.Text = AssemblyCompany;
+            this.labelCompanyName.Text = "NTB";
             //this.textBoxDescription.Text = AssemblyDescription;
         }
 

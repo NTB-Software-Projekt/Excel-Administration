@@ -16,16 +16,19 @@ namespace MemberAdministration
     /// </summary>
     public partial class ExcelExample : Form
     {
+        /// <summary>
+        /// Initialising the GUI components by Visual Studio.
+        /// </summary>
         public ExcelExample()
         {
             InitializeComponent();
         }
 
-        private void ExcelExample_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Closing the Window
+        /// </summary>
+        /// <param name="sender">Button</param>
+        /// <param name="e">Window Close Event</param>
         private void closeButton_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -98,7 +98,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "ExcelExample";
             this.Text = "ExcelExample";
-            this.Load += new System.EventHandler(this.ExcelExample_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);

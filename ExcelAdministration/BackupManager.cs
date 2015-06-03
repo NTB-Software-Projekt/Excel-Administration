@@ -9,18 +9,11 @@ using System.Windows.Forms;
 namespace MemberAdministration
 {
     /// <summary>
-    /// This class handles all Backup related tasks
+    /// This class handles all Backup related tasks such as creating, checking and updating the Backup file.
+    /// 
     /// </summary>
     class BackupManager
     {
-        /// <summary>
-        /// Test
-        /// </summary>
-        public BackupManager()
-        {
-
-        }
-
         private DateTime currentSavedDate = MemberAdministration.Properties.Settings.Default.currentSavedDate;
         private String dbPath;
         private String targetDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop)+@"\xlBackup";

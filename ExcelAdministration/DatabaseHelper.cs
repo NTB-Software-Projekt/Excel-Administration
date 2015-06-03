@@ -11,15 +11,11 @@ namespace MemberAdministration
 {
     /// <summary>
     /// All CRUD operations are handled in this class.
+    /// Connection to the Excel File is managed trough the OleDB Connector with an ISAM driver.
+    /// We need to set the Provider String with the path to the File for the connection to be established.
     /// </summary>
     class DatabaseHelper
-    {
-
-        public DatabaseHelper()
-        {
-
-        }
-
+    {        
         private String dbPath;
 
         /// <summary>
@@ -44,6 +40,9 @@ namespace MemberAdministration
             {
                 /*
                  * Connection begins here when dbPath is set   ********   *********   *********
+                 * 
+                 * 
+                 * This is the Provider String needed for the driver to work.
                  */
                 String connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + dbPath + "; Extended Properties='Excel 12.0 Xml;HDR=YES'";
 
@@ -68,9 +67,9 @@ namespace MemberAdministration
         }
 
         /// <summary>
-        /// Pulling a specific member from the Database, filtered by the inputted name or surname. 
+        /// Pulling a specific member from the Database, filtered by the inputted name,surname, address or state. 
         /// </summary>
-        /// <param name="member">name or surname of the wanted person.</param>
+        /// <param name="member">name, surname, address or state of the wanted person.</param>
         /// <returns> DataSet with the specific person information.</returns>
         public DataSet getThisMember(String member)
         {
@@ -79,6 +78,9 @@ namespace MemberAdministration
             {
                 /*
                  * Connection begins here when dbPath is set   ********   *********   *********
+                 * 
+                 * 
+                 * This is the Provider String needed for the driver to work.
                  */
                 String connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + dbPath + "; Extended Properties='Excel 12.0 Xml;HDR=YES'";
 
@@ -126,6 +128,9 @@ namespace MemberAdministration
             {
                 /*
                  * Connection begins here when dbPath is set   ********   *********   *********
+                 * 
+                 * 
+                 * This is the Provider String needed for the driver to work.
                  */
                 String connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + dbPath + "; Extended Properties='Excel 12.0 Xml;HDR=YES'";
 
@@ -191,6 +196,9 @@ namespace MemberAdministration
             {
                 /*
                  * Connection begins here when dbPath is set   ********   *********   *********
+                 * 
+                 * 
+                 * This is the Provider String needed for the driver to work.
                  */
                 String connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + dbPath + "; Extended Properties='Excel 12.0 Xml;HDR=YES'";
                 using (OleDbConnection connection = new OleDbConnection(connectionString))
@@ -264,6 +272,9 @@ namespace MemberAdministration
             {
                 /*
                  * Connection begins here when dbPath is set   ********   *********   *********
+                 * 
+                 * 
+                 * This is the Provider String needed for the driver to work.
                  */
                 String connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + dbPath + "; Extended Properties='Excel 12.0 Xml;HDR=YES'";
                 using (OleDbConnection connection = new OleDbConnection(connectionString))
@@ -309,6 +320,9 @@ namespace MemberAdministration
             {
                 /*
                  * Connection begins here when dbPath is set   ********   *********   *********
+                 * 
+                 * 
+                 * This is the Provider String needed for the driver to work.
                  */
                 String connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + dbPath + "; Extended Properties='Excel 12.0 Xml;HDR=YES'";
                 using (OleDbConnection connection = new OleDbConnection(connectionString))
@@ -346,7 +360,8 @@ namespace MemberAdministration
                     }
                 }
             }
-            return "100";
+            // This should never be returned, but if it does, the least amount of damage is done.
+            return "500";
         }
     }
 }

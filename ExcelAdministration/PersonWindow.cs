@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace MemberAdministration
 {
     /// <summary>
-    /// This class manages the specific information of a chosen Person.
+    /// This class manages, shows and handles user input regarding the specific information of a chosen Person.
     /// </summary>
     public partial class PersonWindow : Form
     {
@@ -55,6 +55,8 @@ namespace MemberAdministration
         /// <summary>
         /// Enables the TexBoxes so that the Data can be edited and later updated
         /// </summary>
+        /// /// <param name="sender">Button</param>
+        /// <param name="e">Function Call Event</param>
         private void updateButton_Click(object sender, EventArgs e)
         {
             titleBox.Enabled = true;
@@ -72,6 +74,8 @@ namespace MemberAdministration
         /// Packages all the new Data into the Datamodel Person and saves it in the Database.
         /// Upon saving the Data it disables the textboxes again and refreshes the table in the Mainfrom;
         /// </summary>
+        /// <param name="sender">Button</param>
+        /// <param name="e">Function Call Event</param>
         public void saveChangesButton_Click(object sender, EventArgs e)
         {
             Person toUpdate = new Person(person.ID, titleBox.Text, surnameBox.Text, nameBox.Text, addressBox.Text, zipBox.Text, stateBox.Text, phoneBox.Text, emailBox.Text, payedBox.Text);
@@ -84,6 +88,8 @@ namespace MemberAdministration
         /// Adds the inputed payment to the already payed ammount from the Database and updates the TextBox with the new Data.
         /// Doesn't save anything to the Database. 
         /// </summary>
+        /// <param name="sender">Button</param>
+        /// <param name="e">Function Call Event</param>
         private void newPaymentButton_Click(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(newPaymentBox.Text))
@@ -122,6 +128,8 @@ namespace MemberAdministration
         /// where all columns in this row are set to null.
         /// This method has a bug. If we were to delete the last entry in the Table all function of the application stop working.
         /// </summary>
+        /// <param name="sender">Button</param>
+        /// <param name="e">Function Call Event</param>
         private void deleteButton_Click(object sender, EventArgs e)
         {
             dbHelper.deleteMember(person.ID);

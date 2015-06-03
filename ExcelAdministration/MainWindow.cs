@@ -11,7 +11,8 @@ using System.Windows.Forms;
 namespace MemberAdministration
 {
     /// <summary>
-    /// This Class handles the main logic.
+    /// This is the Core Class. It takes the input from the user and handles all calls to open subwindows,
+    /// and generate backups.
     /// </summary>
     public partial class MainWindow : Form
     {
@@ -33,6 +34,8 @@ namespace MemberAdministration
         /// If a Database (Excel File) has been chosen in a previous session it will be loaded from the application properties.
         /// Otherwise it will alert the user to choose one.
         /// </summary>
+        /// <param name="sender">Form Load</param>
+        /// <param name="e">Load Event</param>
         public void MainWindow_Load(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(MemberAdministration.Properties.Settings.Default.dbPath))
@@ -47,6 +50,11 @@ namespace MemberAdministration
             }
         }
 
+        /// <summary>
+        /// Exiting the Application trough the Menu strip.
+        /// </summary>
+        /// <param name="sender">Menu strip Click</param>
+        /// <param name="e">Close Event</param>
         private void exit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -55,12 +63,19 @@ namespace MemberAdministration
         /// <summary>
         /// On every text change a SQL query is sent to populate the table with the Text from the Textbox.
         /// </summary>
+        /// <param name="sender">Text Label</param>
+        /// <param name="e">Text Changed Event</param>
         private void nameInput_TextChanged(object sender, EventArgs e)
         {
             String inputName = inputBox.Text;
             populateTable(inputName);
         }
 
+        /// <summary>
+        /// Opens the Filechooser window so that the Excel File needed as Database can be selected.
+        /// </summary>
+        /// <param name="sender">Menu Strip</param>
+        /// <param name="e">Window Open Event</param>
         private void openExcelMenu_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -78,14 +93,16 @@ namespace MemberAdministration
         /// <summary>
         /// Opens the About us box with the project information.
         /// </summary>
+        /// <param name="sender">Button</param>
+        /// <param name="e">Window Open Event</param>
         private void aboutUs_Click(object sender, EventArgs e)
         {
-            AboutBox1 a = new AboutBox1();
+            AboutBox a = new AboutBox();
             a.Show();
         }
 
         /// <summary>
-        /// Writes the Path to the current Database on the GUI 
+        /// Writes the Path to the current Database on the GUI in the right top corner.
         /// </summary>
         /// <param name="dbPath">Path of the current/selected Database</param>
         private void writeTextBoxPath(String dbPath)
@@ -132,6 +149,8 @@ namespace MemberAdministration
         /// <summary>
         /// Opens the new member form
         /// </summary>
+        /// <param name="sender">Button</param>
+        /// <param name="e">Window Open Event</param>
         private void newMemberButton_Click(object sender, EventArgs e)
         {
             NewMember newMember = new NewMember(this);
@@ -141,8 +160,8 @@ namespace MemberAdministration
         /// <summary>
         /// Opens the Person Window with all the needed information from the Table.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Cell Click</param>
+        /// <param name="e">Clicked Cell</param>
         private void cellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (pWindow != null)
@@ -187,6 +206,8 @@ namespace MemberAdministration
         /// <summary>
         /// Refreshes the table, hiding the empty entries from the Excel File
         /// </summary>
+        /// <param name="sender">Button</param>
+        /// <param name="e">GridView Load Event</param>
         private void refreshButton_Click(object sender, EventArgs e)
         {
             populateTable("");
@@ -195,6 +216,8 @@ namespace MemberAdministration
         /// <summary>
         /// Opens the Excel Example form which only shows how the Excel File needs to be formated.
         /// </summary>
+        /// <param name="sender">Menu Strip</param>
+        /// <param name="e">Window Open Event</param>
         private void exampleMenu_Click(object sender, EventArgs e)
         {
             ExcelExample exampleBox = new ExcelExample();

@@ -28,6 +28,11 @@ namespace MemberAdministration
             this.mainForm = mainForm;
         }
 
+        /// <summary>
+        /// Closes the Window upon cancellation.
+        /// </summary>
+        /// <param name="sender">Button</param>
+        /// <param name="e">Window Close Event</param>
         private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -38,6 +43,8 @@ namespace MemberAdministration
         /// If the Database is empty it will add a new Member in the first position, 
         /// else it will search the last added ID and add a new member with the last ID + 1.
         /// </summary>
+        /// <param name="sender">Button</param>
+        /// <param name="e">Function Call Event</param>
         private void addMemberButton_Click(object sender, EventArgs e)
         {
             String ID;
@@ -72,6 +79,8 @@ namespace MemberAdministration
         /// <summary>
         /// Clears the TextBoxes.
         /// </summary>
+        /// /// <param name="sender">Button</param>
+        /// <param name="e">Window Event</param>
         private void resetButton_Click(object sender, EventArgs e)
         {
             titleBox.Text = "";
