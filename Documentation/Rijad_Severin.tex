@@ -50,7 +50,7 @@
 
 \pagenumbering{roman}
 \title{\vspace{20mm}\Huge Software Projekt - Excel als SQL Datenbank}
-\author{Authoren: Rijad \v{Z}u\v{z}o, Séverin Müller \\ \\ Dozent: Ulrich Hauser}
+\author{Autoren: Rijad \v{Z}u\v{z}o, Séverin Müller \\ \\ Dozent: Ulrich Hauser}
 
 
 
@@ -78,13 +78,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%  ERSTE SEITE  %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Motivation}
-Das Projekt wurde von uns im Rahmen des Software Projekt Moduls für den Bosnischen Club St. Gallen erarbeitet. Diese führen seit langem eine Excel-Liste für die Mitgliederverwaltung. \newline 
+Das Projekt wurde von uns im Rahmen des "Software Projekt Moduls" für den "Bosnischen Club St. Gallen" erarbeitet. Dieser führt seit langem eine Excel-Liste für die Mitgliederverwaltung. \newline 
 Für Sie war dies das einfachste Werkzeug, jedoch gab es immer wieder Probleme, wie zum Beispiel das ungewollte löschen ganzer Zeilen, oder das verrutschen in den Zeilen / Spalten. Wir wollten jedoch nicht eine komplett neue Datenbank erarbeiten, und entschieden uns, Ihnen ein Werkzeug für die Verwaltung der vorhandenen Excel Tabelle zur Verfügung zu stellen, welches eine einfache, intuitive GUI zur Verfügung stellt.
 
 \subsection{Ausgangssituation}
-Nebst den Problemen bei unaufmerksamer Bearbeitung, ist das Auslesen eines grösseren Excel Files deutlich langsamer als bei einer SQL Datenbank der gleichen bzw. einer vielfachen Grösse, deshalb ist es sinnvoll das Excel File in eine SQL Tabelle umzuwandeln und so zu Verarbeiten.
+Nebst den Problemen bei unaufmerksamer Bearbeitung, ist das Auslesen eines grösseren Excel Files deutlich langsamer als bei einer SQL Datenbank der gleichen bzw. einer vielfachen Grösse, deshalb ist es sinnvoll das Excel File in eine SQL Tabelle umzuwandeln und so zu verarbeiten.
 
-Die Konvertierung würde zusätzliche Software Kenntnisse erfordern, so griffen wir auf Vorhandene Office Werkzeuge bzw. vorhandene Excel Tabelle zurück.
+Die Konvertierung würde zusätzliche Software Kenntnisse erfordern, so griffen wir auf vorhandene Office Werkzeuge bzw. vorhandene Excel Tabellen zurück.
 
 Mit unserer xl2dB Applikation wurde das Problem gelöst. Die Umwandlung ist dank OleDB Connector unnötig und somit kann das Excel File bestehend bleiben.
 
@@ -93,7 +93,7 @@ Wir legten vor allem Wert auf ein simples User-Interface mit allen nötigen Funk
 
 Mit unserer Applikation hat der User einen begrenzten Einfluss auf das File und kann so weniger Schaden am File anrichten. Schaden können auch gleichzeitige Lese- / Speicherzugriffe auf ein Shared File auf einem Netzwerklaufwerk. In unserer Applikation dauert die Verbindung nur kurz, bis die Daten gelesen/geschrieben wurden und danach wird das File wieder freigegeben. Parallele Bearbeitung ist in dieser Version nicht implementiert.
 
-Für zusätzliche Datenintegrität wird jeweils ein Backup des Files erstellt und kann nötigen Falls zurück gespielt werden. Dies ist nicht die 'ultimative Lösung', aber wir konnten so die Sicherheit bei Veränderungen am Excel File erhöhen und trotzdem ein 'für jeden lesbares' Dateiformat weiter verwenden; dass zum Beispiel auch mit einem USB Stick übertragen und auf heimischen Computern (weiter-)bearbeitet werden kann.
+Für zusätzliche Datenintegrität wird jeweils ein Backup des Files erstellt und kann nötigen falls zurück gespielt werden. Dies ist nicht die 'ultimative Lösung', aber wir konnten so die Sicherheit bei Veränderungen am Excel File erhöhen und trotzdem ein 'für jeden lesbares' Dateiformat weiter verwenden; dass zum Beispiel auch mit einem USB Stick übertragen und auf heimischen Computern (weiter-)bearbeitet werden kann.
 
 \newpage
 
@@ -115,7 +115,7 @@ Die Applikation muss:
 \subsection{Soll-Anforderung}
 Die Applikation soll:
 \begin{description}[labelindent=1cm]
-	\item[S1:] leicht Bedienbar sein.
+	\item[S1:] leicht bedienbar sein.
 	\item[S2:] ein intuitives, einfaches User-Interface haben.
 	\item[S3:] kompatibel mit Windows XP\footnote{http://windows.microsoft.com/de-de/windows/home} und höher sein.
 	\item[S4:] kompatibel mit Excel 2003\footnote{http://www.office.com} und höher sein.
@@ -127,8 +127,8 @@ Die Applikation könnte:
 	\item[W1:] eine Benutzungsanleitung haben.
 	\item[W2:] mehrere Sprachen unterstützen.
 	\item[W3:] dem User Hilfe anbieten.
-	\item[W4:] einträge sortieren.
-	\item[W5:] auf Grund von Kriterien farbig hervorheben.
+	\item[W4:] Einträge sortieren.
+	\item[W5:] auf Grund von Kriterien Einträge farbig hervorheben.
 	\\
 \end{description}
 
@@ -144,7 +144,7 @@ Die Applikation könnte:
 \section{Projektumgebung}
 \vspace{5mm}
 \subsection{Entwicklungsprozess	}
-Wir entschieden uns für den iterativen Scrum-Prozess\footnote{http://en.wikipedia.org/wiki/Scrum\_software\_development}. Es erschien uns Ideal, da wir jede Woche Dienstag mindestens zwei Lektionen Zeit hatten. Die Sprint Dauer passten wir aufgrund des Stundenplanes an (siehe: \nameref{sec:projektplanung}). Die Rollen teilten wir wie folgt auf:
+Wir entschieden uns für den iterativen Scrum-Prozess\footnote{http://en.wikipedia.org/wiki/Scrum\_software\_development}. Es erschien uns Ideal, da wir jede Woche mindestens zwei Lektionen Zeit hatten. Die Sprint Dauer passten wir aufgrund des Stundenplanes an (siehe: \nameref{sec:projektplanung}). Die Rollen teilten wir wie folgt auf:
 
 \begin{description}
 	\item[Scrum Master:] Rijad \v{Z}u\v{z}o
@@ -154,14 +154,14 @@ Wir entschieden uns für den iterativen Scrum-Prozess\footnote{http://en.wikiped
 \end{description}
 
 \subsection{Ablauf}
-Die Stand-up Meetings erfolgten immer am Anfang der Lektionen am Dienstag bei einem Kaffee oder bei schönem Wetter kurz draussen. Wir benötigten jeweils kaum 10 Minuten, auch dank der guten Vorbereitung jeweils. Unter der Woche haben wir uns oft via Google Hangouts\footnote{https://google.com/hangouts} abgeglichen oder Fragen direkt mit der Freigabe eines Bildschirmes besprochen. 
+Die Stand-up Meetings erfolgten immer am Anfang der Lektionen am Dienstag bei einem Kaffee oder bei schönem Wetter kurz draussen. Wir benötigten jeweils kaum 10 Minuten, auch dank der guten Vorbereitung. Unter der Woche haben wir uns oft via Google Hangouts\footnote{https://google.com/hangouts} abgeglichen oder Fragen direkt mit der Freigabe eines Bildschirmes besprochen. 
 Dank des Online-Tools Trello\footnote{http://www.trello.com/}  konnten wir die Aufgabenpakete sogleich zuteilen und die Meetings waren dank unserer Vorbereitung sehr speditiv. 
 
 \subsection{Programmiersprache}
-Da der Verein zuvor bereits Microsoft Excel verwendete und als Betriebssystem Microsoft Windows verwendete, lag es nahe, dass wir uns für die Windows Spezifische Programmiersprache C\# entschieden. \\ Dies in Kombination mit der IDE Visual Studio\footnote{https://www.visualstudio.com/} ermöglichte uns eine Praxis nahe und angenehme Entwicklung sowohl der Funktionalitäten,wie und auch des GUI's. 
+Da der Verein zuvor bereits Microsoft Excel verwendete und als Betriebssystem Microsoft Windows verwendete, lag es nahe, dass wir uns für die Windows spezifische Programmiersprache C\# entschieden. \\ Dies in Kombination mit der IDE Visual Studio\footnote{https://www.visualstudio.com/} ermöglichte uns eine praxisnahe und angenehme Entwicklung sowohl der Funktionalitäten,wie und auch des GUI's. 
 
 \subsection{Verwaltungssystem}
-Die Auswahl des Verwaltungssystem war sehr einfach, da wir uns im Vorhinein geeinigt haben die Software als OpenSource\footnote{http://de.wikipedia.org/wiki/Open\_Source} entwickeln zu wollen. Somit haben wir uns für das OpenSource Git Projekt Verwaltungssystem\footnote{http://git-scm.com/} entschieden und unser Code auf der Website www.GitHub.com gehostet.
+Die Auswahl des Verwaltungssystem war sehr einfach, da wir uns im vornherein geeinigt haben die Software als OpenSource\footnote{http://de.wikipedia.org/wiki/Open\_Source} entwickeln zu wollen. Somit haben wir uns für das OpenSource Git Projekt Verwaltungssystem\footnote{http://git-scm.com/} entschieden und unser Code auf der Website www.GitHub.com gehostet.
 
 Mit Hilfe dieser Collaboration Plattform war es uns möglich, gleichzeitig, in unabhängigen Codeteilen, zu arbeiten und den jeweiligen Stand zu synchronisieren
 
@@ -196,7 +196,7 @@ Das hat für uns sehr gut gepasst und die Atmosphäre sowie die Arbeiten waren a
 	
 Wie schon erwähnt haben wir für die Planung der Applikation die Website Trello.com benutzt. Das Produkt Backlog ist im Bild 2 abgebildet.
 
-Das grösste Problem Anfangs war die Aufteilung dieses Backlogs in sinnvolle und erreichbare Sprints. Dies haben wir dynamisch gelöst.
+Das grösste Problem anfangs war die Aufteilung dieses Backlogs in sinnvolle und erreichbare Sprints. Dies haben wir dynamisch gelöst.
 
 Wir haben einige Features zur Implementation ausgewählt und in einen Sprint mit entsprechender Deadline gepackt. Konnte ein Feature nicht in der gegebenen Zeit implementiert werden, wurde der Task in den nächsten Sprint mitgenommen oder zurück gestellt.
 
@@ -221,13 +221,13 @@ So sind wir auf fünf Sprints gekommen die in Bild 3. und Bild 4. dargestellt si
 
 \subsection{Sprint Stand-up Meetings}
 Im Scrum Prozess werden die Meetings bewusst "Stand-up Meetings" genannt. Dies um unnötige Diskussionen  beim bequemen Sitzen auf den Leder Stühlen eines in Glas gefassten Sitzungszimmers zu vermeiden.\\
-Die Meetings sollen \textbf{kurz, prägnant und Informativ} sein.
+Die Meetings sollen \textbf{kurz, prägnant und informativ} sein.
 Dies haben wir auch immer versucht einzuhalten; kurz den Stand des jeweiligen Sprints und die darin befindlichen Tasks stehend besprochen und Probleme oder Ideen erst nachher am Laptop besprochen.
-Das hat im Grossen und Ganzen sehr gut funktioniert. Dies aber auch, weil wir immer wieder über das Projekt gesprochen, gechattet oder telefoniert hatten unter der Woche.
+Das hat im Grossen und Ganzen sehr gut funktioniert. Dies aber auch, weil wir immer wieder über das Projekt gesprochen, gechattet oder telefoniert hatten.
 
 \subsection{Sprint Review}
-Die Sprint Review fanden bei uns zumeist kurz nach den Stand-up Meetings statt, weil wir beides jeweils am Dienstag unter vier Augen besprochen haben.
-Hier hatten wir dank Trello auch eine sehr gute Übersicht und wussten anhand der Tasks immer was zu erledigen waren.\\
+Die Sprint Review fanden bei uns zumeist kurz nach den Stand-up Meetings statt, weil wir beides jeweils am Dienstag unter vier Augen besprochen hatten.
+Hier hatten wir dank Trello auch eine sehr gute Übersicht und wussten anhand der Tasks immer was zu erledigen war.\\
 Wir denken aber, es wäre sinnvoll gewesen - vor allem bei einem grösseren Projekt - diese Reviews seperat und in einem geschlossenen Team an einem abgemachten Termin zu besprechen. Um auch eventuelle Ideen noch besser einbringen zu können und noch mehr Brainstorming zu betreiben.
 
 In unserem zweier Team aber hat das so gut funktioniert und es blieb so oder so nicht viel Zeit für noch mehr Ideen. Was aber nicht heissen soll, dass wir an dem Tool nicht noch das Eine oder Andere hinzufügen möchten.
@@ -240,7 +240,7 @@ In unserem zweier Team aber hat das so gut funktioniert und es blieb so oder so 
 
 \subsection{Modellierung}
 Die erste Phase der Entwicklung war das Strukturieren der Software - eine sehr wichtige Phase. Wir wollten ein klares Design von Beginn an, dass uns die Weiterentwicklung ermöglicht.\\
-Hier haben wir sehr viel Zeit aufgewendet, mit den Beteiligten sehr viele Szenarien durchgespielt und uns selbst einige Tage Zeit gelassen um über den Funktionsumfang und die Gimmicks eine klare Vorstellung zu erhalten. Die GUI sollte möglichst einfach gehalten sein, was aber nicht heisst, dass sich wenige Funktionen dahinter verbergen. 
+Hier haben wir sehr viel Zeit aufgewendet, mit den Beteiligten sehr viele Szenarien durchgespielt und uns selbst einige Tage Zeit gelassen um über den Funktionsumfang und die Gimmicks eine klare Vorstellung zu erhalten. Das GUI sollte möglichst einfach gehalten sein, was aber nicht heisst, dass sich wenige Funktionen dahinter verbergen. 
 
 \subsubsection{Klassendiagramm}
 	
@@ -254,7 +254,7 @@ Eintritt in die Applikation geschieht durch die Main() Methode in der Klasse Pro
 
 Die MainWindow Klasse ist der Core der Applikation. Dieser nimmt die Eingaben vom User entgegen und leitet sie den entsprechenden Methoden und Klassen weiter. 
 
-TODO//Die in Rot dargestellten Referenzen, die den OleDB Connector Beinhalten, ermöglichen uns die Verbindung zu Excel Files. Das Excel File dient als Datenbank und kann mit diesen Treibern Ausgelesen und Beschreiben werden. In der Klasse Properties sind die variablen die direkt im System des Users gespeichert werden beinhaltet, diese sind speziell von Visual Studio intern belegt und die sieht man im Code nicht.
+Die in Rot dargestellten Referenzen, die den OleDB Connector beinhalten, ermöglichen uns die Verbindung zu Excel Files. Das Excel File dient als Datenbank und kann mit diesen Treibern ausgelesen und beschrieben werden. In der Klasse Properties sind die Variablen die direkt im System des Users gespeichert werden, diese werden von Visual Studio intern belegt und sind im Code nicht ersichtlich.
 
 \newpage
 
@@ -267,7 +267,7 @@ TODO//Die in Rot dargestellten Referenzen, die den OleDB Connector Beinhalten, e
 	\caption{Zustandsdiagramm}
 \end{figure}
 
-Beim Start der Applikation wird überprüft ob bereits eine Datenbank hinterlegt ist oder nicht. Falls dieser vorhanden ist und verfügbar, werden alle Mitglieder automatisch aus der entsprechenden Datenbank ausgelesen und in der Tabelle dargestellt. Anderenfalls wird auf den User gewartet, bis dieser im File Chooser die gewünschte Datei (Datenbankpfad) manuell auswählt. 
+Beim Start der Applikation wird überprüft ob bereits eine Datenbank hinterlegt ist oder nicht. Falls diese vorhanden und verfügbar ist, werden alle Mitglieder automatisch aus der entsprechenden Datenbank ausgelesen und in der Tabelle dargestellt. Andernfalls wird auf den User gewartet, bis dieser im File Chooser die gewünschte Datei (Datenbankpfad) manuell auswählt. 
 
 Nach dem Auslesen der Mitglieder kann der User weitere Aktionen ausführen, wie z.B. ein neues Mitglied anlegen oder Mitglieder auswählen und detaillierte Informationen zur Person ansehen oder ändern.
 
@@ -285,15 +285,15 @@ Bei jeder Aktion kann der User seine Änderungen speichern oder alles verwerfen.
 \end{figure}
 
 Setzt der User einen Datenbankpfad werden automatisch alle Mitglieder ausgelesen und angezeigt.
-Im Sequenzdiagramm wurden mehrere Abläufe dargestellt: 
+Im Sequenzdiagramm werden mehrere Abläufe dargestellt: 
 \begin{description}
-	\item[Bestimmte Mitgliederinformationen Auslesen] \hfill \\ 
+	\item[Bestimmte Mitgliederinformationen auslesen] \hfill \\ 
 		Um nach einer Bestimmten Person zu suchen, gibt der User Name, Nachname, Adresse oder Ort ein. Jeder Tastenschlag setzt eine SQL Abfrage ab und entsprechende Datasets werden zurückgeliefert.
 	
 	\item[Neues Mitglied anlegen] \hfill \\  
 		Falls der User ein neues Mitglied anlegen will, öffnet er das entsprechende Formular, gibt die neuen Daten ein und drückt den Save Button. Alle Daten werden in ein Datamodel gepackt und in der Datenbank angelegt.
 
-	\item[Mitgliederinformationen Aktualisieren] \hfill \\ 
+	\item[Mitgliederinformationen aktualisieren] \hfill \\ 
 		 Falls der User ein Mitglied in der Liste anklickt, wird das Mitglied angezeigt. Hier kann er die Informationen aktualisieren oder das Mitglied löschen. Beim Löschen wird einfach ein "NULL update" gesendet, da das direkte Löschen im File nicht vom Treiber unterstützt wird.
 \end{description}
 
@@ -303,7 +303,7 @@ Im Sequenzdiagramm wurden mehrere Abläufe dargestellt:
 
 \subsection{GUI}
 \subsubsection{Hauptfenster}
-Die Oberfläche (GUI) wurde so einfach und intuitiv (selbsterklärend) wie möglich gestaltet. Dies auch auf Wunsche des Kunden:
+Die Oberfläche (GUI) wurde so einfach und intuitiv (selbsterklärend) wie möglich gestaltet. Dies auch auf Wunsch des Kunden:
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.0 \textwidth]{MainGUI}
@@ -317,8 +317,8 @@ Die Oberfläche (GUI) wurde so einfach und intuitiv (selbsterklärend) wie mögl
 		\item Ein einfaches Texteingabe (text-input) Feld "Name Input" links, ermöglicht "on text change" (Eingaben werden sofort übergeben) die Suche nach: Nachname, Vorname, Adresse, Ort.
 		\item Ein Klick auf ein Mitglied in der Tabellenansicht öffnet ein neues Fenster (Bild 9.b) und zeigt alle erfassten Details dessen.
 		\item Unter Help gibt es eine einfache Anleitung "Excel Sheet Format Example" und ein Info Dialog mit Kontaktinformationen "About".
-		\item Der Button "New Member" öffnet das Fenster (Bild 9.a) zum erstellen eines neuen Mitgliedes mit den nötigen Informationen.
-		\item Der Button "Refresh Table" lädt das Excel File erneut. (Nützlich bei unerwartetem applikationsbenehmen)
+		\item Der Button "New Member" öffnet das Fenster (Bild 9.a) zum Erstellen eines neuen Mitgliedes mit den nötigen Informationen.
+		\item Der Button "Refresh Table" lädt das Excel File erneut. (Nützlich bei unerwartetem Applikationsverhalten)
 	 \end{itemize}
 
 \newpage
@@ -351,8 +351,8 @@ Die Oberfläche (GUI) wurde so einfach und intuitiv (selbsterklärend) wie mögl
 	\vspace{5mm}
 	
 	 \item Im Fenster "PersonWindow" (Bild 9.b) kann durch die Schaltfläche "Update Information" das Mitglied bearbeitet werden 				oder mit der Schaltfläche "Delete This Member" gelöscht werden.
- \item Ausserdem ist es Möglich den einbezahlten Mitgliederbeitrag (Payed) zu erhöhen (positver Betrag) oder ausstehende Beträge (negativer Betrag) ein zu pflegen (Payment Amount). Dies muss mit "New Payment" bestätigt werden.
- \item Ein Klick auf "Save Changes" speichert oder "Close" schliesst dieses Fenster ohne Speicherung.
+ \item Ausserdem ist es möglich den einbezahlten Mitgliederbeitrag (Payed) zu erhöhen (positver Betrag) oder ausstehende Beträge (negativer Betrag) zu pflegen (Payment Amount). Dies muss mit "New Payment" bestätigt werden.
+ \item Ein Klick auf "Save Changes" speichert, oder "Close" schliesst dieses Fenster ohne Speicherung.
  	\end{itemize} 
 
 
@@ -362,7 +362,7 @@ Die Oberfläche (GUI) wurde so einfach und intuitiv (selbsterklärend) wie mögl
 \subsection{Database Handling}
 Wir haben die Klasse DatabaseHelper implementiert, in welcher alle Interaktion mit der Datenbank, in unserem Fall mit dem Excel File, stattfinden.
 
-Aus den Referenzen Microsoft.Office.Core und Microsoft.Office.Excel.Interop haben wir den sogenannten OleDB Connector nutzen können. Dieser hat uns das Auslesen und Beschreiben des Excel Files ermöglicht, jedoch unterstützt es keine direkte Löschen Operation. Dies haben wir umgangen, in dem wir das Excel File mit NULL Werten Beschreiben und solche Zeilen im GUI (in der Tabelle) ignorieren.
+Aus den Referenzen Microsoft.Office.Core und Microsoft.Office.Excel.Interop haben wir den sogenannten OleDB Connector nutzen können. Dieser hat uns das Auslesen und Beschreiben des Excel Files ermöglicht, jedoch unterstützt es keine direkte Löschen Operation. Dies haben wir umgangen, in dem wir das Excel File mit NULL Werten beschreiben und solche Zeilen im GUI (in der Tabelle) ignorieren.
 
 % Man kann das sicher besser formulieren
 Um Zugriffskollisionen zu vermeiden, wird nach jeder Interaktion mit dem Excel File die Verbindung unterbrochen. Der Verbindungsmanager hält die Verbindung aufrecht, solange mit dem File gearbeitet wird (lesen/schreiben).
@@ -382,7 +382,7 @@ Wir unterstützen ein rudimentäres Backup des eingelesenen Excel Files. Die Dat
 
 Wir benötigten für das Projekt 47.50 Stunden. Im Anbetracht der Tatsache, dass wir in einer neuen Sprache und einem unbekannten IDE gearbeitet haben, sind wir zufrieden. Es war etwas mehr Aufwand als wir zuerst annahmen, jedoch hat uns das persönlich weitergebracht.
 
-Für die Dokumentation in Latex\footnote{http://www.latex-project.org/} haben wir auch nochmals sehr viel Zeit aufgewendet. Freuten uns aber über die Fortschritte und sind am Schluss stolz, eine saubere, professionelle und ansprechende Dokumentation zu liefern.
+Für die Dokumentation in Latex\footnote{http://www.latex-project.org/} haben wir auch nochmals sehr viel Zeit aufgewendet, freuten uns aber über die Fortschritte und sind am Schluss stolz, eine saubere, professionelle und ansprechende Dokumentation zu liefern.
 
 Das Projekt ging ohne grössere Zwischenfälle - mit Ausnahme des Löschens - über die Bühne und die Software ist mehr als zufriedenstellend. Dies war unser erstes gemeinsames Projekt und wir sind uns einig, ein gutes Team zu sein!
 \newpage
@@ -406,7 +406,7 @@ Das Projekt ging ohne grössere Zwischenfälle - mit Ausnahme des Löschens - ü
 								& Resultat:  \textbf{Pass}\hspace{8.4cm} \color{green} {\ding{51}} \\
 	\\
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\textbf{1.3 Mitglied Infofenster:} & Aufrufen des Informations-Fensters beim anklicken eines Mitglieds. \\
+	\textbf{1.3 Mitglied Infofenster:} & Aufrufen des Informations-Fensters beim Anklicken eines Mitglieds. \\
 		Durchführung:			& In der Tabelle das entsprechende Mitglied anklicken. \\
 		Erwartetes Ergebnis: 	& PersonWindow wird geöffnet mit allen Informationen über das Mitglied.\\
 								& Resultat:  \textbf{Pass}\hspace{8.4cm} \color{green} {\ding{51}} \\
@@ -433,21 +433,21 @@ Das Projekt ging ohne grössere Zwischenfälle - mit Ausnahme des Löschens - ü
 % Bis hier.
 
 \vspace{1cm}
-TODO//
+
 \textbf{2. Properties Speicherung Tests (getestet am 16. Mai, 2015)\\}
 \rule[2mm]{1\linewidth}{0.3mm}
 \begin{tabular}{r|p{12cm}}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\textbf{2.1 Pfad Speichern:} & Der eingetragener Pfad im Filechooser wird im System des Users abgespeichert und wird beim nächsten Aufruf der applikation automatisch geladen.\\
+	\textbf{2.1 Pfad Speichern:} & Der eingetragener Pfad im Filechooser wird im System des Users abgespeichert und wird beim nächsten Aufruf der Applikation automatisch geladen.\\
 	Durchführung:			& Datenbankpfad setzen und die Applikation neu starten.\\
 	Erwartetes Ergebnis: 	& Datenbankpfad wird beim nächsten Applikationsaufruf in der GUI angezeigt. \\
 	& Resultat:  \textbf{Pass}\hspace{9cm} \color{green} {\ding{51}} \\
 	\\	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	
-	\textbf{2.2 Datum Speichern } & Bei Aktulitätsüberprüfung, das neue Datum im System des Users abspeichern und bei nächster Überprüfung auslesen. \\
-	Durchführung:			& Automatisch beim Backup Aktualitätscheck (ohne Änderung im File).\\
-	Erwartetes Ergebnis: 	& Keine neue Kopie des Files erstellt (das alte Datum ist vorhanden). \\
+	\textbf{2.2 Datum Speichern } & Bei Aktualitätsüberprüfung, das neue Datum im System des Users abspeichern und bei nächster Überprüfung auslesen. \\
+	Durchführung:			& Automatisch beim Backup Aktualitätsüberprüfung (ohne Änderung im File).\\
+	Erwartetes Ergebnis: 	& Keine neue Kopie des Files erstellt (das alte Datum bleibt bestehen). \\
 	& Resultat:  \textbf{Pass}\hspace{9cm} \color{green} {\ding{51}} \\
 	\\	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -461,7 +461,7 @@ TODO//
 \rule[2mm]{1\linewidth}{0.3mm}
 \begin{tabular}{r|p{12cm}}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\textbf{3.1 Auslesen aller Daten:} & Bei bestehendem Datenbankpfad alle werte aus der DB auslesen. \\
+	\textbf{3.1 Auslesen aller Daten:} & Bei bestehendem Datenbankpfad alle Werte aus der Datenbank auslesen. \\
 		Durchführung:			& Automatisch, sofort nach Setzung des Pfades.\\
 		Erwartetes Ergebnis: 	& Ein DataSet mit allen Daten wird zurückgegeben. \\
 								& Resultat:  \textbf{Pass}\hspace{7.8cm} \color{green} {\ding{51}} \\
@@ -500,7 +500,7 @@ TODO//
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%							
 \end{tabular}
 
-* \textit{Da unser OleDB Connector mit dem ISAM Treiber das direkte löschen von Zeilen (SQL-DELETE) in einer gelinkten Liste nicht unterstützt, mussten wir dies wie vorhergehend erklärt umgehen. 
+* \textit{Da unser OleDB Connector mit dem ISAM Treiber das direkte Löschen von Zeilen (SQL-DELETE) in einer gelinkten Liste nicht unterstützt, mussten wir dies wie vorhergehend erklärt umgehen. 
 \\
 Jedoch funktioniert unsere Lösung nicht ganz wie erwartet. Der Bug wird erst offensichtlich wenn wir den letzten Eintrag in der Tabelle "löschen". Nach der "DELETE Erfolgsmeldung" kann nicht mehr mit der Datenbank interagiert werden. In diesem Fall liefert die Applikation auch im Debug Modus keine Fehlermeldungen, weshalb wir vermuten das dies ein Excel-Ordnungsproblem ist.} \\
 
@@ -520,7 +520,7 @@ Jedoch funktioniert unsere Lösung nicht ganz wie erwartet. Der Bug wird erst of
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	
 	\textbf{4.2 Backup Aktuell:} & Falls die Backupdatei nicht aktuell ist, eine neue Kopie erstellen. \\
-		Durchführung:			& Automatisch beim start der Applikation.\\
+		Durchführung:			& Automatisch beim Start der Applikation.\\
 		Erwartetes Ergebnis: 	& Folder xlBackup im Desktop mit neuem (aktuellen) Excel File vorhanden. \\
 								& Resultat:  \textbf{Pass}\hspace{9cm} \color{green} {\ding{51}} \\
 								\\	
@@ -538,7 +538,7 @@ Jedoch funktioniert unsere Lösung nicht ganz wie erwartet. Der Bug wird erst of
 Die Software "xl2DB" erfüllt die Muss- \& Soll-Anforderungen und erleichtert dem Verein das Handling der Mitglieder Datenbank nach ersten Rückmeldungen enorm. Dies ist für uns ein Erfolg. \\
 Es sind noch Verbesserungen möglich, welche wir in Zukunft gerne noch einpflegen. Ausserdem sind die Wunsch-Anforderungen noch offen und bieten die Möglichkeit die Software noch attraktiver zu machen.
 
-Wir haben in überschaubarer Zeit, erfolgreich eine Software entwickelt, die auch wirklich im Alltag eingesetzt werden kann. Der "Kunde" ist zufrieden und hat ein 'Wunsch' Werkzeug für sein Problem erhalten, dass ihn bei einem Individual-Softwarelieferanten ein ganzes Stück Geld gekostet hätte.
+Wir haben in überschaubarer Zeit, erfolgreich eine Software entwickelt, die auch wirklich im Alltag eingesetzt werden kann. Der "Kunde" ist zufrieden und hat ein 'Wunsch'-Werkzeug für sein Problem erhalten, dass ihn bei einem Individual-Softwarelieferanten ein ganzes Stück Geld gekostet hätte.
 
 \subsection{Resultat: Muss-Anforderungen}
 Die Applikation muss:
@@ -576,14 +576,14 @@ Die Applikation könnte:
 \textit{Leider sind wir nicht dazu gekommen alle Wunsch-Anforderungen zu erfüllen. Hier gibt es Raum die Software weiter auszubauen und zu verbessern. Ein Projekt für die Zukunft!}
 \subsection{Gelerntes}
 
-In diesem Softwareprojekt haben wir sowohl den Software-Entwicklungs-Prozess "Scrum" angewendet, sowie eine neue Sprache C\# kennengelernt.
+In diesem Softwareprojekt haben wir sowohl den Software-Entwicklungs-Prozess "Scrum" angewendet, sowie eine neue Sprache "C\#" kennengelernt.
 
-"Scrum" wurde uns im ersten Teil von IuK näher gebracht. Jedoch ist es etwas anderes sich an die Prozesse und Abläufe halten zu müssen, als in der Theorie / Vorlesungsraum dem Dozenten zu hören zu müssen. Wir denken den Prozess erfolgreich umgesetzt zu haben, auch wenn es ein paar Stolper-Steine gab, und dies können wir in unseren Rucksack packen.
+"Scrum" wurde uns im ersten Teil von IuK näher gebracht. Jedoch ist es etwas Anderes sich an die Prozesse und Abläufe halten zu müssen, als in der Theorie / Vorlesungsraum dem Dozenten zu hören zu müssen. Wir denken den Prozess erfolgreich umgesetzt zu haben, auch wenn es ein paar Stolper-Steine gab, und dies können wir in unseren Rucksack packen.
 
 Die Sprache C\# in Zusammenhang mit der Visual Studio Entwicklungsplattform war eine spannende Erfahrung. Besonders der Umgang mit den referenzierten Treibern und deren Eigenheiten, war für uns neu und benötigte einiges an Recherche und Testing. Jedoch war es unserer Meinung nach die Richtige Entscheidung auf diese Platform zu setzten, da die Software auch ausschliesslich auf und für Microsoft Produkte entwickelt wurde.
 
 \section{Selbstständigkeitserklärung}
-Wir bestätigen hiermit, dass wir die vorstehende Arbeit selbstständig angefertigt,
+Wir bestätigen hiermit, dass wir die vorliegende Arbeit selbstständig angefertigt,
 keine anderen als die angegebenen Hilfsmittel benutzt und sowohl wörtliche, als auch sinngemäss
 verwendete Texteile, Grafiken oder Bilder kenntlich gemacht haben.
 Diese Arbeit ist in gleicher oder ähnlicher Form noch keiner anderen Prüfungsbehörde vorgelegt
