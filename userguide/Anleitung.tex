@@ -49,10 +49,10 @@
 \begin{document}
 \section*{\centering Bedienungsanleitung  - xl2DB}
 \subsection*{Installation}
-Für die Installation der Software muss man nur die Datei "setup.exe" ausführen die sich im Installations Ordner befindet und bei jeweiligen Aufforderungen auf "Ok", "Ja" oder ähnliches drücken.
+Für die Installation der Software muss man nur die Datei "setup.exe" ausführen die sich im Installations-Ordner befindet.
 
 \subsection*{Excel File Vorbereitung}
-Das format des Excel Files muss wie im Bild 1. unten aussehen (ID, Anrede, Nachname usw. muss genau so geschrieben werden): 
+Das Format des Excel Files muss wie in Bild 1. aufgebaut sein (ID, Anrede, Nachname etc.) und ist Case sensitiv (Gross/Kleinschreibung beachten): 
 \begin{figure}[h]
 	\begin{center}
 		\centering
@@ -61,7 +61,7 @@ Das format des Excel Files muss wie im Bild 1. unten aussehen (ID, Anrede, Nachn
 	\end{center}
 \end{figure}
 
-Und die aktuelle Tabelle im Excel File muss wie im Bild 2. unten benannt werden: 
+Auch muss das Blatt mit "Sheet1" beschriftet sein: 
 \begin{figure}[h]
 	\begin{center}
 		\centering
@@ -70,10 +70,10 @@ Und die aktuelle Tabelle im Excel File muss wie im Bild 2. unten benannt werden:
 	\end{center}
 \end{figure}
 
-Falls dies nicht gemacht wird, werden einige Funktionen der Applikation nicht wie erwünscht Funktionieren. Wenn deer Tabellenname nicht in "Sheet1" geändert wird wird die Verbindung zum Excel File unmöglich.
+Dies sind Voraussetzungen für den reibungslosen Betrieb von xl2DB. Ohne diese Einstellungen funktioniert die Software nicht bzw. es ist mit Fehlern zu rechnen.
 
 \subsection*{Ausführung}
-Nach der erfolgreichen Installation sollte auf dem Desktop das Icon mit dem name xl2DB.exe auftauchen und die Applikation wird sofort nach der Installation automatisch aufgerufen.
+Nach erfolgreicher Installation wird die Software direkt ausgeführt und auf dem Desktop ist ein neues Icon mit dem Name xl2DB.exe zu finden.
 
 \begin{figure}[h]
 	\begin{center}
@@ -83,31 +83,29 @@ Nach der erfolgreichen Installation sollte auf dem Desktop das Icon mit dem name
 	\end{center}
 \end{figure}
 
-Bei dem ersten Aufruf der Applikation erscheint ein "Wilkommen" Fenster und die Applikation ist bereit zur Nutzung.
+Beim ersten Aufruf der Applikation erscheint ein "Wilkommen" Fenster in welchem Sie hingewiesen werden, einen Datenbankpfad zu hinterlegen. Nach diesen Schritten ist die Software betriebsbereit.
 
 \newpage
 
-\subsection*{Erste schritte}
-Wenn die Applikation das erste mal aufgerufen wurde, muss man im oberen linken Teil in dem Menü Streifen den Datenbankpfad (Excel File Pfad) setzten und dieser wird intern gespeichert. Bei dem nächsten Aufruf der Applikation wird dieser Pfad automatisch geladen. 
+\subsection*{Erste Schritte}
+Beim ersten Aufruf der Applikation, muss via File - Choose Excel File, eine Datenbank geöffnet werden. Dieser wird intern gespeichert und beim nächsten Aufruf automatisch erneut aufgerufen, sofern die Datenbank noch vorhanden ist.
 
 \begin{figure}[h]
 	\begin{center}
 		\includegraphics[width=0.2\paperwidth]{Pfads}
-		\caption{Menü Streifen Excel File Auswahl}
+		\caption{Menü für die Auswahl eines Excel File}
 	\end{center}
 \end{figure}
 
-Es wird ein Filechooser Fenster geöffnet wie unten im Bild 5. :
+Via File - Chose Excel File wird ein Dateibrowser geöffnet in dem Sie zum gewünschten File navigieren können:
 \begin{figure}[h]
 	\begin{center}
 		\includegraphics[width=0.8\paperwidth]{Filechooser}
-		\caption{Filechooser Fenster}
+		\caption{Dateibrowser}
 	\end{center}
 \end{figure}
-
-Hier kann man leicht zu einem gewünschten Dokument navigieren und diesen durch doppelklick oder auswählen und auf "Öffnen" drücken auswählen. Nach dem Auswählen der Datei schliesst sich dieses Fenster automatisch und die Daten werden aus diesem File gezogen und in der Tabelle Bild 6. dargestellt.
-
 \newpage
+Sind Sie im gewünschten Pfad, kann das File durch einen Doppelklick oder markieren und einem Klick auf "Öffnen" geöffnet werden. Das Fenster schliesst sich und die Daten werden sofort ausgelesen und dargestellt:
 
 \begin{figure}[h]
 	\begin{center}
@@ -116,13 +114,15 @@ Hier kann man leicht zu einem gewünschten Dokument navigieren und diesen durch 
 	\end{center}
 \end{figure}
 
-Jetzt ist die Applikation bereit für weitere Aktionen, die eigentlich recht intuitiv sind und bedürfen kein weiteres erklären. 
+Sollte die Datei nicht geöffnet werden, überprüfen Sie den Pfad erneut mit File - Choose Excel File oder ob wie in Abschnitt "Excel File Vorbereitung" beschrieben, die Datei das gewünschte Format hat.
 
-Zusammengefasst: 
+Die Software ist vollständig eingerichtet.
+
+Bedienung: 
 \begin{itemize}
-\item Ein klick auf "New Member" erzeugt das Formular für das Eingeben der Daten bei erstellen eines neuen Mitglieds (Bild 7.a).
+\item Ein Klick auf "New Member" öffnet das Formular für die Eingabe eines neuen Mitgliedes (Bild 7.a).
  
-\item Ein klick in der Tabelle auf eine Zeile öffnet das "PersonWindow" mit allen Informationen betreffend der angeklickten Zeile (Bild 7.b). In diesem Fenster kann man Änderungen vornehmen und speichern oder Mitglieder ganz löschen.
+\item Ein Klick in die Tabelle öffnet das "PersonWindow" mit allen Informationen zu einem Mitglied (Bild 7.b). Hier können auch Änderungen vorgenommen werden oder Mitglieder gelöscht werden.
 \end{itemize}
 
  \begin{figure}[h]
@@ -136,12 +136,12 @@ Zusammengefasst:
  	\begin{subfigure}{.5\textwidth}
  		\centering
  		\includegraphics[width=.9\linewidth]{MemberInfoGUI}
- 		\caption{Mitgliedsinformation Fenster}
+ 		\caption{Mitgliedsinformationen Fenster}
  		\label{fig:sub2}
  	\end{subfigure}
- 	\caption{Aufrufbare Fenster}
+ 	\caption{Fenster für weitere Details}
  	\label{fig:test}
  \end{figure}
  
- \centering \large Wir wünschen viel Spass und Erfolg bei der Nutzung unserer Software. 
+ \centering \large Wir wünschen viel Spass und Erfolg bei der Nutzung unserer Software xl2DB. 
 \end{document}
