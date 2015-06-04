@@ -42,12 +42,18 @@
 \renewcommand{\contentsname}{Inhaltsverzeichnis}
 \renewcommand{\listfigurename}{Abbildungsverzeichnis}
 \renewcommand{\figurename}{Bild}
-
+\hypersetup{urlcolor=blue}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% BEGIN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 \section*{\centering Bedienungsanleitung  - xl2DB}
+\subsection*{Voraussetzungen}
+Unsere Software benötigt die Microsoft Office Data Connectivity Components für die Datenbankfunktionen. Diese sind bei einer Installation von Microsoft Access > Version 2007 bereits dabei. Sollten Sie kein Microsoft Access installiert haben, können Sie diese Komponenten hier herunterladen und bitte installieren:
+
+2007 Office System Driver: Data Connectivity Components:\\
+\url{http://www.microsoft.com/en-us/download/details.aspx?id=23734}
+
 \subsection*{Installation}
 Für die Installation der Software muss man nur die Datei "setup.exe" ausführen die sich im Installations-Ordner befindet.
 
@@ -71,7 +77,7 @@ Auch muss das Blatt mit "Sheet1" beschriftet sein:
 \end{figure}
 
 Dies sind Voraussetzungen für den reibungslosen Betrieb von xl2DB. Ohne diese Einstellungen funktioniert die Software nicht bzw. es ist mit Fehlern zu rechnen.
-
+\newpage
 \subsection*{Ausführung}
 Nach erfolgreicher Installation wird die Software direkt ausgeführt und auf dem Desktop ist ein neues Icon mit dem Name xl2DB.exe zu finden.
 
@@ -84,8 +90,6 @@ Nach erfolgreicher Installation wird die Software direkt ausgeführt und auf dem
 \end{figure}
 
 Beim ersten Aufruf der Applikation erscheint ein "Wilkommen" Fenster in welchem Sie hingewiesen werden, einen Datenbankpfad zu hinterlegen. Nach diesen Schritten ist die Software betriebsbereit.
-
-\newpage
 
 \subsection*{Erste Schritte}
 Beim ersten Aufruf der Applikation, muss via File - Choose Excel File, eine Datenbank geöffnet werden. Dieser wird intern gespeichert und beim nächsten Aufruf automatisch erneut aufgerufen, sofern die Datenbank noch vorhanden ist.
